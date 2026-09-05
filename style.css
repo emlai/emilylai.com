@@ -285,3 +285,46 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
  .media-back{display:flex;align-items:center;justify-content:center;position:absolute;inset:0 auto 16px 0;width:24px;border:0;background:var(--hover);color:var(--gray);font:24px var(--sans);touch-action:pan-y pinch-zoom;border-radius:var(--ri) 0 0 var(--ri)}
 }
 @media(prefers-reduced-motion:reduce){.folders li.egg.just-unlocked{animation:none}}
+
+/* Shared layout system. See DESIGN.md for dimensions and responsive behavior. */
+:root{--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px;--page-pad:clamp(32px,calc(4.04vw - 4.4px),48px);--desk-gap:clamp(24px,calc(6.06vw - 30.6px),48px);--sidebar-width:clamp(280px,calc(15.15vw + 143.5px),340px);--list-min:208px;--reader-min:272px;--divider-width:8px}
+body{padding:var(--page-pad)}
+.layout{grid-template-columns:var(--sidebar-width) minmax(0,1fr);gap:var(--desk-gap)}
+.contact{left:var(--page-pad);bottom:var(--space-2xl);gap:var(--space-md)}
+.id h1{font-size:32px}
+.id p{line-height:1.5}.id p+p{margin-top:var(--space-sm)}
+.tools{gap:var(--space-xs)}
+.sbtn{width:32px;height:32px}
+.folders{margin-top:var(--space-2xl);gap:var(--space-xs)}
+.folders button{gap:var(--space-sm);padding:var(--space-sm);width:calc(100% + 16px);margin-inline:-8px}
+.win{height:calc(100dvh - 2 * var(--page-pad) - 16px)}
+.bar{padding:8px 8px 0;align-items:flex-end;gap:8px;flex-shrink:0}
+.close{min-width:32px;min-height:32px;margin-bottom:8px}
+.tabs{align-items:stretch;padding:0;overflow-y:hidden}
+.tab{top:0;padding:8px 8px 8px 12px;gap:8px;max-width:192px;border-radius:4px 4px 0 0}
+.tab[aria-selected="true"]::after{display:none}
+.pane.on{grid-template-columns:clamp(var(--list-min),var(--list,38%),calc(100% - var(--reader-min) - var(--divider-width))) var(--divider-width) minmax(0,1fr)}
+.pane .list,.reader{padding:16px}
+.pane .list li{padding:8px;margin-inline:-8px;gap:4px}
+.pane .list li+li.first{margin-top:16px;padding-top:16px}
+.pane .list li+li.first::before{left:8px;right:8px}
+.reader .txt,.reader .para,.reader .bul{max-width:70ch;line-height:1.5}
+.reader .media{gap:8px}.reader .logos{gap:8px 16px;margin:8px 0 16px}
+.search input{font-family:var(--sans);font-size:17px}
+@media(min-width:901px){.idrow{flex-wrap:wrap}}
+@media(max-width:900px){
+ body{padding:24px 20px 32px}.layout{grid-template-columns:minmax(0,1fr);gap:24px}
+ .folders{margin-top:32px}.folders button{padding:12px 8px}
+ .sbtn,.mode button,.pclose{width:44px;height:44px}
+ .mode::before{width:44px;height:44px}html[data-theme="dark"] .mode::before{transform:translateX(44px)}
+ .contact{margin-top:32px;gap:16px}
+ .bar{padding:calc(8px + env(safe-area-inset-top)) 8px 0;gap:8px}
+ .close{min-height:44px;margin-bottom:0;padding:0 8px}
+ .tabs{padding:0;align-items:stretch}
+ .tab{min-height:44px;padding:8px 16px;top:0;max-width:none}
+ .pane.on{display:block}
+ .pane .list{padding:16px 20px calc(32px + env(safe-area-inset-bottom))}
+ .pane .list li{padding:12px 8px}
+ .pane.on.has-cur .reader,.pane.on.moving .reader{padding:0 20px calc(40px + env(safe-area-inset-bottom))}
+ .reader .back{min-height:44px;padding:12px 20px}
+}

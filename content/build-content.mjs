@@ -23,6 +23,11 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  const ser=(series||'').split(/\n/).map(s=>s.trim()).filter(Boolean).map(line=>{const [t,u]=line.split('|').map(x=>x.trim());const yt=u&&u.match(/youtu\.be\/([\w-]+)|v=([\w-]+)/);return yt?{kind:'yt',id:yt[1]||yt[2],title:t}:{kind:'x',url:u,title:t};});
  if(ser.length)it.series=ser;
  if(/first line only/i.test(notes||''))it.safe=true;
+ const cover=(notes||'').match(/(?:^|\n)cover:\s*(\S+)\s*\|\s*([^\n]+)/);
+ if(cover)it.cover={src:cover[1],alt:cover[2].trim()};
+ if(/year sections/i.test(notes||''))it.yearSections=true;
+ const deck=(notes||'').match(/(?:^|\n)deck:\s*(\S+)/);
+ if(deck)it.deck=JSON.parse(fs.readFileSync(deck[1],'utf8'));
  if(Object.keys(cuts).length)it.cuts=cuts;
  if(embeds.length)it.embeds=embeds;
  if(images.length)it.images=images;
@@ -32,3 +37,4 @@ const order=['work','growth experiments','lab experiments','learning','speaking'
 const out=order.filter(n=>buckets[n]).map(n=>({id:buckets[n].id,name:DISPLAY[n]||n,...(EGG[n]?{egg:true}:{}),items:buckets[n].items.sort((a,b)=>a.o-b.o).map(x=>x.v)}));
 fs.writeFileSync(outPath,'window.BUCKETS='+JSON.stringify(out)+';\n'+"window.renderList=function(b){return '<ul>'+b.items.map(([y,t,u])=>'<li><span class=\"d\">'+y+'</span><span>'+(u?'<a href=\"'+u+'\">'+t+'</a>':t)+'</span></li>').join('')+'</ul>'};\n");
 console.log('wrote',outPath,out.map(b=>b.name+':'+b.items.length).join(', '));
+if(fs.existsSync('content/media-manifest.json'))fs.appendFileSync(outPath,'window.MEDIA='+JSON.stringify(JSON.parse(fs.readFileSync('content/media-manifest.json','utf8')))+';\n');

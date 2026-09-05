@@ -1,0 +1,101 @@
+{
+  "url": "https://www.slideshare.net/slideshow/facebook-marketing-the-science-of-building-and-managing-campaigns/112947945",
+  "slides": [
+    {
+      "src": "media/dojo-slide-1.webp",
+      "text": "Facebook Marketing \nThe science of building and managing campaigns. \nEmily Lai"
+    },
+    {
+      "src": "media/dojo-slide-2.webp",
+      "text": "About\n—  From Portland, Oregon\n—  Started backpacking SE\nAsia in May\n—  In digital marketing for\ntwo years\n—  Worked for an agency\ncalled Logical Position"
+    },
+    {
+      "src": "media/dojo-slide-3.webp",
+      "text": "What are Facebook Ads?"
+    },
+    {
+      "src": "media/dojo-slide-4.webp",
+      "text": "Google Ads\n•  Target by keyword\nsearches\n•  Generally text based\n•  Pay-per-click\nFacebook Ads\n•  Target by demographics\nand interests\n•  Visual based\n•  Pay per impression"
+    },
+    {
+      "src": "media/dojo-slide-5.webp",
+      "text": "Push marketing\nPull marketing"
+    },
+    {
+      "src": "media/dojo-slide-6.webp",
+      "text": "How does Facebook know? \nSettings > Ad preferences\nEvery click,\nengagement,\nand pause\nis logged."
+    },
+    {
+      "src": "media/dojo-slide-7.webp",
+      "text": ""
+    },
+    {
+      "src": "media/dojo-slide-8.webp",
+      "text": "How does Facebook know?\nThe Facebook Pixel"
+    },
+    {
+      "src": "media/dojo-slide-9.webp",
+      "text": ""
+    },
+    {
+      "src": "media/dojo-slide-10.webp",
+      "text": "Base Pixel code:\n•  PageView: fires on any\nwebsite page\nPixel events:\n•  ViewContent\n•  AddToCart\n•  Purchase\n•  Lead\n•  CompleteRegistration"
+    },
+    {
+      "src": "media/dojo-slide-11.webp",
+      "text": "Elements of a Campaign\n— Campaign: test objectives\n— Ad set: test audiences\n— Ad: test creatives"
+    },
+    {
+      "src": "media/dojo-slide-12.webp",
+      "text": "Elements of a Campaign\nObjectives\n•  Conversions (the main one):\noptimizes for any Pixel event\n•  Catalog sales: shows me any\nOsprey bag I viewed\n•  Reach: shows to ANYONE in that\naudience (test on small\nremarketing audiences)"
+    },
+    {
+      "src": "media/dojo-slide-13.webp",
+      "text": "An effective campaign comes\ndown to:\n— Audience targeting\n— Creative (the ad)\n— Ad copy\n— Images and video\n— Landing page experience"
+    },
+    {
+      "src": "media/dojo-slide-14.webp",
+      "text": "Audiences and Targeting\n1. Custom audiences\n•  Website traffic (from Pixel)\n•  Uploaded email lists\n•  Engagement\n3. Saved audiences\n•  Interest and demographic based\n•  Can include/exclude custom\naudiences\n2. Lookalike audiences\n•  Find new prospects on Facebook\nsimilar to your existing audiences"
+    },
+    {
+      "src": "media/dojo-slide-15.webp",
+      "text": "Tips for Audience Creation\n—  Capitalize off audiences\nat the bottom of the\nfunnel\n—  Post engagers\n—  Video viewers\n—  Past purchasers\n—  Page visitors\n—  Cart abandoners\n—  Utilize lookalikes"
+    },
+    {
+      "src": "media/dojo-slide-16.webp",
+      "text": "Tips for Audience Creation\n—  When creating saved\naudiences, think about\nexclusions too\n—  Think proxies: brands,\nmagazines, podcasts, idols,\nassociations, etc.\n—  Test larger audiences\nupfront (1-5 million*)\n—  Test, test, and test some\nmore"
+    },
+    {
+      "src": "media/dojo-slide-17.webp",
+      "text": "Tips for Creative\n—  Use page post IDs across ad sets\n—  Test different formats (Images and\nvideo)\n—  Use Facebook’s 20% rule checker\nCopywriting:\n—  Test long-form copy against short-\nform\n—  Ask questions\n—  Disapproval? Try using less “you’s”"
+    },
+    {
+      "src": "media/dojo-slide-18.webp",
+      "text": "Putting it All Together\nAd/creative Landing page / product page"
+    },
+    {
+      "src": "media/dojo-slide-19.webp",
+      "text": "Putting it All Together"
+    },
+    {
+      "src": "media/dojo-slide-20.webp",
+      "text": "Optimizing Campaigns\nLooking at data: start from bottom of funnel up.\n1.  Conversions/cost per conversion (CPA)\n2.  ROAS (return on ad spend)\n3.  Add to carts\n4.  Landing page views\n5.  Outbound clicks\n6.  Click through rate (CTR)"
+    },
+    {
+      "src": "media/dojo-slide-21.webp",
+      "text": "Troubleshooting\n1. Are there conversions?\n—  YES: Scale the campaign/ad set/ad that is\nworking\n—  NO…\n2. Are there add to cart events?\n—  YES: Check your checkout experience\n—  NO..\n3. Are you getting clicks? Is click through rate (CTR)\ngood?\n—  YES: Check your landing page experience\n—  NO: Check your audience targeting and creatives"
+    },
+    {
+      "src": "media/dojo-slide-22.webp",
+      "text": "Optimizing Campaigns: cont.\nUse organized\nnaming syntaxes\nCompare, columns\n& breakdown"
+    },
+    {
+      "src": "media/dojo-slide-23.webp",
+      "text": "Long Term Success\n— Combine Facebook marketing with\nother channels\n— Constantly work on new creatives and\noffers\n— Be data and conversion focused\n— Test, test, and test some more"
+    },
+    {
+      "src": "media/dojo-slide-24.webp",
+      "text": "Q & A"
+    }
+  ]
+}

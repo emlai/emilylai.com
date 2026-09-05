@@ -779,5 +779,123 @@
     "src": "media/1317883308840079361-fx3.jpg"
    }
   ]
+ },
+ "2082489035147161837": {
+  "text": "who can connect me to someone i can commission these tables from",
+  "date": "2026-07-29",
+  "likes": 38,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2082489035147161837-fx1.jpg"
+   }
+  ]
+ },
+ "2081663181441597879": {
+  "text": "Been on an absolutely streak with RWA markets (facebook marketplace) lately, great place to learn about market microstructure dynamics \n\nBid/ask spread: i know i’m going to get negotiated on \n\nLiquidity: how fast or slow something sells \n\nPrice discovery: when i have to lower the ask price \n\nSpoofing: getting ghosted after agreeing lol \n\nCounterparty risk: settlement and safety: is it cash? is it real? will the revolut tx land instantly?\n\nAnyways, i’m selling a ton of my glasses, i accumulated way too many and don’t like what i’ve become",
+  "date": "2026-07-27",
+  "likes": 61,
+  "author": "emilylai"
+ },
+ "2089442129605017805": {
+  "text": "Been going down a rabbit hole of tokenization: stocks, asset backed securities, private credit, and money market funds.  Went through ~550k of words across panels from TokenizeThis from June, podcasts, developer docs, asset manager and vc research, and industry reports\n\nA lot of X and crypto content is self advertising, so it's hard to get unbias, objective takes. Digesting all this then pattern matching it both in aggregate and to the TradFi analog has been really helpful in my learning process.\n\n- This headline I saw yesterday reads bullish (and yes let's give the growth credit) but tokenized equity markets are extremely fragmented. Imagine the depth of $2.3B spread across 1.4M holders across 1,000+ tokenized stocks on multiple chains and frontends \n- Market makers go where flow is. Retail getting bad slippage means less flow, which means worse slippage. Chicken and egg situation \n- Tokens trade 24/7 but the underlying stock market is closed on weekends, creating even worse liquidity and gap risks\n- Robinhood and Binance (bStocks) seem to be leading retail front for tokenized equities which makes sense, they have distribution to the end user. Distribution is harder than issuance, all the tech rails exist today \n- Most X posts will look at the growth of tokenized stocks via issuance: xStocks vs. Ondo vs. Robinhood etc, but not many mention how nearly all go through one broker and clearer: Alpaca, the real winner here\n- Alpaca and Oracles seem to have the best monetization models in this, effectively being the bridge in bringing TradFI onchain and pricing it\n- Tokenized stocks have multiple legal variants with a spectrum of actual rights to just exposure: Jersey debt certificates, BVI total-return notes, ADGM certificates all giving a different range of rights to just pure exposure\n- Tokenized private credit is interesting, I still need to read more... the underlying loans never trade so there's no market price yet oracles push a NAV from some fund admin on a schedule while DeFi works 24/7\n- Institutional tokenized products have massive (inflated) TVLs compared to tokenized equities right now. DeFi composability creates real yield opportunities (lev looping a tokenized CLO or MMF) yet they're typically permissioned with minimums and KYB\n\nA lot of the future for more capital efficient onchain markets comes down to regulatory clarity. Will be interesting to see DTCC rolling out it's tokenization commercial launch in Oct, Nasdaq and NYSE moving forward with their tokenization roadmaps, and SEC possibly rescinding rule 611, making it easier for public equities to be traded on blockchain rails",
+  "date": "2026-08-17",
+  "likes": 53,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2089442129605017805-fx1.jpg"
+   }
+  ]
+ },
+ "2090641761492168962": {
+  "text": "Nasdaq's Director of Communications for their \"Digital Liquidity Networks\" org  role is a peek into the future: \n- continuous, always-on trading \n- programmable market structures \n- tokenization \n\nI started wondering when Nasdaq and NYSE tokenize equities, how they will execute. Will it be fragmented order books? And does it directly compete with the xStocks, Ondo stocks, Robinhood token stocks, Dinari stocks today?\n\nI looked into the SEC releases and found out both Nasdaq and NYSE are launching tokenized equities with  unified liquidity - both tokenized and traditional shares will trade on the same order book \n\nThis however, won't be DeFi. It's walled gardens, permissioned finance on crypto rails\n\nFor reaching offshore non-US people: \n- Nasdaq is partnering with xStocks (Kraken/Payward) on an equities gateway that converts DTCC custodied equities to tokenized forms\n- NYSE is launching a new 24/7 venue for tokenized securities\n\nBoth of these efforts bring flow back to the underlying US capital markets. Crypto rails create access and extend distribution to global capital, similar to stablecoins increasing demand for the dollar or Fasanara getting new investors on their Global Diversified Alternative Debt Fund with Midas. These also both seem to be competitors to existing tokenized equity options that exist today, with full defi composability - but will not merely be wrappers\n\nThere's three levels of blockchain finance emerging: \n1. Existing finance importing controlled, blockchain infrastructure (walled gardens) \n2. Permissioned DeFi: whitelisted assets, AML/KYC/KYB, for accredited investors only but usable in composable onchain markets\n3. Fully permissionless DeFi",
+  "date": "2026-08-21",
+  "likes": 34,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2090641761492168962-fx1.jpg"
+   }
+  ]
+ },
+ "2095865781804302509": {
+  "text": "Every new AMC minted onchain is a real share that had to be bought first, which means tokenized stocks drive global demand for the underlying stock \n\nIt’s like how stablecoins drive global demand for the US dollar \n\nRight now with regulations, tokenized stocks are just wrappers with fewer rights and (supposedly only) available to non US people\n\nAlpaca usually custodies them, then in Robinhood’s case they have a Jersey entity that issues them. KYB’d authorized participants mint only after the traditional shares are bought and held in custody\n\nIt should be a net positive for both AMC (and US markets) that new global audiences can now “buy” the stock",
+  "date": "2026-09-04",
+  "likes": 45,
+  "author": "emilylai"
+ },
+ "2091232909600436585": {
+  "text": "I’m 15 minutes into Grok Bot and it’s: \n\n- scanning my email ready to reply whenever an ATOMIX waitlist spot opens up \n- scraping app store reviews and doing sentiment analysis \n- going through and taking screenshots of a full onboarding flow to analyze later",
+  "date": "2026-08-22",
+  "likes": 55,
+  "author": "emilylai"
+ },
+ "2091618318385807640": {
+  "text": "Grok Bot is texting my partner a joke + words of endearment every 30 minutes \n\nI can remotely see the agent from my phone navigating a Linux VPS and sending the message \n\nOnly took one minute, one prompt to set up. Crazy simple",
+  "date": "2026-08-23",
+  "likes": 28,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2091618318385807640-fx1.jpg"
+   },
+   {
+    "t": "photo",
+    "src": "media/2091618318385807640-fx2.jpg"
+   }
+  ]
+ },
+ "2095453564902461921": {
+  "text": "Set up my grok bot ferny with it's own virtual card and it booked flights and emailed a calendar invite for me \n\nPretty magical",
+  "date": "2026-09-03",
+  "likes": 22,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2095453564902461921-fx1.jpg"
+   }
+  ]
+ },
+ "2094042611589783950": {
+  "text": "Day 8 with grok @bot, everything i've used it for: \n\nTrip planning:\n- One bot is actively monitoring flights and pinging me when it's at a certain price \n- Plan out visas: how to apply, where to go, costs, best agencies and reminding me \n- Sending emails to check if stores have a specific product and making reservations for me\n- Searching and building out itineraries then adding it to my calendar \n- Created a tableall account and made lists of sushi restaurants to go to in Japan \n\nDaily life and errands: \n- Adding events to my calendar or reminding me things I need to do at a certain day or time \n- Researching best products and checking all forums, reviews, and cheapest websites to get it from, including finding coupon codes\n- Canceling free trials for me before I get charged lol\n- Daily brief of AI + Tech + Crypto news \n\nWork: \n- Going through onboarding flows and doing full UX and messaging reviews for me \n- Designing websites \n- Doing due diligence on companies and the people behind them (it searches their LinkedIn, news, any press, confirms numbers) \n- Designing and coding a new website\n- It helped me write this post \n- Auditing work done by other LLMS\n\nMy current team set up: \n1. Big boss bot: the main one i interface with that delegates to all the other bots, sets up routines and reminders\n2. Deep researcher: does a lot of the research, looks on X and web, fact checks\n3. CMO: does a lot of marketing strategy, copy, analysis, positioning and growth \n4. CTO: anything technical, related to code, ai setup  \n5. Therapist: my brainstorm buddy, will ask me questions \n\nI've also had big boss bot read @ericzakariasson 's share of all the grok bot guides and intake that for the others, added @poteto 's pstake skill, her dr egg bot template which helps make new bots (i used this to also train the existing bots), and @heyrobinai 's alfred template which did an audit of how all the bots are working together\n\nI'm finding myself using grok bot for my day to day more than Hermes, mainly out of token usage, but I have them sharing the same brain. I also found grok dot com is better for fuller reports using real-time X. @claudeai is still my main driver for a majority of coding and dense research (you can only attach 6 files to grok bot at time and cannot choose model)",
+  "date": "2026-08-30",
+  "likes": 86,
+  "author": "emilylai"
+ },
+ "2088274956211593457": {
+  "text": "The generalist growth/marketing role in crypto does not exist anymore. \n\nThis makes an onboarding funnel byway of a single course difficult. I used to make a lot more \"crypto growth marketing\" content in the last years and have reviewed hundreds of gtm cvs in multiple hiring cycles when the industry was more premature. These days, I'm studying for the FINRA.\n\nCrypto is becoming concentrated in the following:\n1. Onchain finance (effectively, finance - as the rails become more invisible)\n2. Market infrastructure\n3. Trading platforms \n\nWith many companies folding or aggregating, combined with current market conditions, most will head hunt specialized talent and go with seniors over juniors.\n\nOnchain finance is a broad category that is an analog to traditional capital markets. This means an increased demand in expertise coming from finance and banking. Market infrastructure is all the piping needed to power this. This is entirely B2B. The main audiences a growth or marketing role would be targeting in a more mature crypto space include: \n- retail and consumer traders \n- SMEs \n- financial institutions \n- family offices \n- trading desks \n- asset managers \n- other company's in the space  \n\nThe retail and consumer segment is hyper-competitive. Power laws apply to the largest exchanges, trading platforms, and neobanks. These companies source talent from other high growth web2 consumer apps or competitors. For trading platforms, you'd want to target power traders as they drive most of your revenue. This is primarily B2B, right there with the rest of the audiences on the list. These relationships and knowledge in each segment's pain points, current solutions, and technical prowess come with specialized experience that accrues over time.",
+  "date": "2026-08-14",
+  "likes": 150,
+  "author": "emilylai"
+ },
+ "2075327476817870904": {
+  "text": "Ostium is currently #2 in open interest right now for RWA perps. \n\nIn the last five months of being in this role, I've seen two record-breaking onchain positions. The first one was a $26m long on gold. It's pretty incredible to see blockchain rails enable people around the world to trade US markets at this magnitude. \n\nCrypto execution isn't as great as it can be (team is working on it, updates coming soon), but this is one the best places to trade metals, stocks, forex, and ETFs right now. It's not another perp dex, there's no order books to fragment liquidity. It's directly connecting traders to the underlying market which is why large size trades like this frequently happen. \n\nIf you want to test it, use code EMILY. Dms open for any feedback, asset requests, complaints",
+  "date": "2026-07-09",
+  "likes": 65,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2075327476817870904-fx1.jpg"
+   }
+  ]
+ },
+ "2076792346423779473": {
+  "text": "Breaking down the complete process for brand strategy and what went into these 298 slides with @enaraxr tomorrow\n\nFirst live stream in months! 3 pm cet, 9 am est. If you have questions for her, drop below",
+  "date": "2026-07-13",
+  "likes": 84,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2076792346423779473-fx1.jpg"
+   }
+  ]
  }
 }

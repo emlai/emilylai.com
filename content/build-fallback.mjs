@@ -9,7 +9,7 @@ export function fallbackHTML(buckets){
  const link=(url,label)=>'<a href="'+esc(url)+'">'+esc(label)+'</a>';
  return '<noscript><div class="fallback">\n'+buckets.filter(b=>!b.egg).map(b=>'<details><summary>'+esc(b.name)+'</summary>\n'+b.items.map(it=>{
   if(Array.isArray(it))return '<p><small>'+esc(it[0])+'</small><br>'+(it[2]?link(it[2],it[1]):esc(it[1]))+'</p>';
-  const desc=(it.desc||[]).map(s=>'<p>'+esc(s.replace(/^(## |&gt; |> |- )/,'' )).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2">$1</a>')+'</p>').join('');
+  const desc=(it.desc||[]).map(s=>'<p>'+esc(s.replace(/^(## |&gt; |> |- )/,'' )).replace(/\[([^\]]+)\]\((https?:[^)\s]+|#[A-Za-z0-9_-]+)\)/g,'<a href="$2">$1</a>')+'</p>').join('');
   const social=[...(it.posts||[]).map(u=>({url:u,label:'Post on X'})),...(it.embeds||[]).map(e=>({url:e.src.replace('/embed/feed/update/','/feed/update/'),label:'Post on LinkedIn'}))];
   if(it.newestFirst)social.sort((a,b)=>socialTimestamp(b.url)-socialTimestamp(a.url));
   for(const id of [...(it.streamOrder||[])].reverse()){

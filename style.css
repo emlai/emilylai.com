@@ -174,3 +174,13 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
 .reader .cont .txt{margin-bottom:0}
 .reader .cont .media{margin-top:0}
 .reader .bul a{color:inherit;text-decoration:underline;text-decoration-color:var(--gray);text-underline-offset:3px}
+
+.reader .yt img{width:100%;display:block;border-radius:var(--r2)}
+
+/* headings and paragraphs inside a role's copy */
+.reader .sub{font-family:var(--sans);font-size:13px;color:var(--gray);margin:18px 0 6px}
+.reader .sub:first-child{margin-top:0}
+.reader .para{margin:0 0 12px;line-height:1.45}
+/* LinkedIn embeds */
+.reader .li{max-width:504px;margin:0 0 16px}
+.reader .li iframe{width:100%;border:0;border-radius:var(--r2);display:block;background:var(--hover)}

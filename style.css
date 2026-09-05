@@ -275,8 +275,11 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
 .video-frame{position:relative}
 .media-back{display:none}
 .folders li.egg.just-unlocked{animation:discovery-glow 1800ms ease-out}
-@keyframes discovery-glow{0%,100%{box-shadow:0 0 0 0 transparent;background:transparent}25%{background:var(--hover);box-shadow:0 0 18px 3px color-mix(in srgb,var(--ink) 10%,transparent)}}
+@keyframes discovery-glow{0%,100%{box-shadow:0 0 0 0 transparent;background:transparent}25%{background:rgba(255,219,104,.16);box-shadow:0 0 18px 3px rgba(255,219,104,.28)}}
 @media(max-width:900px){
+ .pane.tab-preview{display:block;position:absolute;inset:0;pointer-events:none;background:var(--win)}
+ .pane.tab-preview .list{visibility:visible}
+ .pane.tab-preview .reader{display:none}
  .video-frame{padding-left:24px}
  .media-back{display:flex;align-items:center;justify-content:center;position:absolute;inset:0 auto 16px 0;width:24px;border:0;background:var(--hover);color:var(--gray);font:24px var(--sans);touch-action:pan-y pinch-zoom;border-radius:var(--ri) 0 0 var(--ri)}
 }

@@ -9,7 +9,7 @@ export function fallbackHTML(buckets){
   if(Array.isArray(it))return '<p><small>'+esc(it[0])+'</small><br>'+(it[2]?link(it[2],it[1]):esc(it[1]))+'</p>';
   const desc=(it.desc||[]).map(s=>'<p>'+esc(s.replace(/^(## |&gt; |> |- )/,'' )).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2">$1</a>')+'</p>').join('');
   const sources=[...(it.posts||[]).map((u,i)=>link(u,'Post '+(i+1))),...(it.series||[]).map(s=>link(s.kind==='yt'?'https://youtu.be/'+s.id:s.url,s.title)),...(it.link?[link(it.link,'Visit website')]:[])];
-  return '<article><h3>'+esc(it.label)+'</h3><small>'+esc(it.y)+'</small>'+desc+(sources.length?'<p>'+sources.join(' · ')+'</p>':'')+'</article>';
+  return '<article><h3>'+esc(String(it.label).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'$1'))+'</h3><small>'+esc(it.y)+'</small>'+desc+(sources.length?'<p>'+sources.join(' · ')+'</p>':'')+'</article>';
  }).join('\n')+'\n</details>').join('\n')+'\n</div></noscript>';
 }
 

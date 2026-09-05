@@ -134,6 +134,11 @@
     "w": 613,
     "h": 722
   },
+  "media/1937821557339955692-GuSGITOWsAAGxtu.jpg": {
+    "src": "media/1937821557339955692-GuSGITOWsAAGxtu-optimized.webp",
+    "w": 1200,
+    "h": 900
+  },
   "media/2014001570808041727-G_MpwICWEAAk8Mh.jpg": {
     "src": "media/2014001570808041727-G_MpwICWEAAk8Mh-optimized.webp",
     "w": 1044,
@@ -309,10 +314,30 @@
     "w": 1200,
     "h": 845
   },
+  "media/1191824488696025093-EIo2DeCWkAADHQx.jpg": {
+    "src": "media/1191824488696025093-EIo2DeCWkAADHQx-optimized.webp",
+    "w": 554,
+    "h": 1200
+  },
   "media/1272237327285399552-EaflGnAXgAEJPln.jpg": {
     "src": "media/1272237327285399552-EaflGnAXgAEJPln-optimized.webp",
     "w": 1024,
     "h": 788
+  },
+  "media/1237009861709369346-ESq95rWX0AIyZWb.jpg": {
+    "src": "media/1237009861709369346-ESq95rWX0AIyZWb-optimized.webp",
+    "w": 675,
+    "h": 1200
+  },
+  "media/1105808965420699649-D1ifZA6XcAAWJBG.jpg": {
+    "src": "media/1105808965420699649-D1ifZA6XcAAWJBG-optimized.webp",
+    "w": 900,
+    "h": 1200
+  },
+  "media/2095139148352933993-fx1.jpg": {
+    "src": "media/2095139148352933993-fx1-optimized.webp",
+    "w": 410,
+    "h": 120
   },
   "media/2090641761492168962-fx1.jpg": {
     "src": "media/2090641761492168962-fx1-optimized.webp",
@@ -348,11 +373,6 @@
     "src": "media/2091618318385807640-HQbrxiIWoAEs0Ra-optimized.webp",
     "w": 755,
     "h": 1200
-  },
-  "media/2095139148352933993-fx1.jpg": {
-    "src": "media/2095139148352933993-fx1-optimized.webp",
-    "w": 410,
-    "h": 120
   },
   "media/2076792346423779473-HNI_oYyWwAA8gbe.jpg": {
     "src": "media/2076792346423779473-HNI_oYyWwAA8gbe-optimized.webp",
@@ -434,6 +454,16 @@
     "w": 1170,
     "h": 889
   },
+  "media/1899900098202550681-cover.jpg": {
+    "src": "media/1899900098202550681-cover-optimized.webp",
+    "w": 1200,
+    "h": 480
+  },
+  "media/1993137695145533533-cover.jpg": {
+    "src": "media/1993137695145533533-cover-optimized.webp",
+    "w": 1200,
+    "h": 480
+  },
   "media/1881423550298607917-Ghwnh0tXgAIPXEY.jpg": {
     "src": "media/1881423550298607917-Ghwnh0tXgAIPXEY-optimized.webp",
     "w": 986,
@@ -453,16 +483,6 @@
     "src": "media/1986716841201336412-G5I8S2iWQAAWxqm-optimized.webp",
     "w": 1200,
     "h": 676
-  },
-  "media/1993137695145533533-cover.jpg": {
-    "src": "media/1993137695145533533-cover-optimized.webp",
-    "w": 1200,
-    "h": 480
-  },
-  "media/1899900098202550681-cover.jpg": {
-    "src": "media/1899900098202550681-cover-optimized.webp",
-    "w": 1200,
-    "h": 480
   },
   "media/1861696138812051488-fx1.jpg": {
     "src": "media/1861696138812051488-fx1-optimized.webp",
@@ -648,26 +668,6 @@
     "src": "media/1317883308840079361-EkoP4O6VkAEFGfL-optimized.webp",
     "w": 900,
     "h": 1200
-  },
-  "media/1191824488696025093-fx1.jpg": {
-    "src": "media/1191824488696025093-fx1-optimized.webp",
-    "w": 946,
-    "h": 2048
-  },
-  "media/1237009861709369346-fx1.jpg": {
-    "src": "media/1237009861709369346-fx1-optimized.webp",
-    "w": 1152,
-    "h": 2048
-  },
-  "media/1105808965420699649-fx1.jpg": {
-    "src": "media/1105808965420699649-fx1-optimized.webp",
-    "w": 1536,
-    "h": 2048
-  },
-  "media/1937821557339955692-fx1.jpg": {
-    "src": "media/1937821557339955692-fx1-optimized.webp",
-    "w": 1331,
-    "h": 998
   },
   "media/dojo-slide-1.webp": {
     "src": "media/dojo-slide-1.webp",

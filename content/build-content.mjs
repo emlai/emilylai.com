@@ -8,6 +8,7 @@ const rows=parseCSV(text).filter(r=>r.length>1);
 const [header,...data]=rows;
 const ids={'work':'work','growth experiments':'growth','lab experiments':'lab','learning':'learn','speaking':'talks','side projects':'side','field notes':'notes'};
 const EGG={'field notes':true};
+const DISPLAY={'field notes':'field notes (bonus archives)'};
 const buckets={};
 for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,status,notes]=r;if(!ids[bucket])continue;if((status||'').trim()==='cut')continue;
  const b=buckets[bucket]||(buckets[bucket]={id:ids[bucket],name:bucket,items:[]});
@@ -28,6 +29,6 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  if(type==='stack')it.stack=true;
  b.items.push({o:+order,v:it});}
 const order=['work','growth experiments','lab experiments','learning','speaking','side projects','field notes'];
-const out=order.filter(n=>buckets[n]).map(n=>({id:buckets[n].id,name:n,...(EGG[n]?{egg:true}:{}),items:buckets[n].items.sort((a,b)=>a.o-b.o).map(x=>x.v)}));
+const out=order.filter(n=>buckets[n]).map(n=>({id:buckets[n].id,name:DISPLAY[n]||n,...(EGG[n]?{egg:true}:{}),items:buckets[n].items.sort((a,b)=>a.o-b.o).map(x=>x.v)}));
 fs.writeFileSync(outPath,'window.BUCKETS='+JSON.stringify(out)+';\n'+"window.renderList=function(b){return '<ul>'+b.items.map(([y,t,u])=>'<li><span class=\"d\">'+y+'</span><span>'+(u?'<a href=\"'+u+'\">'+t+'</a>':t)+'</span></li>').join('')+'</ul>'};\n");
 console.log('wrote',outPath,out.map(b=>b.name+':'+b.items.length).join(', '));

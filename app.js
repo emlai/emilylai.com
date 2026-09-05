@@ -43,7 +43,7 @@ F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;c
 
 /* tabs */
 T.addEventListener('click',e=>{const x=e.target.closest('.x');const t=e.target.closest('[data-t]');
- if(isMobile()){if(t){open=[t.dataset.t];active=t.dataset.t;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(false);const el=T.querySelector('[aria-selected="true"]');if(el)el.scrollIntoView({inline:'center',block:'nearest'});}return;}
+ if(isMobile()){if(t){const was=unlocked();seen.add(t.dataset.t);store.set('seen',[...seen]);if(!was&&unlocked()){renderFolders();}open=[t.dataset.t];active=t.dataset.t;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(false);const el=T.querySelector('[aria-selected="true"]');if(el)el.scrollIntoView({inline:'center',block:'nearest'});}return;}
  if(x){const id=x.dataset.x;open=open.filter(o=>o!==id);if(active===id)active=open[open.length-1]||null;sync(true);return;}
  if(t){active=t.dataset.t;sync(true);}});
 T.addEventListener('keydown',e=>{const i=open.indexOf(active);if(e.key==='ArrowRight'&&i<open.length-1){active=open[i+1];sync(true);}else if(e.key==='ArrowLeft'&&i>0){active=open[i-1];sync(true);}});
@@ -51,7 +51,7 @@ WIN.querySelector('.close').addEventListener('click',()=>{open=[];active=null;sy
 addEventListener('keydown',e=>{if(e.key==='Escape'&&open.length&&!document.activeElement.closest('.search')){open=[];active=null;sync(false);}});
 
 /* reader */
-function mediaHTML(med,u){if(!med.length)return '';const mh=med.map(x=>x.t==='photo'?'<img src="'+x.src+'" alt="Image from the post" loading="lazy">':(/\.mp4$/.test(x.src)?'<video controls preload="none" playsinline poster="'+(x.poster||'')+'" src="'+x.src+'"></video>':'<a class="vid" href="'+u+'" target="_blank" rel="noopener" title="Play on X (opens in a new tab)"><img src="'+(x.poster||x.src)+'" alt="Video from the post" loading="lazy"></a>')).join('');return '<div class="media'+(med.length>=3?' many':'')+'">'+mh+'</div>';}
+function mediaHTML(med,u){if(!med.length)return '';const mh=med.map(x=>x.t==='photo'?'<img src="'+x.src+'" alt="Image from the post" loading="lazy" decoding="async">':(/\.mp4$/.test(x.src)?'<video controls preload="none" playsinline poster="'+(x.poster||'')+'" src="'+x.src+'"></video>':'<a class="vid" href="'+u+'" target="_blank" rel="noopener" title="Play on X (opens in a new tab)"><img src="'+(x.poster||x.src)+'" alt="Video from the post" loading="lazy"></a>')).join('');return '<div class="media'+(med.length>=3?' many':'')+'">'+mh+'</div>';}
 function postHTML(u,lab,noMedia,cut){const m=u.match(/status\/(\d+)/);const p=m&&PREVIEWS[m[1]];
  if(!p)return '<div class="post"><p class="who"><span>X · @emilylai</span></p><p class="out"><a href="'+u+'" target="_blank" rel="noopener">Open on X ↗</a></p></div>';
  let body=lab?p.text.split(/\n/)[0]:p.text,cutted=false;if(cut){const i=p.text.toLowerCase().indexOf(cut.toLowerCase());if(i>=0){body=p.text.slice(0,i+cut.length);cutted=true;}}const med=noMedia?[]:(p.media||[]);
@@ -61,7 +61,7 @@ function cardHTML(s){if(s.kind==='yt')return '<a role="listitem" class="card" hr
  const id=(s.url.match(/status\/(\d+)/)||[])[1];const pv=PREVIEWS[id];const th=pv&&pv.media?'<img src="'+pv.media[0].src+'" alt="" loading="lazy">':'<span class="ph">X</span>';return '<a role="listitem" class="card" href="'+s.url+'" data-u="'+s.url+'" data-series="1">'+th+'<span>'+esc(s.title)+'</span></a>';}
 function descHTML(d){if(!d||!d.length)return '';let out='',ul=[];const flush=()=>{if(ul.length){out+='<ul class="bul">'+ul.map(x=>'<li>'+md(x)+'</li>').join('')+'</ul>';ul=[];}};
  for(const line of d){if(line.startsWith('## ')){flush();out+='<p class="sub">'+md(line.slice(3))+'</p>';}else if(line.startsWith('> ')){flush();out+='<p class="para">'+md(line.slice(2))+'</p>';}else ul.push(line.replace(/^- /,''));}flush();return out;}
-function imagesHTML(it){return (it.images||[]).map(src=>'<div class="media"><img src="'+src+'" alt="" loading="lazy"></div>').join('');}
+function imagesHTML(it){return (it.images||[]).map(src=>'<div class="media"><img src="'+src+'" alt="" loading="lazy" decoding="async"></div>').join('');}
 function embedHTML(e){return '<div class="li"><iframe src="'+e.src+'" height="'+e.h+'" loading="lazy" title="LinkedIn post" allowfullscreen></iframe></div>';}
 /* a single video renders large; several render as a row of cards (or stacked for type stack) */
 function seriesHTML(it){if(!it.series)return '';if(it.stack||(it.series.length===1&&it.series[0].kind==='yt'))return it.series.map(stackHTML).join('');return '<div class="row" role="list">'+it.series.map(cardHTML).join('')+'</div><div class="stagebox"></div>';}

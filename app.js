@@ -29,7 +29,7 @@ function renderPanes(){P.innerHTML=BUCKETS.map(b=>'<div class="pane" id="p-'+b.i
 function remember(){store.set('desk',{open,active,transform:WIN.style.transform||'',w:WIN.style.width||'',h:WIN.style.height||''});}
 function sync(focusTab){if(isMobile()&&open.length>1)open=[active];remember();
  WIN.classList.toggle('open',open.length>0);document.body.classList.toggle('m-open',open.length>0&&isMobile());
- const tabIds=isMobile()?visible().map(b=>b.id):open;
+ const tabIds=isMobile()?visible().filter(b=>!b.egg||store.get('eggOpened',false)).map(b=>b.id):open;
  T.innerHTML=tabIds.map(id=>{const b=BUCKETS.find(x=>x.id===id);return '<div class="tab" role="tab" id="t-'+id+'" tabindex="'+(id===active?0:-1)+'" aria-selected="'+(id===active)+'" aria-controls="p-'+id+'" data-t="'+id+'"><span class="name">'+esc(b.name)+'</span><button type="button" class="x" aria-label="Close '+esc(b.name)+'" data-x="'+id+'">'+XICON+'</button></div>'}).join('');
  document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id==='p-'+active));
  F.querySelectorAll('button').forEach(b=>b.setAttribute('aria-expanded',String(open.includes(b.dataset.w))));
@@ -37,7 +37,7 @@ function sync(focusTab){if(isMobile()&&open.length>1)open=[active];remember();
 renderFolders();renderPanes();
 
 /* folders */
-F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.w;const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked())renderFolders();
+F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.w;const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked())renderFolders();if((BUCKETS.find(x=>x.id===id)||{}).egg)store.set('eggOpened',true);
  if(isMobile()){open=[id];active=id;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(false);return;}
  if(open.includes(id)){open=open.filter(o=>o!==id);active=open[open.length-1]||null;sync(false);}else{open.push(id);if(open.length>MAXTABS)open.shift();active=id;sync(true);}});
 
@@ -85,6 +85,12 @@ P.addEventListener('click',e=>{
  else if(yt)rd.innerHTML='<p class="who"><span>YouTube · @emilylai8</span></p><a class="yt vid" href="'+u+'" data-yt="'+yt[1]+'"><img src="https://img.youtube.com/vi/'+yt[1]+'/hqdefault.jpg" alt="Play the video here"></a><p class="out"><a href="'+u+'" target="_blank" rel="noopener">Open on YouTube ↗</a></p>';
  else{const host=new URL(u).host;rd.innerHTML='<p class="who"><span>'+esc(host)+'</span></p><p class="out"><a href="'+u+'" target="_blank" rel="noopener">Open '+esc(host)+' ↗</a></p>';}
  mobileBack(pane,rd);});
+
+/* phone: swipe right to go back (note to list, list to folders) */
+(function(){let sx=0,sy=0,t0=0,ok=false;
+ P.addEventListener('touchstart',e=>{if(!isMobile()||e.touches.length!==1)return;const t=e.touches[0];ok=!e.target.closest('.row, video, iframe, .li');sx=t.clientX;sy=t.clientY;t0=Date.now();},{passive:true});
+ P.addEventListener('touchend',e=>{if(!isMobile()||!ok)return;const t=e.changedTouches[0];const dx=t.clientX-sx,dy=t.clientY-sy;if(dx<70||Math.abs(dy)>60||Date.now()-t0>600||sx>innerWidth*.6)return;
+  const pane=document.querySelector('.pane.on');if(!pane)return;if(pane.classList.contains('has-cur')){pane.classList.remove('has-cur');pane.querySelectorAll('li').forEach(l=>l.classList.remove('cur'));}else{open=[];active=null;sync(false);}},{passive:true});})();
 
 /* column divider */
 (function(){let drag=null,sx,sw;const v=store.get('listw',null);if(v)WIN.style.setProperty('--list',v);

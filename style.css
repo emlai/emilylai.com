@@ -158,6 +158,12 @@ svg.i{width:16px;height:16px;fill:currentColor;flex:none}
  @keyframes slidein{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
  .reader .back{position:sticky;top:0;z-index:1;display:block;width:calc(100% + 40px);margin:0 -20px 16px;padding:14px 20px;text-align:left;background:var(--bg);border-bottom:1px solid var(--hair);font-size:15px;color:var(--ink)}
  .reader .empty{display:none}
+ .reader .post{margin-top:28px;padding-top:24px;border-top:2px solid var(--hair)}
+ .reader .back+.post{border-top:0;padding-top:0;margin-top:0}
+ .reader .who{margin-bottom:10px}
+ .reader .txt,.reader .para,.reader .bul li{line-height:1.5}
+ .reader .cont{margin-top:16px;padding-top:16px}
+ .reader .rl{margin-bottom:16px}
  .mcontact{display:flex;gap:18px;align-items:center;padding:28px 0 8px;margin-top:8px;border-top:1px solid var(--hair);font-family:var(--sans);font-size:13px}
  .mcontact a{display:inline-flex;align-items:center;text-decoration:none;color:var(--text)}
  .mcontact svg{width:15px;height:15px;fill:currentColor;color:var(--gray)}

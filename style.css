@@ -39,9 +39,9 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .palette:not([hidden]) .searchbox{animation:search-open 160ms var(--ease)}
 @keyframes search-open{from{opacity:.4;transform:translateY(-6px) scale(.985)}to{opacity:1;transform:none}}
 .search{display:flex;align-items:center;gap:12px;padding:12px 14px}
-.search-results{max-height:55vh;max-height:55dvh;overflow:auto;overscroll-behavior:contain}
+.search-results{max-height:55vh;max-height:55dvh;overflow:auto;overscroll-behavior:contain;font-family:var(--sans);font-size:14px;line-height:1.4}
 .search-results:not(:empty){border-top:1px solid var(--hair);padding:6px}
-.search-results button{display:block;width:100%;text-align:left;padding:10px;border-radius:var(--ri);line-height:1.4}
+.search-results button{display:block;width:100%;text-align:left;padding:10px;border-radius:var(--ri);font-family:var(--sans);font-size:14px;line-height:1.4}
 .search-results button:hover,.search-results button:focus-visible{background:var(--hover)}
 .search-results small{display:block;font:12px/1.5 var(--sans);color:var(--gray);margin-top:3px}
 .search-results p{margin:10px;font-size:16px}
@@ -83,7 +83,7 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .close{display:inline-flex;align-items:center;gap:6px;color:var(--gray);padding:6px;border-radius:var(--ri);min-width:28px;min-height:28px;justify-content:center}
 .close:hover{color:var(--ink);background:var(--hover)}
 .close .t{display:none}
-.tabs{display:flex;gap:2px;flex:1;min-width:0;overflow:auto;scrollbar-width:none}
+.tabs{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-y:none;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-bottom:0;padding:6px 6px 6px 12px;border-radius:6px 6px 0 0;color:var(--gray);white-space:nowrap;position:relative;top:1px;max-width:190px;cursor:pointer;transition:color .12s,background .12s}
 .tab:hover{color:var(--ink);background:var(--hover)}
@@ -191,7 +191,7 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
  body.m-open{overflow:hidden}
  .bar{align-items:flex-end;padding:calc(6px + env(safe-area-inset-top)) 8px 0;gap:6px;cursor:default;touch-action:auto}
  .close{align-self:center;margin-bottom:6px;min-height:44px;padding:0 10px 0 6px}.close .t{display:inline}
- .tabs{gap:0;overflow-x:auto;padding:0 6px;scrollbar-width:none;align-items:flex-end}
+ .tabs{gap:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-y:none;padding:0 6px;scrollbar-width:none;align-items:flex-end}
  .id h1{font-size:30px}
  .tab{flex:none;border:1px solid transparent;border-bottom:0;border-radius:6px 6px 0 0;padding:9px 14px;min-height:44px;font-size:14px;color:var(--gray);background:none;top:1px;max-width:none}
  .tab:hover{background:none}

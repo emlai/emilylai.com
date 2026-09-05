@@ -2,3 +2,12 @@
 .impeccable/review/
 node_modules/
 tools/
+
+# working docs and design material stay local, not in the public repo
+BRAND.md
+PRODUCT.md
+CONTENT-LINKS.md
+CLAUDE.md
+references/
+.claude/
+.impeccable/

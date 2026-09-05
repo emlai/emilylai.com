@@ -11,7 +11,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 a,button,[role="tab"]{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 ::selection{background:var(--ink);color:var(--bg)}
 :focus-visible{outline:1.5px solid var(--ink);outline-offset:3px;border-radius:var(--ri)}
-html[data-input="pointer"] .tab:focus-visible,html[data-input="pointer"] .back:focus-visible{outline:none}
+html[data-input="pointer"] :is(.folders button,.pane .list a,.tab,.back,.close):focus-visible{outline:none}
 .tab:focus-visible{outline-offset:-4px}
 svg.i{width:16px;height:16px;fill:currentColor;flex:none}
 .skip{position:absolute;left:48px;top:-4rem;padding:.4em .6em;background:var(--bg);z-index:9;font-family:var(--sans);font-size:13px}.skip:focus{top:12px}
@@ -130,7 +130,8 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .reader .stats{color:var(--gray);margin:0 0 8px}
 .reader .out{margin:0}
 .reader .post{padding:16px 0 0;margin:16px 0 0;border-top:1px solid var(--hair)}
-.reader .post,.reader .li{content-visibility:auto;contain-intrinsic-size:auto 480px}
+.reader .post{content-visibility:auto;contain-intrinsic-size:auto 480px}
+/* Cross-origin frames can stay blank inside content-visibility containment. */
 .more-posts{height:1px}
 .reader .post:first-child{padding-top:0;margin-top:0;border-top:0}
 .reader .media{display:grid;gap:6px;margin:0 0 16px}
@@ -274,7 +275,7 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
 .reader .deck figcaption{font:12px var(--sans);text-align:center;color:var(--gray);margin-top:8px}
 .video-frame{position:relative}
 .media-back{display:none}
-.folders li.egg.just-unlocked{animation:discovery-glow 1800ms ease-out}
+.folders li.egg.just-unlocked{animation:discovery-glow 1800ms ease-out 3}
 @keyframes discovery-glow{0%,100%{box-shadow:0 0 0 0 transparent;background:transparent}25%{background:rgba(255,219,104,.16);box-shadow:0 0 18px 3px rgba(255,219,104,.28)}}
 @media(max-width:900px){
  .pane.tab-preview{display:block;position:absolute;inset:0;pointer-events:none;background:var(--win)}

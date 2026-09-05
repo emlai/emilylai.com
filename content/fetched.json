@@ -969,5 +969,53 @@
   "date": "2026-05-19",
   "likes": 275,
   "author": "kaledora"
+ },
+ "1664253736900780032": {
+  "text": "A 4000 nft collection at 0.08 eth still minted out yesterday, regardless of market conditions and about 15k daily active traders\n\nNow it's going for +50% in secondary\n\nHere's our initial test driving allowlist submissions for this collection:",
+  "date": "2023-06-01",
+  "likes": 14,
+  "author": "emilylai"
+ },
+ "2000935337388847350": {
+  "text": "iGaming and crypto have many common similarities in UA and marketing \n\n- 5 out of 8 crypto paid marketing ad networks I spoke to last week mentioned CAC ranges they're seeing for iGaming platforms \n- Getting ads up for both verticals often are restricted on native ad networks \n- Media buyers are used to spinning up new ad accounts often \n- USPs are similar in the sense of financialization, gambling, earn/win\n- Spoke to an iGaming exec this weekend and he mentioned he was impressed with Kalshi and Polymarket getting to the size they are simply by bypassing sports betting regs by labeling it as \"prediction markets\" - they don't see it as competition in Europe (yet) but do feel the competition in the USA",
+  "date": "2025-12-16",
+  "likes": 20,
+  "author": "emilylai"
+ },
+ "2094560179333234848": {
+  "text": "Was in the USA long enough and finally got access to X Money \n\n > $25 instant bonus is cheap for fintech acquisition, and smart because being this is a social app, it garners shares\n> the 6% headline APY blows every current offer out the water (that I know of). I read through the t&c and don’t see any caps. This is FDIC insured and feels safer than most defi vault strategies. It’s definitely propped up with some incentives and won’t last forever \n\nX is building its way into one app for everything. Social and news gets your attention, Grok Bot gets your external data, @XMoney gets your idle cash to monetize along with your spending data\n\nThey have cash tags and price graphs implemented and will likely build out their own exchange with their social graph (or should just acquire @fomo - many “thesis” there link back here) \n\nProduct UX and features have honestly improved greatly over the last year. Great execution from the team",
+  "date": "2026-08-31",
+  "likes": 22,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2094560179333234848-fx1.jpg"
+   }
+  ]
+ },
+ "2016101912408441322": {
+  "text": "This has been the most exciting time for DeFi and building economic access for all through crypto rails\n\nIn the last 12ish months, we’ve seen: \n∙ 300+ new stablecoins, including new yield-bearing categories \n∙ TradFi entering in forms of corporate blockchains, DATs, ETFS, protocol liquidity providers, tokenized assets \n∙ RobinHood, Stripe, Square, PayPal and other fintech web2 giants adopting their own stablecoin rails or tokenizing assets \n∙ A more crypto friendly regulatory period with GENIUS act and current administration (stablecoins! fee switches!) \n∙ Ability to trade indexes, commodities, metals, bonds permissionlessly and globally \n∙ 38%+ increase in new tokens launched, up to 63.5 million today (testament to commoditization of token launching and pump fun success) \n∙ $123mm+ in monthly crypto card volume tracked on visible blockchains, card issuers like Rain making it easier to launch crypto cards \n∙ Composable finance maturing and allowing for neobanks, defibanks, and capital markets with more capital efficiency\n∙ Prediction markets like Kalshi and Polymarket hit new volumes - even TradFi brokers like Interactive Brokers (IBKR) and Robinhood have launched their own prediction market offerings",
+  "date": "2026-01-27",
+  "likes": 93,
+  "author": "emilylai"
+ },
+ "2016177022628716727": {
+  "text": "Crypto in disbelief that clippers are being paid \"only\" $1 per 1000 views yet OpenAI's ChatGPT ads are apparently priced in at $60 cpm (for non media buyers, this is exceptionally expensive)\n\n- This is 3x the CPM cost of Meta ads targeting USA on conversion objective \n- This is also 12-20x more expensive in CPM costs than contextual ai ads in specific use AI LLM tools already monetizing with placements \n- On these existing AI placements, CTR is about 0.7-1% which is in-line, slightly higher than Meta on conversion objective \n- Which means you need conversion rate on these ChatGPT ads to be 3x+ higher than Meta (generalizing the baseline here) to be profitable ROAS\n\nWorth a test at small budgets, but gut feeling is you're targeting free users (signal of lower buying power), it's contextually relevant but evident it'll be sponsored (can lower conversion rate further), and 3x more expensive than Meta (what I'm using as a baseline for one of the top converting paid ads channels)",
+  "date": "2026-01-27",
+  "likes": 43,
+  "author": "emilylai"
+ },
+ "2022310385961890222": {
+  "text": "1. Recently learned just posting on this app can get you quoted in Forbes lol (was done unbeknownst to me) \n\n2. Have actually seen many more clipping campaigns with less than $2 CPMs now. Some as low as $0.05 now",
+  "date": "2026-02-13",
+  "likes": 54,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2022310385961890222-fx1.jpg"
+   }
+  ]
  }
 }

@@ -1,4 +1,19 @@
 {
+  "media/user-journeys.webp": {
+    "src": "media/user-journeys.webp",
+    "w": 1206,
+    "h": 830
+  },
+  "media/manychat-chatbots.webp": {
+    "src": "media/manychat-chatbots.webp",
+    "w": 1206,
+    "h": 1354
+  },
+  "media/digital-marketing-reviews.webp": {
+    "src": "media/digital-marketing-reviews.webp",
+    "w": 1206,
+    "h": 1789
+  },
   "media/peptides-part-2.webp": {
     "src": "media/peptides-part-2.webp",
     "w": 1142,
@@ -124,6 +139,11 @@
     "w": 1200,
     "h": 887
   },
+  "media/2022310385961890222-HBCwkdgbkAAol-6.jpg": {
+    "src": "media/2022310385961890222-HBCwkdgbkAAol-6-optimized.webp",
+    "w": 1200,
+    "h": 861
+  },
   "media/2016465006255108176-G_vrnQTXAAAwKXi.jpg": {
     "src": "media/2016465006255108176-G_vrnQTXAAAwKXi-optimized.webp",
     "w": 1072,
@@ -134,25 +154,25 @@
     "w": 613,
     "h": 722
   },
-  "media/1937821557339955692-GuSGITOWsAAGxtu.jpg": {
-    "src": "media/1937821557339955692-GuSGITOWsAAGxtu-optimized.webp",
-    "w": 1200,
-    "h": 900
-  },
   "media/2014001570808041727-G_MpwICWEAAk8Mh.jpg": {
     "src": "media/2014001570808041727-G_MpwICWEAAk8Mh-optimized.webp",
     "w": 1044,
     "h": 1200
   },
-  "media/1905600033501970902-GnINIJ2bsAAF7PW.jpg": {
-    "src": "media/1905600033501970902-GnINIJ2bsAAF7PW-optimized.webp",
-    "w": 1166,
-    "h": 1200
+  "media/1937821557339955692-GuSGITOWsAAGxtu.jpg": {
+    "src": "media/1937821557339955692-GuSGITOWsAAGxtu-optimized.webp",
+    "w": 1200,
+    "h": 900
   },
   "media/2013625252018884637-cover.jpg": {
     "src": "media/2013625252018884637-cover-optimized.webp",
     "w": 1200,
     "h": 480
+  },
+  "media/1905600033501970902-GnINIJ2bsAAF7PW.jpg": {
+    "src": "media/1905600033501970902-GnINIJ2bsAAF7PW-optimized.webp",
+    "w": 1166,
+    "h": 1200
   },
   "media/1945119712859299850-Gv50EBqXYAAkUUM.jpg": {
     "src": "media/1945119712859299850-Gv50EBqXYAAkUUM-optimized.webp",
@@ -209,6 +229,16 @@
     "w": 1200,
     "h": 376
   },
+  "media/2057796161797325052-HI7CstVW0AABHCr.jpg": {
+    "src": "media/2057796161797325052-HI7CstVW0AABHCr-optimized.webp",
+    "w": 979,
+    "h": 1200
+  },
+  "media/2032563549935992921-HDUdxcHWsAE2bH_.jpg": {
+    "src": "media/2032563549935992921-HDUdxcHWsAE2bH_-optimized.webp",
+    "w": 1184,
+    "h": 1200
+  },
   "media/2032462883943051436-fx1-poster.jpg": {
     "src": "media/2032462883943051436-fx1-poster-optimized.webp",
     "w": 1200,
@@ -234,16 +264,6 @@
     "w": 1142,
     "h": 642
   },
-  "media/2032563549935992921-HDUdxcHWsAE2bH_.jpg": {
-    "src": "media/2032563549935992921-HDUdxcHWsAE2bH_-optimized.webp",
-    "w": 1184,
-    "h": 1200
-  },
-  "media/2057796161797325052-HI7CstVW0AABHCr.jpg": {
-    "src": "media/2057796161797325052-HI7CstVW0AABHCr-optimized.webp",
-    "w": 979,
-    "h": 1200
-  },
   "media/2052325841271407099-HHtTeZDXEAIZt5d.jpg": {
     "src": "media/2052325841271407099-HHtTeZDXEAIZt5d-optimized.webp",
     "w": 1200,
@@ -253,16 +273,6 @@
     "src": "media/1919048359899287685-fx1-optimized.webp",
     "w": 710,
     "h": 1024
-  },
-  "media/tech-neck.webp": {
-    "src": "media/tech-neck.webp",
-    "w": 1200,
-    "h": 1092
-  },
-  "media/2011411568404128221-G-n3MORbcAIII7K.png": {
-    "src": "media/2011411568404128221-G-n3MORbcAIII7K-optimized.webp",
-    "w": 735,
-    "h": 486
   },
   "media/2011484778957099206-G-o6veWWYAAA7s-.jpg": {
     "src": "media/2011484778957099206-G-o6veWWYAAA7s--optimized.webp",
@@ -278,6 +288,16 @@
     "src": "media/2011484778957099206-G-o6veVa4AA3Myw-optimized.webp",
     "w": 819,
     "h": 1200
+  },
+  "media/2011411568404128221-G-n3MORbcAIII7K.png": {
+    "src": "media/2011411568404128221-G-n3MORbcAIII7K-optimized.webp",
+    "w": 735,
+    "h": 486
+  },
+  "media/tech-neck.webp": {
+    "src": "media/tech-neck.webp",
+    "w": 1200,
+    "h": 1092
   },
   "media/2005540854778167685-G9UcxlMXIAAC_jK.jpg": {
     "src": "media/2005540854778167685-G9UcxlMXIAAC_jK-optimized.webp",
@@ -334,11 +354,6 @@
     "w": 900,
     "h": 1200
   },
-  "media/2095139148352933993-fx1.jpg": {
-    "src": "media/2095139148352933993-fx1-optimized.webp",
-    "w": 410,
-    "h": 120
-  },
   "media/2090641761492168962-fx1.jpg": {
     "src": "media/2090641761492168962-fx1-optimized.webp",
     "w": 1400,
@@ -374,20 +389,25 @@
     "w": 755,
     "h": 1200
   },
+  "media/2095139148352933993-fx1.jpg": {
+    "src": "media/2095139148352933993-fx1-optimized.webp",
+    "w": 410,
+    "h": 120
+  },
+  "media/2094560179333234848-fx1.jpg": {
+    "src": "media/2094560179333234848-fx1-optimized.webp",
+    "w": 1206,
+    "h": 1512
+  },
+  "media/2018383492552556658-HAK7R2XW8AANsK6.jpg": {
+    "src": "media/2018383492552556658-HAK7R2XW8AANsK6-optimized.webp",
+    "w": 1200,
+    "h": 748
+  },
   "media/2076792346423779473-HNI_oYyWwAA8gbe.jpg": {
     "src": "media/2076792346423779473-HNI_oYyWwAA8gbe-optimized.webp",
     "w": 1156,
     "h": 1200
-  },
-  "media/1921894825944658090-GqvvdklXUAAmb6p.jpg": {
-    "src": "media/1921894825944658090-GqvvdklXUAAmb6p-optimized.webp",
-    "w": 1200,
-    "h": 367
-  },
-  "media/1890048442858373477-GjrM-s_XoAAdCTw.jpg": {
-    "src": "media/1890048442858373477-GjrM-s_XoAAdCTw-optimized.webp",
-    "w": 1200,
-    "h": 783
   },
   "media/1927119626552381481-Gr59VY7XwAAs5uk.jpg": {
     "src": "media/1927119626552381481-Gr59VY7XwAAs5uk-optimized.webp",
@@ -423,6 +443,16 @@
     "src": "media/1871808262020206928-Gfn9kIsXIAAICZ_-optimized.webp",
     "w": 1200,
     "h": 987
+  },
+  "media/1921894825944658090-GqvvdklXUAAmb6p.jpg": {
+    "src": "media/1921894825944658090-GqvvdklXUAAmb6p-optimized.webp",
+    "w": 1200,
+    "h": 367
+  },
+  "media/1890048442858373477-GjrM-s_XoAAdCTw.jpg": {
+    "src": "media/1890048442858373477-GjrM-s_XoAAdCTw-optimized.webp",
+    "w": 1200,
+    "h": 783
   },
   "media/1836436116628804003-GXxS1FCWIAABD5i.jpg": {
     "src": "media/1836436116628804003-GXxS1FCWIAABD5i-optimized.webp",

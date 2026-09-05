@@ -96,12 +96,14 @@ function reset(){
 panes.addEventListener('touchstart',e=>{
  if(!mobile()||e.touches.length!==1||!document.getElementById('palette').hidden)return;
  const t=e.touches[0];
- // Leave the browser's very edge, media controls, carousels, and text selection alone.
- if(t.clientX<18||t.clientX>innerWidth*.75||e.target.closest('.row,video,iframe,.li,input,textarea')||!getSelection().isCollapsed)return;
+ // Reserve the browser edge and the native video's bottom control strip.
+ // Capture-phase listeners let the picture itself participate in swipe-back.
+ const video=e.target.closest('video'),controls=video&&t.clientY>video.getBoundingClientRect().bottom-48;
+ if(t.clientX<18||t.clientX>innerWidth*.75||controls||e.target.closest('.row,iframe,input,textarea')||!getSelection().isCollapsed)return;
  const pane=e.target.closest('.pane.on');if(!pane)return;
  const note=pane.classList.contains('has-cur'),state=note?noteState(pane):root;
  gesture={pane,note,startX:t.clientX,startY:t.clientY,lastX:t.clientX,lastTime:performance.now(),velocity:0,base:state?.value||0,locked:false};
-},{passive:true});
+},{passive:true,capture:true});
 panes.addEventListener('touchmove',e=>{
  if(!gesture)return;
  if(e.touches.length!==1){cancelGesture();return;}
@@ -120,7 +122,7 @@ panes.addEventListener('touchmove',e=>{
  g.state.value=clamp(g.base+dx/g.state.width);g.state.velocity=0;
  cancelAnimationFrame(g.paint);
  g.paint=requestAnimationFrame(()=>{if(g.note)drawNote(g.state,g.state.value);else drawRoot(g.state.value);});
-},{passive:false});
+},{passive:false,capture:true});
 function finishGesture(cancelled=false){
  const g=gesture;gesture=null;if(!g?.locked)return;
  cancelAnimationFrame(g.paint);suppressClickUntil=performance.now()+350;
@@ -132,8 +134,8 @@ function finishGesture(cancelled=false){
  if(commit)haptic();
 }
 function cancelGesture(){finishGesture(true);}
-panes.addEventListener('touchend',()=>finishGesture(),{passive:true});
-panes.addEventListener('touchcancel',cancelGesture,{passive:true});
+panes.addEventListener('touchend',()=>finishGesture(),{passive:true,capture:true});
+panes.addEventListener('touchcancel',cancelGesture,{passive:true,capture:true});
 panes.addEventListener('pointerdown',()=>{suppressClickUntil=0;},{passive:true});
 panes.addEventListener('click',e=>{if(performance.now()<suppressClickUntil){e.preventDefault();e.stopImmediatePropagation();}},{capture:true});
 let width=innerWidth;

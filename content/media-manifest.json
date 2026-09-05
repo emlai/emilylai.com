@@ -1,0 +1,792 @@
+{
+  "media/peptides-part-2.webp": {
+    "src": "media/peptides-part-2.webp",
+    "w": 1142,
+    "h": 642
+  },
+  "media/meditation-form.jpg": {
+    "src": "media/meditation-form-optimized.webp",
+    "w": 1064,
+    "h": 1400
+  },
+  "media/float-1.jpg": {
+    "src": "media/float-1-optimized.webp",
+    "w": 1206,
+    "h": 1982
+  },
+  "media/float-2.jpg": {
+    "src": "media/float-2-optimized.webp",
+    "w": 1206,
+    "h": 1892
+  },
+  "media/dojo-bali-slide-1.jpg": {
+    "src": "media/dojo-bali-slide-1.jpg",
+    "w": 2048,
+    "h": 1536
+  },
+  "media/unicorngear.webp": {
+    "src": "media/unicorngear.webp",
+    "w": 1132,
+    "h": 1447
+  },
+  "media/unicorngear2.webp": {
+    "src": "media/unicorngear2.webp",
+    "w": 810,
+    "h": 959
+  },
+  "media/unicorngear3.webp": {
+    "src": "media/unicorngear3.webp",
+    "w": 1082,
+    "h": 1514
+  },
+  "media/bitcoin-blog-1.jpg": {
+    "src": "media/bitcoin-blog-1-optimized.webp",
+    "w": 1400,
+    "h": 1127
+  },
+  "media/bitcoin-blog-2.jpg": {
+    "src": "media/bitcoin-blog-2-optimized.webp",
+    "w": 1400,
+    "h": 1145
+  },
+  "media/2037313003591233955-HEX9HcEaEAANWAs.jpg": {
+    "src": "media/2037313003591233955-HEX9HcEaEAANWAs-optimized.webp",
+    "w": 1200,
+    "h": 593
+  },
+  "media/2048084717010903101-HGxBhJoawAAhDBM.jpg": {
+    "src": "media/2048084717010903101-HGxBhJoawAAhDBM-optimized.webp",
+    "w": 902,
+    "h": 444
+  },
+  "media/2057418674542149718-HI1rYAoXoAAuar1.jpg": {
+    "src": "media/2057418674542149718-HI1rYAoXoAAuar1-optimized.webp",
+    "w": 857,
+    "h": 1200
+  },
+  "media/2057418674542149718-HI1rYBKX0AA9YA3.jpg": {
+    "src": "media/2057418674542149718-HI1rYBKX0AA9YA3-optimized.webp",
+    "w": 594,
+    "h": 1200
+  },
+  "media/2075327476817870904-fx1.jpg": {
+    "src": "media/2075327476817870904-fx1-optimized.webp",
+    "w": 971,
+    "h": 942
+  },
+  "media/1961074879232430090-GzcZHJQXYAIEQb3.png": {
+    "src": "media/1961074879232430090-GzcZHJQXYAIEQb3-optimized.webp",
+    "w": 802,
+    "h": 290
+  },
+  "media/1920139026406719940-GqWyIL_XUAAxle2.jpg": {
+    "src": "media/1920139026406719940-GqWyIL_XUAAxle2-optimized.webp",
+    "w": 1200,
+    "h": 475
+  },
+  "media/1809254567705497660-GRvAImuWwAA0ozb.jpg": {
+    "src": "media/1809254567705497660-GRvAImuWwAA0ozb-optimized.webp",
+    "w": 1034,
+    "h": 312
+  },
+  "media/1693867097288311214-F4HTJH-XgAAHED2.jpg": {
+    "src": "media/1693867097288311214-F4HTJH-XgAAHED2-optimized.webp",
+    "w": 1200,
+    "h": 1055
+  },
+  "media/1693867097288311214-F4HTJH4W4AAV7he.jpg": {
+    "src": "media/1693867097288311214-F4HTJH4W4AAV7he-optimized.webp",
+    "w": 1060,
+    "h": 1200
+  },
+  "media/1693867097288311214-F4HTJH9WkAACQ0I.jpg": {
+    "src": "media/1693867097288311214-F4HTJH9WkAACQ0I-optimized.webp",
+    "w": 1200,
+    "h": 701
+  },
+  "media/1620539337443266560-Fn1KgcNX0AEEZiG.png": {
+    "src": "media/1620539337443266560-Fn1KgcNX0AEEZiG-optimized.webp",
+    "w": 1200,
+    "h": 1114
+  },
+  "media/1620539337443266560-Fn1L6H8XoAAA1u3.jpg": {
+    "src": "media/1620539337443266560-Fn1L6H8XoAAA1u3-optimized.webp",
+    "w": 1110,
+    "h": 1200
+  },
+  "media/1516415065582600199-FQtjdlXaUAM1xG0.jpg": {
+    "src": "media/1516415065582600199-FQtjdlXaUAM1xG0-optimized.webp",
+    "w": 1200,
+    "h": 697
+  },
+  "media/1491084237461950468-FLFkpVBXsAUsf-x.jpg": {
+    "src": "media/1491084237461950468-FLFkpVBXsAUsf-x-optimized.webp",
+    "w": 1200,
+    "h": 887
+  },
+  "media/2016465006255108176-G_vrnQTXAAAwKXi.jpg": {
+    "src": "media/2016465006255108176-G_vrnQTXAAAwKXi-optimized.webp",
+    "w": 1072,
+    "h": 417
+  },
+  "media/2013685120683631051-G_ILxSmXEAEk0WD.png": {
+    "src": "media/2013685120683631051-G_ILxSmXEAEk0WD-optimized.webp",
+    "w": 613,
+    "h": 722
+  },
+  "media/2014001570808041727-G_MpwICWEAAk8Mh.jpg": {
+    "src": "media/2014001570808041727-G_MpwICWEAAk8Mh-optimized.webp",
+    "w": 1044,
+    "h": 1200
+  },
+  "media/1905600033501970902-GnINIJ2bsAAF7PW.jpg": {
+    "src": "media/1905600033501970902-GnINIJ2bsAAF7PW-optimized.webp",
+    "w": 1166,
+    "h": 1200
+  },
+  "media/2013625252018884637-cover.jpg": {
+    "src": "media/2013625252018884637-cover-optimized.webp",
+    "w": 1200,
+    "h": 480
+  },
+  "media/1945119712859299850-Gv50EBqXYAAkUUM.jpg": {
+    "src": "media/1945119712859299850-Gv50EBqXYAAkUUM-optimized.webp",
+    "w": 1200,
+    "h": 1044
+  },
+  "media/1911791805584093222-Gnn_TmvWkAEmoW2.jpg": {
+    "src": "media/1911791805584093222-Gnn_TmvWkAEmoW2-optimized.webp",
+    "w": 1200,
+    "h": 546
+  },
+  "media/1911791805584093222-GnoAO0CXUAAXWuj.jpg": {
+    "src": "media/1911791805584093222-GnoAO0CXUAAXWuj-optimized.webp",
+    "w": 1131,
+    "h": 966
+  },
+  "media/1911791805584093222-GnoAhSSWUAAdZL3.jpg": {
+    "src": "media/1911791805584093222-GnoAhSSWUAAdZL3-optimized.webp",
+    "w": 1200,
+    "h": 514
+  },
+  "media/1911791805584093222-GnoA4M8X0AA4G6Q.jpg": {
+    "src": "media/1911791805584093222-GnoA4M8X0AA4G6Q-optimized.webp",
+    "w": 1200,
+    "h": 458
+  },
+  "media/1884203576911880259-GiYJKP5XUAAQYD1.jpg": {
+    "src": "media/1884203576911880259-GiYJKP5XUAAQYD1-optimized.webp",
+    "w": 1120,
+    "h": 1200
+  },
+  "media/1851248468620141036-GbDwokoWwAICFJb.png": {
+    "src": "media/1851248468620141036-GbDwokoWwAICFJb-optimized.webp",
+    "w": 713,
+    "h": 677
+  },
+  "media/1830882164281422117-GWiYeM5WQAQ_vXD.jpg": {
+    "src": "media/1830882164281422117-GWiYeM5WQAQ_vXD-optimized.webp",
+    "w": 1200,
+    "h": 998
+  },
+  "media/1826595407243202597-GVldodiXsAAVtp7.jpg": {
+    "src": "media/1826595407243202597-GVldodiXsAAVtp7-optimized.webp",
+    "w": 1082,
+    "h": 771
+  },
+  "media/1486162781791342597-FJ_pK3WWUAk1zvF.jpg": {
+    "src": "media/1486162781791342597-FJ_pK3WWUAk1zvF-optimized.webp",
+    "w": 288,
+    "h": 168
+  },
+  "media/1486162791983566850-FJ_pLaUXoAErn-r.jpg": {
+    "src": "media/1486162791983566850-FJ_pLaUXoAErn-r-optimized.webp",
+    "w": 1200,
+    "h": 376
+  },
+  "media/2032462883943051436-fx1-poster.jpg": {
+    "src": "media/2032462883943051436-fx1-poster-optimized.webp",
+    "w": 1200,
+    "h": 675
+  },
+  "media/2014398183560851650-G_STzdjXAAAYl1a.png": {
+    "src": "media/2014398183560851650-G_STzdjXAAAYl1a-optimized.webp",
+    "w": 729,
+    "h": 796
+  },
+  "media/2014398183560851650-G_SUAo8WkAEm-e_.jpg": {
+    "src": "media/2014398183560851650-G_SUAo8WkAEm-e_-optimized.webp",
+    "w": 1137,
+    "h": 480
+  },
+  "media/2014398183560851650-G_SUILgXgAExbsD.png": {
+    "src": "media/2014398183560851650-G_SUILgXgAExbsD-optimized.webp",
+    "w": 792,
+    "h": 534
+  },
+  "media/2014398183560851650-G_SUZmJWQAEca6j.jpg": {
+    "src": "media/2014398183560851650-G_SUZmJWQAEca6j-optimized.webp",
+    "w": 1142,
+    "h": 642
+  },
+  "media/2032563549935992921-HDUdxcHWsAE2bH_.jpg": {
+    "src": "media/2032563549935992921-HDUdxcHWsAE2bH_-optimized.webp",
+    "w": 1184,
+    "h": 1200
+  },
+  "media/2057796161797325052-HI7CstVW0AABHCr.jpg": {
+    "src": "media/2057796161797325052-HI7CstVW0AABHCr-optimized.webp",
+    "w": 979,
+    "h": 1200
+  },
+  "media/2052325841271407099-HHtTeZDXEAIZt5d.jpg": {
+    "src": "media/2052325841271407099-HHtTeZDXEAIZt5d-optimized.webp",
+    "w": 1200,
+    "h": 563
+  },
+  "media/1919048359899287685-fx1.jpg": {
+    "src": "media/1919048359899287685-fx1-optimized.webp",
+    "w": 710,
+    "h": 1024
+  },
+  "media/tech-neck.webp": {
+    "src": "media/tech-neck.webp",
+    "w": 1200,
+    "h": 1092
+  },
+  "media/2011411568404128221-G-n3MORbcAIII7K.png": {
+    "src": "media/2011411568404128221-G-n3MORbcAIII7K-optimized.webp",
+    "w": 735,
+    "h": 486
+  },
+  "media/2011484778957099206-G-o6veWWYAAA7s-.jpg": {
+    "src": "media/2011484778957099206-G-o6veWWYAAA7s--optimized.webp",
+    "w": 671,
+    "h": 1200
+  },
+  "media/2011484778957099206-G-o6ve3bQAUM55a.jpg": {
+    "src": "media/2011484778957099206-G-o6ve3bQAUM55a-optimized.webp",
+    "w": 750,
+    "h": 1200
+  },
+  "media/2011484778957099206-G-o6veVa4AA3Myw.jpg": {
+    "src": "media/2011484778957099206-G-o6veVa4AA3Myw-optimized.webp",
+    "w": 819,
+    "h": 1200
+  },
+  "media/2005540854778167685-G9UcxlMXIAAC_jK.jpg": {
+    "src": "media/2005540854778167685-G9UcxlMXIAAC_jK-optimized.webp",
+    "w": 980,
+    "h": 1200
+  },
+  "media/2005540854778167685-G9UcxlFWQAE-w4q.jpg": {
+    "src": "media/2005540854778167685-G9UcxlFWQAE-w4q-optimized.webp",
+    "w": 917,
+    "h": 1200
+  },
+  "media/1229215899053367296-EQ8NV-yXUAAJ4mv.jpg": {
+    "src": "media/1229215899053367296-EQ8NV-yXUAAJ4mv-optimized.webp",
+    "w": 687,
+    "h": 1200
+  },
+  "media/1229215912240320513-EQ8NWiPXUAMHnek.jpg": {
+    "src": "media/1229215912240320513-EQ8NWiPXUAMHnek-optimized.webp",
+    "w": 901,
+    "h": 1200
+  },
+  "media/1229526071797829632-ERAncO0WoAENfBM.jpg": {
+    "src": "media/1229526071797829632-ERAncO0WoAENfBM-optimized.webp",
+    "w": 554,
+    "h": 1200
+  },
+  "media/1912921067301011567-GowLGfDXwAAgF6r.jpg": {
+    "src": "media/1912921067301011567-GowLGfDXwAAgF6r-optimized.webp",
+    "w": 1200,
+    "h": 1007
+  },
+  "media/1912921067301011567-GowNlslWoAA4A0D.jpg": {
+    "src": "media/1912921067301011567-GowNlslWoAA4A0D-optimized.webp",
+    "w": 1200,
+    "h": 845
+  },
+  "media/1272237327285399552-EaflGnAXgAEJPln.jpg": {
+    "src": "media/1272237327285399552-EaflGnAXgAEJPln-optimized.webp",
+    "w": 1024,
+    "h": 788
+  },
+  "media/2090641761492168962-fx1.jpg": {
+    "src": "media/2090641761492168962-fx1-optimized.webp",
+    "w": 1400,
+    "h": 728
+  },
+  "media/2089442129605017805-fx1.jpg": {
+    "src": "media/2089442129605017805-fx1-optimized.webp",
+    "w": 1364,
+    "h": 438
+  },
+  "media/2014797463744352443-fx1.jpg": {
+    "src": "media/2014797463744352443-fx1-optimized.webp",
+    "w": 1206,
+    "h": 472
+  },
+  "media/2095453564902461921-fx1.jpg": {
+    "src": "media/2095453564902461921-fx1-optimized.webp",
+    "w": 715,
+    "h": 526
+  },
+  "media/2092731640749473861-fx1.jpg": {
+    "src": "media/2092731640749473861-fx1-optimized.webp",
+    "w": 1192,
+    "h": 1560
+  },
+  "media/2091618318385807640-HQbrxiEXkAAuIrl.jpg": {
+    "src": "media/2091618318385807640-HQbrxiEXkAAuIrl-optimized.webp",
+    "w": 587,
+    "h": 1200
+  },
+  "media/2091618318385807640-HQbrxiIWoAEs0Ra.jpg": {
+    "src": "media/2091618318385807640-HQbrxiIWoAEs0Ra-optimized.webp",
+    "w": 755,
+    "h": 1200
+  },
+  "media/2095139148352933993-fx1.jpg": {
+    "src": "media/2095139148352933993-fx1-optimized.webp",
+    "w": 410,
+    "h": 120
+  },
+  "media/2076792346423779473-HNI_oYyWwAA8gbe.jpg": {
+    "src": "media/2076792346423779473-HNI_oYyWwAA8gbe-optimized.webp",
+    "w": 1156,
+    "h": 1200
+  },
+  "media/1921894825944658090-GqvvdklXUAAmb6p.jpg": {
+    "src": "media/1921894825944658090-GqvvdklXUAAmb6p-optimized.webp",
+    "w": 1200,
+    "h": 367
+  },
+  "media/1890048442858373477-GjrM-s_XoAAdCTw.jpg": {
+    "src": "media/1890048442858373477-GjrM-s_XoAAdCTw-optimized.webp",
+    "w": 1200,
+    "h": 783
+  },
+  "media/1927119626552381481-Gr59VY7XwAAs5uk.jpg": {
+    "src": "media/1927119626552381481-Gr59VY7XwAAs5uk-optimized.webp",
+    "w": 1109,
+    "h": 945
+  },
+  "media/1927119626552381481-Gr596GmW0AAvyMT.jpg": {
+    "src": "media/1927119626552381481-Gr596GmW0AAvyMT-optimized.webp",
+    "w": 1083,
+    "h": 428
+  },
+  "media/1927119626552381481-Gr5_gdcWwAAm7kO.jpg": {
+    "src": "media/1927119626552381481-Gr5_gdcWwAAm7kO-optimized.webp",
+    "w": 798,
+    "h": 949
+  },
+  "media/1871808262020206928-GfnzsoTW8AAhTIf.jpg": {
+    "src": "media/1871808262020206928-GfnzsoTW8AAhTIf-optimized.webp",
+    "w": 1200,
+    "h": 712
+  },
+  "media/1871808262020206928-Gfn2MUIXMAAyY7b.png": {
+    "src": "media/1871808262020206928-Gfn2MUIXMAAyY7b-optimized.webp",
+    "w": 776,
+    "h": 576
+  },
+  "media/1871808262020206928-Gfn7aYBXMAA12I6.jpg": {
+    "src": "media/1871808262020206928-Gfn7aYBXMAA12I6-optimized.webp",
+    "w": 1200,
+    "h": 813
+  },
+  "media/1871808262020206928-Gfn9kIsXIAAICZ_.jpg": {
+    "src": "media/1871808262020206928-Gfn9kIsXIAAICZ_-optimized.webp",
+    "w": 1200,
+    "h": 987
+  },
+  "media/1836436116628804003-GXxS1FCWIAABD5i.jpg": {
+    "src": "media/1836436116628804003-GXxS1FCWIAABD5i-optimized.webp",
+    "w": 916,
+    "h": 510
+  },
+  "media/1836436116628804003-GXxTWntWwAAEvkS.jpg": {
+    "src": "media/1836436116628804003-GXxTWntWwAAEvkS-optimized.webp",
+    "w": 1123,
+    "h": 567
+  },
+  "media/1836436116628804003-GXxTsmuWcAAn9oc.png": {
+    "src": "media/1836436116628804003-GXxTsmuWcAAn9oc-optimized.webp",
+    "w": 895,
+    "h": 490
+  },
+  "media/1836436116628804003-GXxTvlsWMAAfwGI.png": {
+    "src": "media/1836436116628804003-GXxTvlsWMAAfwGI-optimized.webp",
+    "w": 887,
+    "h": 509
+  },
+  "media/1808141175284543743-GRfO0GyWgAA7TM6.jpg": {
+    "src": "media/1808141175284543743-GRfO0GyWgAA7TM6-optimized.webp",
+    "w": 1083,
+    "h": 811
+  },
+  "media/1685536068328722432-F2Q6HQ6WgAAPwPr.jpg": {
+    "src": "media/1685536068328722432-F2Q6HQ6WgAAPwPr-optimized.webp",
+    "w": 1170,
+    "h": 889
+  },
+  "media/1881423550298607917-Ghwnh0tXgAIPXEY.jpg": {
+    "src": "media/1881423550298607917-Ghwnh0tXgAIPXEY-optimized.webp",
+    "w": 986,
+    "h": 794
+  },
+  "media/1986716841201336412-G5I8S2jXAAADUPV.jpg": {
+    "src": "media/1986716841201336412-G5I8S2jXAAADUPV-optimized.webp",
+    "w": 1200,
+    "h": 653
+  },
+  "media/1986716841201336412-G5I8S2iXcAA6qET.jpg": {
+    "src": "media/1986716841201336412-G5I8S2iXcAA6qET-optimized.webp",
+    "w": 1200,
+    "h": 663
+  },
+  "media/1986716841201336412-G5I8S2iWQAAWxqm.jpg": {
+    "src": "media/1986716841201336412-G5I8S2iWQAAWxqm-optimized.webp",
+    "w": 1200,
+    "h": 676
+  },
+  "media/1993137695145533533-cover.jpg": {
+    "src": "media/1993137695145533533-cover-optimized.webp",
+    "w": 1200,
+    "h": 480
+  },
+  "media/1899900098202550681-cover.jpg": {
+    "src": "media/1899900098202550681-cover-optimized.webp",
+    "w": 1200,
+    "h": 480
+  },
+  "media/1861696138812051488-fx1.jpg": {
+    "src": "media/1861696138812051488-fx1-optimized.webp",
+    "w": 1400,
+    "h": 1400
+  },
+  "media/1845853616545939779-fx1.jpg": {
+    "src": "media/1845853616545939779-fx1-optimized.webp",
+    "w": 1400,
+    "h": 630
+  },
+  "media/1838301600663867460-fx1.jpg": {
+    "src": "media/1838301600663867460-fx1-optimized.webp",
+    "w": 1400,
+    "h": 1400
+  },
+  "media/1797677263510757859-fx1.jpg": {
+    "src": "media/1797677263510757859-fx1-optimized.webp",
+    "w": 1322,
+    "h": 1400
+  },
+  "media/1623077710980415489-FoZPErjWAAEc1ta.jpg": {
+    "src": "media/1623077710980415489-FoZPErjWAAEc1ta-optimized.webp",
+    "w": 960,
+    "h": 540
+  },
+  "media/2095510628865593684-fx1-poster.jpg": {
+    "src": "media/2095510628865593684-fx1-poster-optimized.webp",
+    "w": 1200,
+    "h": 675
+  },
+  "media/2095549760631443716-fx1.jpg": {
+    "src": "media/2095549760631443716-fx1-optimized.webp",
+    "w": 1200,
+    "h": 354
+  },
+  "media/2094480103463899494-fx1.jpg": {
+    "src": "media/2094480103463899494-fx1-optimized.webp",
+    "w": 1105,
+    "h": 789
+  },
+  "media/2094132631478698379-fx1.jpg": {
+    "src": "media/2094132631478698379-fx1-optimized.webp",
+    "w": 807,
+    "h": 592
+  },
+  "media/2093538609827631270-fx1.jpg": {
+    "src": "media/2093538609827631270-fx1-optimized.webp",
+    "w": 1400,
+    "h": 1179
+  },
+  "media/1901983349784092752-GmUyyarWAAATtdL.jpg": {
+    "src": "media/1901983349784092752-GmUyyarWAAATtdL-optimized.webp",
+    "w": 970,
+    "h": 241
+  },
+  "media/1806644072444047692-GRJ7GnmWsAABKK4.jpg": {
+    "src": "media/1806644072444047692-GRJ7GnmWsAABKK4-optimized.webp",
+    "w": 1200,
+    "h": 289
+  },
+  "media/1806644072444047692-GRJ78qlWcAAaDGZ.jpg": {
+    "src": "media/1806644072444047692-GRJ78qlWcAAaDGZ-optimized.webp",
+    "w": 1200,
+    "h": 723
+  },
+  "media/1806644072444047692-GRJ8Q12WIAA1vAw.jpg": {
+    "src": "media/1806644072444047692-GRJ8Q12WIAA1vAw-optimized.webp",
+    "w": 1200,
+    "h": 733
+  },
+  "media/1806644072444047692-GRJ9IbKWwAEAKQh.jpg": {
+    "src": "media/1806644072444047692-GRJ9IbKWwAEAKQh-optimized.webp",
+    "w": 1200,
+    "h": 740
+  },
+  "media/2082489035147161837-HOZ8vHFWIAERQce.jpg": {
+    "src": "media/2082489035147161837-HOZ8vHFWIAERQce-optimized.webp",
+    "w": 1085,
+    "h": 1200
+  },
+  "media/2067340048735801723-HLCqy36WYAEA2cB.jpg": {
+    "src": "media/2067340048735801723-HLCqy36WYAEA2cB-optimized.webp",
+    "w": 1200,
+    "h": 881
+  },
+  "media/2067340048735801723-HLCqy4DWwAA4c0U.jpg": {
+    "src": "media/2067340048735801723-HLCqy4DWwAA4c0U-optimized.webp",
+    "w": 1200,
+    "h": 881
+  },
+  "media/2067340048735801723-HLCqy5QWAAA7Qvn.jpg": {
+    "src": "media/2067340048735801723-HLCqy5QWAAA7Qvn-optimized.webp",
+    "w": 1200,
+    "h": 881
+  },
+  "media/2067340048735801723-HLCqy4FXEAAvOlM.jpg": {
+    "src": "media/2067340048735801723-HLCqy4FXEAAvOlM-optimized.webp",
+    "w": 1200,
+    "h": 881
+  },
+  "media/1977155131964899383-G3BEHRAbwAAXRwn.jpg": {
+    "src": "media/1977155131964899383-G3BEHRAbwAAXRwn-optimized.webp",
+    "w": 1200,
+    "h": 675
+  },
+  "media/1977052827366441449-G2_nETzbIAA8aM2.jpg": {
+    "src": "media/1977052827366441449-G2_nETzbIAA8aM2-optimized.webp",
+    "w": 1191,
+    "h": 1200
+  },
+  "media/1974377280299483344-G2Zlq5vWYAAZAV_.jpg": {
+    "src": "media/1974377280299483344-G2Zlq5vWYAAZAV_-optimized.webp",
+    "w": 1170,
+    "h": 558
+  },
+  "media/1834679977968566680-GXYXtcPWgAAJhnr.jpg": {
+    "src": "media/1834679977968566680-GXYXtcPWgAAJhnr-optimized.webp",
+    "w": 1200,
+    "h": 1200
+  },
+  "media/1834679977968566680-GXYXtcMXcAA-uYw.jpg": {
+    "src": "media/1834679977968566680-GXYXtcMXcAA-uYw-optimized.webp",
+    "w": 1200,
+    "h": 1185
+  },
+  "media/1489658457716264960-FKxUds4WUAQg00H.jpg": {
+    "src": "media/1489658457716264960-FKxUds4WUAQg00H-optimized.webp",
+    "w": 1200,
+    "h": 1200
+  },
+  "media/1489658457716264960-FKxUds9XoAcZ0tO.jpg": {
+    "src": "media/1489658457716264960-FKxUds9XoAcZ0tO-optimized.webp",
+    "w": 1200,
+    "h": 1200
+  },
+  "media/1489658457716264960-FKxUds5XwAIGGgr.jpg": {
+    "src": "media/1489658457716264960-FKxUds5XwAIGGgr-optimized.webp",
+    "w": 1169,
+    "h": 1169
+  },
+  "media/1843356431099277458-GZTq5loWwAADdKP.jpg": {
+    "src": "media/1843356431099277458-GZTq5loWwAADdKP-optimized.webp",
+    "w": 1200,
+    "h": 952
+  },
+  "media/1843356431099277458-GZTq5leXIAA_uRb.jpg": {
+    "src": "media/1843356431099277458-GZTq5leXIAA_uRb-optimized.webp",
+    "w": 1200,
+    "h": 786
+  },
+  "media/1843356431099277458-GZTq5ldXYAAi1hu.jpg": {
+    "src": "media/1843356431099277458-GZTq5ldXYAAi1hu-optimized.webp",
+    "w": 1170,
+    "h": 1015
+  },
+  "media/1843356431099277458-GZTq5lbXUAAFo6F.jpg": {
+    "src": "media/1843356431099277458-GZTq5lbXUAAFo6F-optimized.webp",
+    "w": 1200,
+    "h": 800
+  },
+  "media/1402219072708771841-E3WuzbsVgAYHyGU.jpg": {
+    "src": "media/1402219072708771841-E3WuzbsVgAYHyGU-optimized.webp",
+    "w": 1024,
+    "h": 576
+  },
+  "media/1402219072708771841-E3WuzbpUUAAm47Q.jpg": {
+    "src": "media/1402219072708771841-E3WuzbpUUAAm47Q-optimized.webp",
+    "w": 1024,
+    "h": 901
+  },
+  "media/1317883308840079361-EkoP4K8VoAAdR3b.jpg": {
+    "src": "media/1317883308840079361-EkoP4K8VoAAdR3b-optimized.webp",
+    "w": 900,
+    "h": 1200
+  },
+  "media/1317883308840079361-EkoP4MVVgAMZ5X8.jpg": {
+    "src": "media/1317883308840079361-EkoP4MVVgAMZ5X8-optimized.webp",
+    "w": 900,
+    "h": 1200
+  },
+  "media/1317883308840079361-EkoP4O6VkAEFGfL.jpg": {
+    "src": "media/1317883308840079361-EkoP4O6VkAEFGfL-optimized.webp",
+    "w": 900,
+    "h": 1200
+  },
+  "media/1191824488696025093-fx1.jpg": {
+    "src": "media/1191824488696025093-fx1-optimized.webp",
+    "w": 946,
+    "h": 2048
+  },
+  "media/1237009861709369346-fx1.jpg": {
+    "src": "media/1237009861709369346-fx1-optimized.webp",
+    "w": 1152,
+    "h": 2048
+  },
+  "media/1105808965420699649-fx1.jpg": {
+    "src": "media/1105808965420699649-fx1-optimized.webp",
+    "w": 1536,
+    "h": 2048
+  },
+  "media/1937821557339955692-fx1.jpg": {
+    "src": "media/1937821557339955692-fx1-optimized.webp",
+    "w": 1331,
+    "h": 998
+  },
+  "media/dojo-slide-1.webp": {
+    "src": "media/dojo-slide-1.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-2.webp": {
+    "src": "media/dojo-slide-2.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-3.webp": {
+    "src": "media/dojo-slide-3.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-4.webp": {
+    "src": "media/dojo-slide-4.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-5.webp": {
+    "src": "media/dojo-slide-5.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-6.webp": {
+    "src": "media/dojo-slide-6.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-7.webp": {
+    "src": "media/dojo-slide-7.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-8.webp": {
+    "src": "media/dojo-slide-8.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-9.webp": {
+    "src": "media/dojo-slide-9.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-10.webp": {
+    "src": "media/dojo-slide-10.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-11.webp": {
+    "src": "media/dojo-slide-11.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-12.webp": {
+    "src": "media/dojo-slide-12.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-13.webp": {
+    "src": "media/dojo-slide-13.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-14.webp": {
+    "src": "media/dojo-slide-14.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-15.webp": {
+    "src": "media/dojo-slide-15.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-16.webp": {
+    "src": "media/dojo-slide-16.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-17.webp": {
+    "src": "media/dojo-slide-17.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-18.webp": {
+    "src": "media/dojo-slide-18.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-19.webp": {
+    "src": "media/dojo-slide-19.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-20.webp": {
+    "src": "media/dojo-slide-20.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-21.webp": {
+    "src": "media/dojo-slide-21.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-22.webp": {
+    "src": "media/dojo-slide-22.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-23.webp": {
+    "src": "media/dojo-slide-23.webp",
+    "w": 1440,
+    "h": 1080
+  },
+  "media/dojo-slide-24.webp": {
+    "src": "media/dojo-slide-24.webp",
+    "w": 1440,
+    "h": 1080
+  }
+}

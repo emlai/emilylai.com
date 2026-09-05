@@ -897,5 +897,17 @@
     "src": "media/2076792346423779473-fx1.jpg"
    }
   ]
+ },
+ "2014797463744352443": {
+  "text": "Tradfi building on crypto rails and adopting crypto native concepts is validating \n\n1. Prediction markets > Robinhood up to Interactive Brokers (IBKR) and Bloomberg Terminal have it, it’s actually even one of Robinhood’s messaging on paid ads \n2. 24/7 trading > Robinhood with tokenized stocks allow for 24/7 trading \n3. Airdrops > eToro is literally marketing “stock airdrops” lol \n4. Stablecoins > Stripe with Tempo, PayPal with pyUSD, just to name a few \n5. Tokenization > recent NYSE announcement, Robinhood launching tokenized stocks last year, bankers talking about it \n\nIt is notable how quickly they adopt once a use case is proved out though - it took us years to build the infrastructure and primitives to get to the app layers \n\nWe’re going to continue to see a lot more convergence but one side will always be more of a blackbox and fragmented than the other",
+  "date": "2026-01-23",
+  "likes": 46,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2014797463744352443-fx1.jpg"
+   }
+  ]
  }
 }

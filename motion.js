@@ -4,7 +4,7 @@
 const win=document.getElementById('win'),panes=document.getElementById('panes');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)'),mobile=()=>innerWidth<=900;
 const notes=new Map();
-let root=null,gesture=null,callbacks={},suppressClickUntil=0;
+let root=null,tab=null,gesture=null,callbacks={},suppressClickUntil=0;
 const clamp=(n,min=0,max=1)=>Math.max(min,Math.min(max,n));
 const haptic=()=>{if(!reduce.matches&&matchMedia('(pointer: coarse)').matches&&navigator.vibrate)navigator.vibrate(6);};
 
@@ -88,8 +88,28 @@ function tabChange(pane,direction){
 }
 function reset(){
  gesture=null;
+ cleanTab();
  notes.forEach(s=>{cancelAnimationFrame(s.frame);s.frame=0;const done=s.done;s.done=null;done?.();cleanNote(s);s.value=s.pane.classList.contains('has-cur')?0:1;});
  if(root){cancelAnimationFrame(root.frame);root.frame=0;const done=root.done;root.done=null;done?.();cleanRoot();root=null;}
+}
+
+// Adjacent folders are real panes: reveal the next list under the finger.
+function prepareTab(pane,next,direction){
+ cleanTab();
+ tab={pane,next,direction,width:innerWidth,value:0,velocity:0,frame:0};
+ next.classList.add('tab-preview');next.setAttribute('aria-hidden','true');
+ pane.style.willChange='transform';next.style.willChange='transform';
+ drawTab(0);return tab;
+}
+function drawTab(value){
+ if(!tab||reduce.matches)return;
+ tab.pane.style.transform='translate3d('+(-tab.direction*tab.width*value)+'px,0,0)';
+ tab.next.style.transform='translate3d('+(tab.direction*tab.width*(1-value))+'px,0,0)';
+}
+function cleanTab(){
+ if(!tab)return;cancelAnimationFrame(tab.frame);
+ for(const p of [tab.pane,tab.next]){p.style.removeProperty('transform');p.style.removeProperty('will-change');}
+ tab.next.classList.remove('tab-preview');tab.next.removeAttribute('aria-hidden');tab=null;
 }
 
 // Horizontal intent is established before preventing native vertical scrolling.
@@ -99,7 +119,8 @@ panes.addEventListener('touchstart',e=>{
  // Reserve the browser edge and the native video's bottom control strip.
  // Capture-phase listeners let the picture itself participate in swipe-back.
  const video=e.target.closest('video'),controls=video&&t.clientY>video.getBoundingClientRect().bottom-48;
- if(t.clientX<18||t.clientX>innerWidth*.75||controls||e.target.closest('.row,iframe,input,textarea')||!getSelection().isCollapsed)return;
+ if(t.clientX<18||t.clientX>innerWidth-18||controls||e.target.closest('.row,iframe,input,textarea')||!getSelection().isCollapsed)return;
+ if(tab?.frame)return;
  const pane=e.target.closest('.pane.on');if(!pane)return;
  const note=pane.classList.contains('has-cur'),state=note?noteState(pane):root;
  gesture={pane,note,startX:t.clientX,startY:t.clientY,lastX:t.clientX,lastTime:performance.now(),velocity:0,base:state?.value||0,locked:false};
@@ -110,18 +131,21 @@ panes.addEventListener('touchmove',e=>{
  const g=gesture,t=e.touches[0],dx=t.clientX-g.startX,dy=t.clientY-g.startY;
  if(!g.locked){
   if(Math.abs(dy)>8&&Math.abs(dy)>Math.abs(dx)){gesture=null;return;}
-  if(dx<0&&Math.abs(dx)>8){gesture=null;return;}
-  if(dx<8||dx<Math.abs(dy)*1.25)return;
+  if(Math.abs(dx)<8||Math.abs(dx)<Math.abs(dy)*1.25)return;
+  const direction=dx<0?1:-1,next=(direction===1||!g.note)?callbacks.neighbor?.(direction):null;
+  if(direction===1&&!next){gesture=null;return;}
   g.locked=true;
-  if(g.note){g.state=noteState(g.pane);prepareNote(g.state);}else{prepareRoot();g.state=root;}
+  if(next){g.tab=true;g.direction=direction;g.state=prepareTab(g.pane,next,direction);}
+  else if(g.note){g.state=noteState(g.pane);prepareNote(g.state);}else{prepareRoot();g.state=root;}
   cancelAnimationFrame(g.state.frame);g.state.frame=0;g.state.done=null;g.base=g.state.value;
  }
  if(e.cancelable)e.preventDefault();
  const now=performance.now(),dt=Math.max(1,now-g.lastTime);
- g.velocity=(t.clientX-g.lastX)/dt;g.lastX=t.clientX;g.lastTime=now;
- g.state.value=clamp(g.base+dx/g.state.width);g.state.velocity=0;
+ const sign=g.tab?-g.direction:1;
+ g.velocity=sign*(t.clientX-g.lastX)/dt;g.lastX=t.clientX;g.lastTime=now;
+ g.state.value=clamp(g.base+sign*dx/g.state.width);g.state.velocity=0;
  cancelAnimationFrame(g.paint);
- g.paint=requestAnimationFrame(()=>{if(g.note)drawNote(g.state,g.state.value);else drawRoot(g.state.value);});
+ g.paint=requestAnimationFrame(()=>{if(g.tab)drawTab(g.state.value);else if(g.note)drawNote(g.state,g.state.value);else drawRoot(g.state.value);});
 },{passive:false,capture:true});
 function finishGesture(cancelled=false){
  const g=gesture;gesture=null;if(!g?.locked)return;
@@ -129,7 +153,8 @@ function finishGesture(cancelled=false){
  const speed=performance.now()-g.lastTime<100?g.velocity:0;
  const commit=!cancelled&&(g.state.value>.32||(speed>.45&&g.state.value>.07))&&speed>-.25;
  const velocity=speed*1000/g.state.width;
- if(g.note)settleNote(g.state,commit?1:0,commit?()=>callbacks.back(g.pane):null,velocity);
+ if(g.tab)spring(g.state,commit?1:0,drawTab,()=>{const next=g.state.next;cleanTab();if(commit)callbacks.tab(next);},velocity);
+ else if(g.note)settleNote(g.state,commit?1:0,commit?()=>callbacks.back(g.pane):null,velocity);
  else spring(g.state,commit?1:0,drawRoot,()=>{if(commit)callbacks.close();cleanRoot();},velocity);
  if(commit)haptic();
 }

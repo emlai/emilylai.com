@@ -8,7 +8,7 @@ const rows=parseCSV(text).filter(r=>r.length>1);
 const [header,...data]=rows;
 const ids={'work':'work','growth experiments':'growth','lab experiments':'lab','learning':'learn','speaking':'talks','side projects':'side','field notes':'notes'};
 const EGG={'field notes':true};
-const DISPLAY={'field notes':'field notes (bonus archives)'};
+const DISPLAY={'field notes':'field notes (unlocked)'};
 const buckets={};
 for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,status,notes]=r;if(!ids[bucket])continue;if((status||'').trim()==='cut')continue;
  const b=buckets[bucket]||(buckets[bucket]={id:ids[bucket],name:bucket,items:[]});

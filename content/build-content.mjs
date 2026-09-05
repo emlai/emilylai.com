@@ -12,7 +12,8 @@ const DISPLAY={'field notes':'field notes (unlocked)'};
 const buckets={};
 for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,status,notes]=r;if(!ids[bucket])continue;if((status||'').trim()==='cut')continue;
  const b=buckets[bucket]||(buckets[bucket]={id:ids[bucket],name:bucket,items:[]});
- const cuts={},embeds=[],images=[];const urlList=(urls||'').split(/\n/).map(s=>s.trim()).filter(Boolean).map(line=>{const m=line.match(/^(\S+)\s*\|\s*ends? after:\s*(.+)$/i);if(m){const id=(m[1].match(/status\/(\d+)/)||[])[1];if(id)cuts[id]=m[2].trim();return m[1];}
+ const cuts={},solo={},embeds=[],images=[];const urlList=(urls||'').split(/\n/).map(s=>s.trim()).filter(Boolean).map(line=>{const so=line.match(/^(\S+)\s*\|\s*text only$/i);if(so){const id=(so[1].match(/status\/(\d+)/)||[])[1];if(id)solo[id]=true;return so[1];}
+  const m=line.match(/^(\S+)\s*\|\s*ends? after:\s*(.+)$/i);if(m){const id=(m[1].match(/status\/(\d+)/)||[])[1];if(id)cuts[id]=m[2].trim();return m[1];}
   const e=line.match(/^(https:\/\/www\.linkedin\.com\/embed\/\S+)(?:\s*\|\s*height:\s*(\d+))?$/i);if(e){embeds.push({src:e[1],h:+(e[2]||600)});return '';}
   if(/\.(png|jpe?g|webp|gif)$/i.test(line)&&!/^https?:/.test(line)){images.push(line);return '';}return line;}).filter(Boolean);
  if(type==='post'||type==='video'||type==='fact'){b.items.push({o:+order,v:[dates,title,urlList[0]||'']});continue;}
@@ -31,6 +32,7 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  const deck=(notes||'').match(/(?:^|\n)deck:\s*(\S+)/);
  if(deck)it.deck=JSON.parse(fs.readFileSync(deck[1],'utf8'));
  if(Object.keys(cuts).length)it.cuts=cuts;
+ if(Object.keys(solo).length)it.solo=solo;
  if(embeds.length)it.embeds=embeds;
  if(images.length)it.images=images;
  if(type==='stack')it.stack=true;

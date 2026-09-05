@@ -26,6 +26,8 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  const cover=(notes||'').match(/(?:^|\n)cover:\s*(\S+)\s*\|\s*([^\n]+)/);
  if(cover)it.cover={src:cover[1],alt:cover[2].trim()};
  if(/year sections/i.test(notes||''))it.yearSections=true;
+ if(/posts before embeds/i.test(notes||''))it.postsFirst=true;
+ if(/hide reader title/i.test(notes||''))it.hideTitle=true;
  const deck=(notes||'').match(/(?:^|\n)deck:\s*(\S+)/);
  if(deck)it.deck=JSON.parse(fs.readFileSync(deck[1],'utf8'));
  if(Object.keys(cuts).length)it.cuts=cuts;

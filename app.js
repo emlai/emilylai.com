@@ -65,7 +65,7 @@ Motion.connect({back:pane=>backToList(pane,true),close:()=>closeWindow(true),
 /* folders */
 F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.w;const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked()){pendingDiscovery=true;renderFolders();}if((BUCKETS.find(x=>x.id===id)||{}).egg)store.set('eggOpened',true);
  if(isMobile()){const origin=b.getBoundingClientRect();open=[id];active=id;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(e.detail===0);Motion.folderOpen(origin);return;}
- if(open.includes(id)){open=open.filter(o=>o!==id);active=open[open.length-1]||null;sync(false);}else{const first=!open.length;open.push(id);if(open.length>MAXTABS)open.shift();active=id;sync(true);if(first)Motion.folderOpen();}});
+ if(open.includes(id)){open=[];active=null;sync(false);}else{const first=!open.length;open=[id];active=id;sync(true);if(first)Motion.folderOpen();}});
 
 /* tabs */
 T.addEventListener('click',e=>{const x=e.target.closest('.x');const t=e.target.closest('[data-t]');

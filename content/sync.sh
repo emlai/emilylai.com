@@ -11,3 +11,4 @@ fi
 node content/sort-content.mjs >/dev/null
 node content/build-content.mjs content/content.csv content.js
 node content/build-fallback.mjs
+node scripts/build.mjs

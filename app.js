@@ -12,6 +12,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const md=s=>esc(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+|#[A-Za-z0-9_-]+)\)/g,(m,label,url)=>url[0]==='#'?'<a href="'+url+'">'+label+'</a>':'<a href="'+url+'" target="_blank" rel="noopener">'+label+'</a>');
 const linkedText=s=>String(s).split(/(https?:\/\/[^\s<>]+)/g).map((part,i)=>i%2?'<a href="'+esc(part)+'" target="_blank" rel="noopener">'+esc(part.replace(/^https?:\/\//,''))+'</a>':esc(part)).join('');
 const plain=s=>String(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'$1');
+const cap=s=>String(s).charAt(0).toUpperCase()+String(s).slice(1);
 const fmt=d=>{const [y,m,dd]=d.split('-');return (+dd)+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]+' '+y};
 const store={get(k,f){try{const v=localStorage.getItem(k);return v==null?f:JSON.parse(v)}catch(e){return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
@@ -28,10 +29,10 @@ function revealDiscovery(){if(!pendingDiscovery)return;pendingDiscovery=false;co
 const LOGOS={'Hype':[['kraken.com','Kraken'],['optimism.io','Optimism'],['sui.io','Sui'],['consensys.io','Consensys'],['bitfinex.com','Bitfinex'],['polygon.technology','Polygon']],'Jump 450':[['fool.com','Motley Fool'],['moneylion.com','MoneyLion'],['jtv.com','Jewelry TV'],['gorjana.com','Gorjana'],['integrativenutrition.com','Institute for Integrative Nutrition'],['talentless.co','Talentless'],['foursigmatic.com','Four Sigmatic']]};
 function logosHTML(label){const k=Object.keys(LOGOS).find(k=>label.startsWith(k));if(!k)return '';return '<div class="logos">'+LOGOS[k].map(([d,n])=>'<img src="media/logos/'+d+'.png" alt="'+esc(n)+'" title="'+esc(n)+'" loading="lazy" onerror="this.remove()">').join('')+'</div>';}
 /* render */
-function renderFolders(){F.innerHTML=visible().map(b=>'<li'+(b.egg?' class="egg"':'')+'><button type="button" aria-expanded="false" aria-controls="p-'+b.id+'" data-w="'+b.id+'">'+ICON+'<span class="lbl">'+esc(b.name)+'</span><span class="n">'+b.items.length+'</span></button></li>').join('');}
+function renderFolders(){F.innerHTML=visible().map(b=>'<li'+(b.egg?' class="egg"':'')+'><button type="button" aria-expanded="false" aria-controls="p-'+b.id+'" data-w="'+b.id+'">'+ICON+'<span class="lbl">'+esc(cap(b.name))+'</span><span class="n">'+b.items.length+'</span></button></li>').join('');}
 function rowHTML(it,i,prev){if(Array.isArray(it)){const py=prev?(Array.isArray(prev)?prev[0]:prev.y):null;const first=py!==it[0];return '<li'+(first?' class="first"':'')+'>'+(first?'<span class="d">'+esc(it[0])+'</span>':'')+'<span>'+(it[2]?'<a href="'+it[2]+'" data-u="'+it[2]+'">'+esc(it[1])+'</a>':esc(it[1]))+'</span></li>';}
  const py=prev?(Array.isArray(prev)?prev[0]:prev.y):null;const first=py!==it.y;return '<li class="role'+(first?' first':'')+'">'+(first?'<span class="d">'+esc(it.y)+'</span>':'')+'<span><a href="#" class="lbl" data-role="'+i+'">'+esc(plain(it.label))+'</a></span></li>';}
-function renderPanes(){P.innerHTML=BUCKETS.map(b=>'<div class="pane" id="p-'+b.id+'" role="tabpanel" aria-labelledby="h-'+b.id+'"><div class="list"><h2 id="h-'+b.id+'">'+esc(b.name)+'</h2><p class="meta">'+b.items.length+' entries</p><ul>'+b.items.map((it,i)=>rowHTML(it,i,b.items[i-1])).join('')+'</ul>'+CONTACT+'</div><div class="divider" role="separator" aria-orientation="vertical" aria-label="Resize columns" aria-valuemin="22" aria-valuemax="70" aria-valuenow="38" tabindex="0"></div><div class="nav-shade" aria-hidden="true"></div><aside class="reader" tabindex="-1" aria-label="Entry content"><p class="empty">Select an entry to read it here.</p></aside></div>').join('');}
+function renderPanes(){P.innerHTML=BUCKETS.map(b=>'<div class="pane" id="p-'+b.id+'" role="tabpanel" aria-labelledby="h-'+b.id+'"><div class="list"><h2 id="h-'+b.id+'">'+esc(cap(b.name))+'</h2><p class="meta">'+b.items.length+' entries</p><ul>'+b.items.map((it,i)=>rowHTML(it,i,b.items[i-1])).join('')+'</ul>'+CONTACT+'</div><div class="divider" role="separator" aria-orientation="vertical" aria-label="Resize columns" aria-valuemin="22" aria-valuemax="70" aria-valuenow="38" tabindex="0"></div><div class="nav-shade" aria-hidden="true"></div><aside class="reader" tabindex="-1" aria-label="Entry content"><p class="empty">Select an entry to read it here.</p></aside></div>').join('');}
 function remember(){store.set('desk',{open,active,transform:isMobile()?'':WIN.style.transform||'',w:isMobile()?'':WIN.style.width||'',h:isMobile()?'':WIN.style.height||''});}
 function keepWindowInView(){if(isMobile()||!open.length)return;const r=WIN.getBoundingClientRect(),m=/translate\((-?[\d.]+)px, ?(-?[\d.]+)px\)/.exec(WIN.style.transform||'');const dx=r.left<24?24-r.left:Math.min(0,innerWidth-24-r.right),dy=r.top<24?24-r.top:Math.min(0,innerHeight-24-r.bottom);if(dx||dy)WIN.style.transform='translate('+((m?+m[1]:0)+dx)+'px, '+((m?+m[2]:0)+dy)+'px)';}
 function dividerBounds(pane){const style=getComputedStyle(pane),width=pane.clientWidth;const min=parseFloat(style.getPropertyValue("--list-min")),reader=parseFloat(style.getPropertyValue("--reader-min")),divider=parseFloat(style.getPropertyValue("--divider-width"));return {width,min,max:Math.max(min,width-reader-divider)};}
@@ -43,12 +44,12 @@ function sync(focusTab){if(isMobile()&&open.length>1)open=[active];remember();
  document.querySelector('.layout>aside').inert=open.length>0&&isMobile();
  document.querySelector('.contact').inert=open.length>0&&isMobile();
  const tabIds=isMobile()?visible().filter(b=>!b.egg||store.get('eggOpened',false)).map(b=>b.id):open;
- if(T.dataset.ids!==tabIds.join("|")){T.innerHTML=tabIds.map(id=>{const b=BUCKETS.find(x=>x.id===id);return '<div class="tab" role="tab" id="t-'+id+'" tabindex="'+(id===active?0:-1)+'" aria-selected="'+(id===active)+'" aria-controls="p-'+id+'" data-t="'+id+'"><span class="name">'+esc(b.name)+'</span><button type="button" class="x" aria-label="Close '+esc(b.name)+'" data-x="'+id+'">'+XICON+'</button></div>'}).join('');T.dataset.ids=tabIds.join("|");}
+ if(T.dataset.ids!==tabIds.join("|")){T.innerHTML=tabIds.map(id=>{const b=BUCKETS.find(x=>x.id===id);return '<div class="tab" role="tab" id="t-'+id+'" tabindex="'+(id===active?0:-1)+'" aria-selected="'+(id===active)+'" aria-controls="p-'+id+'" data-t="'+id+'"><span class="name">'+esc(cap(b.name))+'</span><button type="button" class="x" aria-label="Close '+esc(cap(b.name))+'" data-x="'+id+'">'+XICON+'</button></div>'}).join('');T.dataset.ids=tabIds.join("|");}
  T.querySelectorAll("[data-t]").forEach(t=>{const selected=t.dataset.t===active;t.setAttribute("aria-selected",String(selected));t.tabIndex=selected?0:-1;});
  P.querySelectorAll('.pane').forEach(p=>{p.classList.toggle('on',p.id==='p-'+active);p.querySelector('.list').inert=isMobile()&&p.classList.contains('has-cur');p.querySelector('.reader').inert=isMobile()&&!p.classList.contains('has-cur');});
  P.querySelectorAll('.pane').forEach(p=>{if(!p.classList.contains('on')||(isMobile()&&!p.classList.contains('has-cur')))pauseMedia(p);else p.querySelectorAll('iframe[data-resume-src]').forEach(f=>{f.src=f.dataset.resumeSrc;delete f.dataset.resumeSrc;});});
  updateDividers();
- F.querySelectorAll('button').forEach(b=>b.setAttribute('aria-expanded',String(open.includes(b.dataset.w))));
+ F.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-expanded',String(open.includes(b.dataset.w)));b.classList.toggle('active',b.dataset.w===active);});
  const selected=T.querySelector('[aria-selected="true"]');
  if(selected){selected.scrollIntoView({inline:'nearest',block:'nearest'});if(focusTab)selected.focus({preventScroll:true});}}
 renderFolders();renderPanes();
@@ -171,7 +172,7 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
   const matches=[];
   visible().forEach(b=>b.items.forEach((it,i)=>{if(textOf(it).toLowerCase().includes(s))matches.push({b,it,i});}));
   hits.textContent=matches.length+' found';
-  results.innerHTML=matches.length?matches.map(({b,it,i})=>'<button type="button" data-folder="'+b.id+'" data-entry="'+i+'"><span>'+esc(Array.isArray(it)?it[1]:it.label)+'</span><small>'+esc(b.name)+' · '+esc(Array.isArray(it)?it[0]:it.y)+'</small></button>').join(''):'<p>No entries found. Try a different topic or year.</p>';
+  results.innerHTML=matches.length?matches.map(({b,it,i})=>'<button type="button" data-folder="'+b.id+'" data-entry="'+i+'"><span>'+esc(Array.isArray(it)?it[1]:it.label)+'</span><small>'+esc(cap(b.name))+' · '+esc(Array.isArray(it)?it[0]:it.y)+'</small></button>').join(''):'<p>No entries found. Try a different topic or year.</p>';
  }
  function choose(button){
   const id=button.dataset.folder,index=+button.dataset.entry;hide(false);visit(id);

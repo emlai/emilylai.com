@@ -1017,5 +1017,19 @@
     "src": "media/2022310385961890222-fx1.jpg"
    }
   ]
+ },
+ "2096694660421104069": {
+  "text": "Using Astra, Fable, and Grok to build my personal website (what i learned)\n\nI spent the last 3 days playing with the latest frontier models to build my personal website.\nThis process took 180+ prompts across 5 chats and was happening as Fable 5.1 and GPT 6 Astra were",
+  "date": "2026-09-06",
+  "likes": 3,
+  "author": "emilylai",
+  "article": "Using Astra, Fable, and Grok to build my personal website (what i learned)",
+  "articleFile": "content/articles/2096694660421104069.json",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2096694660421104069-cover.jpg"
+   }
+  ]
  }
 }

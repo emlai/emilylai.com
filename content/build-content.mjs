@@ -19,7 +19,8 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
   const img=line.match(/^(media\/.+\.(?:png|jpe?g|webp|gif))\s*\|\s*alt:\s*(.+)$/i);
   if(img){images.push({src:img[1],alt:img[2]});return '';}
   if(/\.(png|jpe?g|webp|gif)$/i.test(line)&&!/^https?:/.test(line)){images.push(line);return '';}return line;}).filter(Boolean);
- if(type==='post'||type==='video'||type==='fact'){b.items.push({o:+order,v:[dates,title,urlList[0]||'']});continue;}
+ const tab=((notes||'').match(/(?:^|\n)tab:\s*([^\n]+)/)||[])[1];
+ if(type==='post'||type==='video'||type==='fact'){const v=[dates,title,urlList[0]||''];if(tab)v[3]=tab.trim();b.items.push({o:+order,v});continue;}
  const it={y:dates,label:title};
  if(['growth experiments','lab experiments','learning'].includes(bucket))it.newestFirst=true;
  const desc=(bullets||'').split(/\n/).map(s=>s.trim()).filter(Boolean);if(desc.length)it.desc=desc;
@@ -40,6 +41,7 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  const deck=(notes||'').match(/(?:^|\n)deck:\s*(\S+)/);
  if(deck)it.deck=JSON.parse(fs.readFileSync(deck[1],'utf8'));
  if(Object.keys(cuts).length)it.cuts=cuts;
+ if(tab)it.tab=tab.trim();
  if(Object.keys(solo).length)it.solo=solo;
  if(it.newestFirst)embeds.sort((a,b)=>socialTimestamp(b.src)-socialTimestamp(a.src));
  if(embeds.length)it.embeds=embeds;

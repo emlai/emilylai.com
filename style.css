@@ -86,11 +86,11 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .close .t{display:none}
 .tabs{display:flex;gap:2px;flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-y:none;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-bottom:0;padding:6px 6px 6px 12px;border-radius:6px 6px 0 0;color:var(--gray);white-space:nowrap;position:relative;top:1px;max-width:190px;cursor:pointer;transition:color .12s,background .12s}
+.tab{display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;border-bottom:0;padding:6px 14px;border-radius:6px 6px 0 0;color:var(--gray);white-space:nowrap;position:relative;top:1px;max-width:190px;cursor:pointer;transition:color .12s,background .12s}
 .tab:hover{color:var(--ink);background:var(--hover)}
 .tab .name{overflow:hidden;text-overflow:ellipsis}
 .tab[aria-selected="true"],.tab[aria-selected="true"]:hover{background:var(--win);border-color:var(--hair);color:var(--ink)}
-.tab .x{display:inline-grid;place-items:center;width:24px;height:24px;flex:none;border-radius:var(--ri);color:var(--gray)}
+.tab .x{display:none;place-items:center;width:24px;height:24px;flex:none;border-radius:var(--ri);color:var(--gray)}
 .tab .x:hover{color:var(--ink);background:var(--hover)}
 .tab .x svg{width:10px;height:10px}
 #panes{flex:1;min-height:0;display:flex}

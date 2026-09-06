@@ -328,3 +328,12 @@ body{padding:var(--page-pad)}
  .pane.on.has-cur .reader,.pane.on.moving .reader{padding:0 20px calc(40px + env(safe-area-inset-bottom))}
  .reader .back{min-height:44px;padding:12px 20px}
 }
+
+/* Compact contact disclosure, shared with mobile readers. */
+.contact-trigger{font:inherit;min-height:44px;text-align:left}
+.contact-trigger:hover{color:var(--ink)}
+.contact-options{position:fixed;z-index:1000;width:min(296px,calc(100vw - 32px));padding:8px;background:var(--win);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow);font:13px/1.4 var(--sans)}
+.contact-options[hidden]{display:none}
+.contact-options a{display:flex;flex-direction:column;gap:4px;min-height:60px;padding:12px;text-decoration:none;border-radius:var(--ri)}
+.contact-options a:hover,.contact-options a:focus-visible{background:var(--hover)}
+.contact-options small{font:inherit;color:var(--gray)}

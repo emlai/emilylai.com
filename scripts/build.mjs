@@ -1,0 +1,29 @@
+// Generated assets are committed so GitHub Pages needs no build service.
+import { build, transform } from 'esbuild';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import vm from 'node:vm';
+await mkdir('dist',{recursive:true});
+const files=['content.js','previews.js','motion.js','social-date.js','app.js'];
+const source=(await Promise.all(files.map(f=>readFile(f,'utf8')))).join('\n;\n');
+const result=await transform(source,{minify:true,format:'iife',target:'es2020',legalComments:'eof'});
+await writeFile('dist/site.min.js',result.code);
+await build({entryPoints:['silver-toggle/silver-toggle.js'],outfile:'silver-toggle/silver-toggle.min.js',bundle:true,minify:true,format:'esm',target:'es2020',legalComments:'eof'});
+await build({entryPoints:['style.css'],outfile:'dist/style.min.css',minify:true});
+const hash=async path=>createHash('sha256').update(await readFile(path)).digest('hex').slice(0,12);
+let html=await readFile('index.html','utf8');
+html=html.replace(/<link rel="modulepreload"[^>]*>/g,'');
+html=html.replace(/<link rel="stylesheet"[^>]*>/,`<link rel="stylesheet" href="dist/style.min.css?v=${await hash('dist/style.min.css')}">\n<link rel="modulepreload" href="silver-toggle/silver-toggle.min.js?v=${await hash('silver-toggle/silver-toggle.min.js')}">`);
+html=html.replace(/<script src="(?:content|previews|motion|social-date|app)\.js[^>]*><\/script>\s*/g,'');
+html=html.replace(/<script src="dist\/site.min.js[^>]*><\/script>\s*/g,'');
+html=html.replace('<script type="module">',`<script src="dist/site.min.js?v=${await hash('dist/site.min.js')}" defer></script>\n<script type="module">`);
+html=html.replace(/from '\.\/silver-toggle\/silver-toggle(?:\.min)?\.js[^']*'/,`from './silver-toggle/silver-toggle.min.js?v=${await hash('silver-toggle/silver-toggle.min.js')}'`);
+// Paint the folder list with the first HTML response to avoid a mobile layout shift.
+const context={window:{}};
+vm.runInNewContext(await readFile('content.js','utf8'),context);
+const app=await readFile('app.js','utf8');
+const icon=app.match(/const ICON='([^']+)';/)[1];
+const escape=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const folders=context.window.BUCKETS.filter(b=>!b.egg).map(b=>`<li><button type="button" aria-expanded="false" aria-controls="p-${escape(b.id)}" data-w="${escape(b.id)}">${icon}<span class="lbl">${escape(b.name)}</span><span class="n">${b.items.length}</span></button></li>`).join('');
+html=html.replace(/(<ul class="folders" id="folders">)[\s\S]*?<\/ul>/,`$1${folders}</ul>`);
+await writeFile('index.html',html);

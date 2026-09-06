@@ -210,8 +210,8 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
  const popup=document.getElementById('contact-options');let trigger;
  const close=(restore=false)=>{popup.hidden=true;if(trigger){trigger.setAttribute('aria-expanded','false');if(restore&&trigger.isConnected)trigger.focus();}};
  const position=()=>{if(popup.hidden||!trigger)return;const r=trigger.getBoundingClientRect(),w=popup.offsetWidth,h=popup.offsetHeight;popup.style.left=Math.max(16,Math.min(r.left,innerWidth-w-16))+'px';popup.style.top=Math.max(16,r.top-h-8>=16?r.top-h-8:Math.min(r.bottom+8,innerHeight-h-16))+'px';};
- document.addEventListener('click',e=>{const t=e.target.closest('.contact-trigger');if(t){const opening=popup.hidden||trigger!==t;close();if(opening){trigger=t;popup.hidden=false;t.setAttribute('aria-expanded','true');position();popup.querySelector('a').focus();}return;}if(!popup.contains(e.target)||e.target.closest('a'))close();});
- document.addEventListener('keydown',e=>{if(!popup.hidden&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();close(true);}},true);
+ document.addEventListener('click',e=>{const t=e.target.closest('.contact-trigger');if(t){const opening=popup.hidden||trigger!==t;close();if(opening){trigger=t;popup.hidden=false;t.setAttribute('aria-expanded','true');position();popup.querySelector('a').focus();}return;}if(e.target.closest('#contact-options a'))close(true);else if(!popup.contains(e.target))close();});
+ document.addEventListener('keydown',e=>{if(!popup.hidden&&e.key==='Tab'&&e.shiftKey&&e.target===popup.querySelector('a')){e.preventDefault();close(true);return;}if(!popup.hidden&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();close(true);}},true);
  document.addEventListener('focusin',e=>{if(!popup.hidden&&!popup.contains(e.target)&&e.target!==trigger)close();});
  addEventListener('resize',()=>close());document.addEventListener('scroll',()=>close(),true);
 })();

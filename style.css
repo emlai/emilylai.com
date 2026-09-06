@@ -329,22 +329,17 @@ body{padding:var(--page-pad)}
  .reader .back{min-height:44px;padding:12px 20px}
 }
 
-/* Floating contact sheet: local SVG icons and native messaging links. */
+/* Contact disclosure follows the desk's existing spacing and surface tokens. */
 .contact-trigger{font:inherit;min-height:44px;text-align:left}
 .contact-trigger:hover,.contact-trigger[aria-expanded=true]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
-.contact-options{position:fixed;z-index:1000;width:min(320px,calc(100vw - 32px));padding:8px;background:linear-gradient(160deg,var(--win),var(--bar));color:var(--ink);border-radius:12px;box-shadow:0 2px 4px #0000000a,0 12px 28px #00000012,0 28px 64px #00000016,inset 0 1px 0 #ffffffb3;font:13px/1.4 var(--sans);transform-origin:bottom left}
-html[data-theme=dark] .contact-options{box-shadow:0 2px 4px #0003,0 14px 32px #0005,0 28px 64px #0004,inset 0 1px 0 #ffffff18}
+.contact-options{position:fixed;z-index:1000;width:min(240px,calc(100vw - 2 * var(--space-md)));padding:var(--space-sm);background:var(--win);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow);font:13px/1.4 var(--sans);transform-origin:bottom left}
 .contact-options[hidden]{display:none}
-.contact-options a{display:flex;align-items:center;gap:12px;min-height:76px;padding:12px;text-decoration:none;border-radius:8px;transition:background 140ms ease}
-.contact-options a+a{position:relative}
-.contact-options a+a:before{content:"";position:absolute;top:0;left:64px;right:12px;height:1px;background:var(--hair)}
+.contact-options a{display:flex;align-items:center;gap:var(--space-md);min-height:48px;padding:var(--space-sm) var(--space-md);text-decoration:none;border-radius:var(--ri);transition:background var(--press) ease}
 .contact-options a:hover,.contact-options a:focus-visible{background:var(--hover)}
-.contact-icon{display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:10px;background:linear-gradient(145deg,var(--win),var(--sel));box-shadow:0 1px 2px #00000014,inset 0 1px 0 #ffffff70}
-html[data-theme=dark] .contact-icon{box-shadow:0 1px 2px #0005,inset 0 1px 0 #ffffff12}
-.contact-icon svg{width:19px;height:19px}
-.contact-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
-.contact-copy>span{font-weight:500}
-.contact-options small{font:11px/1.5 var(--sans);color:var(--gray);overflow-wrap:anywhere}
-.contact-arrow{width:16px;height:16px;margin-left:auto;flex:none;color:var(--gray);transition:transform 140ms ease}
-.contact-options a:hover .contact-arrow{transform:translate(1px,-1px);color:var(--ink)}
-@media(prefers-reduced-motion:no-preference){.contact-options:not([hidden]){animation:contact-enter 160ms cubic-bezier(.16,1,.3,1)}@keyframes contact-enter{from{transform:translateY(4px);clip-path:inset(4px 0 0 round 12px)}to{transform:translateY(0);clip-path:inset(0 round 12px)}}}
+.contact-options a:focus-visible{outline:1.5px solid var(--ink);outline-offset:-2px}
+.contact-icon{display:grid;place-items:center;width:var(--space-md);height:var(--space-md);flex:none}
+.contact-icon svg{width:100%;height:100%}
+.contact-copy{min-width:0}
+.contact-arrow{width:var(--space-md);height:var(--space-md);margin-left:auto;flex:none;color:var(--gray)}
+@media(prefers-reduced-motion:no-preference){.contact-options:not([hidden]){animation:contact-enter 160ms var(--ease)}@keyframes contact-enter{from{transform:translateY(4px)}to{transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.contact-options a{transition:none}}

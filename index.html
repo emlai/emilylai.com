@@ -151,5 +151,10 @@
 <script src="motion.js?v=eef0b169197a" defer></script>
 <script src="social-date.js?v=25aa05d5a85c" defer></script>
 <script src="app.js?v=b8c3c92e76b7" defer></script>
+<script type="module">
+import { replaceThemeControl } from './silver-toggle/silver-toggle.js';
+const toggle = replaceThemeControl('.mode');
+if (toggle) toggle.setAttribute('sound', 'weighted');
+</script>
 </body>
 </html>

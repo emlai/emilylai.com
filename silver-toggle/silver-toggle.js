@@ -88,9 +88,8 @@ export class SilverToggle extends HTMLElement {
     button:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
     canvas{visibility:hidden;display:block;width:100%;height:100%;pointer-events:none}
     .fallback[hidden]{display:none!important}
-    .fallback{position:absolute;inset:15% 5%;border-radius:4px;background:linear-gradient(110deg,#888,#eee 40%,#aaa 65%,#ddd);box-shadow:0 2px 3px #0004,inset 0 1px #fff}
-    .fallback:after{content:'';position:absolute;width:24%;height:42%;left:28%;top:29%;border-radius:8px;background:linear-gradient(#555,#fff 30%,#aaa 65%,#444);box-shadow:2px 3px 3px #0006;transform:translateX(-30%)}
-    button[aria-checked=true] .fallback:after{transform:translateX(100%)}
+    .fallback{position:absolute;inset:0;background:var(--steel-toggle-light,url("${new URL('./toggle-light.png',import.meta.url).href}")) center/100% 100% no-repeat}
+    button[aria-checked=true] .fallback{background-image:var(--steel-toggle-dark,url("${new URL('./toggle-dark.png',import.meta.url).href}"))}
     </style><button type="button" role="switch" aria-label="Dark mode" aria-checked="false" title="Switch to dark mode"><span class="fallback" aria-hidden="true"></span></button>`;
     this.button=this.shadowRoot.querySelector('button');
     this.dark=document.documentElement.dataset.theme==='dark';

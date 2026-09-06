@@ -86,7 +86,8 @@ export class SilverToggle extends HTMLElement {
     :host{display:inline-block;width:84px;height:44px;flex:none;vertical-align:middle;--focus:#777}
     button{appearance:none;display:block;width:100%;height:100%;border:0;background:transparent;padding:0;cursor:pointer;position:relative;border-radius:5px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
     button:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
-    canvas{display:block;width:100%;height:100%;pointer-events:none}
+    canvas{visibility:hidden;display:block;width:100%;height:100%;pointer-events:none}
+    .fallback[hidden]{display:none!important}
     .fallback{position:absolute;inset:15% 5%;border-radius:4px;background:linear-gradient(110deg,#888,#eee 40%,#aaa 65%,#ddd);box-shadow:0 2px 3px #0004,inset 0 1px #fff}
     .fallback:after{content:'';position:absolute;width:24%;height:42%;left:28%;top:29%;border-radius:8px;background:linear-gradient(#555,#fff 30%,#aaa 65%,#444);box-shadow:2px 3px 3px #0006;transform:translateX(-30%)}
     button[aria-checked=true] .fallback:after{transform:translateX(100%)}
@@ -107,7 +108,7 @@ export class SilverToggle extends HTMLElement {
     renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio,2),3));renderer.setClearColor(0,0);
     renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
     renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-    this.button.append(renderer.domElement);this.shadowRoot.querySelector('.fallback').hidden=true;
+    this.button.append(renderer.domElement);
     const scene=this.scene=new THREE.Scene();this.env=studio(renderer);scene.environment=this.env.texture;
     const camera=this.camera=new THREE.OrthographicCamera(-2.8,2.8,1.5,-1.5,.1,30);camera.position.set(0,1.1,12);camera.lookAt(0,0,0);
     const brush=this.brush=noiseTexture();brush.repeat.set(1,1);const machining=this.machining=machiningTexture();
@@ -157,7 +158,7 @@ export class SilverToggle extends HTMLElement {
     this.resize=new ResizeObserver(()=>{const w=this.clientWidth,h=this.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);camera.left=-2.65;camera.right=2.65;camera.top=2.65*h/w;camera.bottom=-camera.top;camera.updateProjectionMatrix();this.draw();});this.resize.observe(this);
     this.dataset.renderer='webgl';
   }
-  draw(){if(this.renderer&&this.lever){this.lever.rotation.y=this.angle;this.renderer.render(this.scene,this.camera);}}
+  draw(){if(this.renderer&&this.lever){this.lever.rotation.y=this.angle;this.renderer.render(this.scene,this.camera);this.renderer.domElement.style.visibility='visible';this.shadowRoot.querySelector('.fallback').hidden=true;}}
   sync(){
     this.dark=document.documentElement.dataset.theme==='dark';
     this.button.setAttribute('aria-checked',String(this.dark));this.button.title=`Switch to ${this.dark?'light':'dark'} mode`;

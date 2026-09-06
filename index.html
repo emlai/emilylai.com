@@ -16,6 +16,23 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
 <link rel="preconnect" href="https://img.youtube.com">
 <link rel="stylesheet" href="style.css?v=f626608d2a63">
+<link rel="modulepreload" href="silver-toggle/silver-toggle.js?v=loading1">
+<link rel="modulepreload" href="silver-toggle/vendor/three.module.js">
+<link rel="modulepreload" href="silver-toggle/vendor/three.core.js">
+<style id="steel-toggle-loading">
+/* Paint a steel placeholder immediately, before the 3D module downloads.
+   Keep the original two theme buttons usable if the module cannot load. */
+.tools .mode{box-sizing:border-box;display:inline-flex;position:relative;flex:none;width:84px;height:44px;padding:0;gap:0;border:0;border-radius:5px;background:transparent}
+.tools .mode::before{content:"";position:absolute;inset:9px 5px;width:auto;height:auto;border-radius:3px;transform:none;background:radial-gradient(circle at 10% 50%,#333 0 1px,#dadada 1px 3px,transparent 3px),radial-gradient(circle at 90% 50%,#333 0 1px,#dadada 1px 3px,transparent 3px),repeating-linear-gradient(90deg,#ffffff18 0 1px,#0000000a 1px 2px),linear-gradient(110deg,#919191,#dedede 35%,#a3a3a3 70%,#c9c9c9);box-shadow:inset 0 1px 1px #fff9,0 1px 2px #0005;pointer-events:none}
+.tools .mode::after{content:"";position:absolute;left:30px;top:17px;width:21px;height:9px;border-radius:5px;background:linear-gradient(#494949,#ececec 35%,#aaa 65%,#454545);box-shadow:2px 3px 2px #0005;transform:translateX(-5px);pointer-events:none}
+html[data-theme="dark"] .tools .mode::before{transform:none}
+html[data-theme="dark"] .tools .mode::after{transform:translateX(5px)}
+.tools .mode button{box-sizing:border-box;width:42px;height:44px;padding:0;background:transparent;border-radius:4px;z-index:1}
+.tools .mode button:hover{background:transparent}
+.tools .mode button svg{visibility:hidden}
+.tools .mode button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.tools silver-toggle{display:inline-block;flex:none;width:84px;height:44px}
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4L5FDVN34G"></script>
 <script>
@@ -152,7 +169,7 @@
 <script src="social-date.js?v=25aa05d5a85c" defer></script>
 <script src="app.js?v=b8c3c92e76b7" defer></script>
 <script type="module">
-import { replaceThemeControl } from './silver-toggle/silver-toggle.js';
+import { replaceThemeControl } from './silver-toggle/silver-toggle.js?v=loading1';
 const toggle = replaceThemeControl('.mode');
 if (toggle) toggle.setAttribute('sound', 'weighted');
 </script>

@@ -164,6 +164,7 @@ export class SilverToggle extends HTMLElement {
     const target=this.dark?.65:-.65;
     cancelAnimationFrame(this.frame);
     if(matchMedia('(prefers-reduced-motion: reduce)').matches){this.angle=target;this.draw();return;}
+    if(Math.abs(this.angle-target)<.0001){this.draw();return;}
     const from=this.angle,start=performance.now();
     const animate=now=>{const t=Math.min((now-start)/230,1);const ease=1-Math.pow(1-t,3)*Math.cos(t*Math.PI*2);this.angle=from+(target-from)*ease;this.draw();if(t<1)this.frame=requestAnimationFrame(animate);};this.frame=requestAnimationFrame(animate);
   }

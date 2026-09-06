@@ -328,3 +328,18 @@ body{padding:var(--page-pad)}
  .pane.on.has-cur .reader,.pane.on.moving .reader{padding:0 20px calc(40px + env(safe-area-inset-bottom))}
  .reader .back{min-height:44px;padding:12px 20px}
 }
+
+/* Contact disclosure follows the desk's existing spacing and surface tokens. */
+.contact-trigger{font:inherit;min-height:44px;text-align:left}
+.contact-trigger:hover,.contact-trigger[aria-expanded=true]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.contact-options{position:fixed;z-index:1000;width:min(240px,calc(100vw - 2 * var(--space-md)));padding:var(--space-sm);background:var(--win);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow);font:13px/1.4 var(--sans);transform-origin:bottom left}
+.contact-options[hidden]{display:none}
+.contact-options a{display:flex;align-items:center;gap:var(--space-md);min-height:48px;padding:var(--space-sm) var(--space-md);text-decoration:none;border-radius:var(--ri);transition:background var(--press) ease}
+.contact-options a:hover,.contact-options a:focus-visible{background:var(--hover)}
+.contact-options a:focus-visible{outline:1.5px solid var(--ink);outline-offset:-2px}
+.contact-icon{display:grid;place-items:center;width:var(--space-md);height:var(--space-md);flex:none}
+.contact-icon svg{width:100%;height:100%}
+.contact-copy{min-width:0}
+.contact-arrow{width:var(--space-md);height:var(--space-md);margin-left:auto;flex:none;color:var(--gray)}
+@media(prefers-reduced-motion:no-preference){.contact-options:not([hidden]){animation:contact-enter 160ms var(--ease)}@keyframes contact-enter{from{transform:translateY(4px)}to{transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.contact-options a{transition:none}}

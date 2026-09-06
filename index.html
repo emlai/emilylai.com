@@ -15,10 +15,14 @@
 <meta name="twitter:site" content="@emilylai">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
 <link rel="preconnect" href="https://img.youtube.com">
-<link rel="stylesheet" href="style.css?v=f626608d2a63">
-<link rel="modulepreload" href="silver-toggle/silver-toggle.js?v=photo1">
-<link rel="modulepreload" href="silver-toggle/vendor/three.module.js">
-<link rel="modulepreload" href="silver-toggle/vendor/three.core.js">
+<link rel="stylesheet" href="dist/style.min.css?v=a70005f11ac3">
+<link rel="modulepreload" href="silver-toggle/silver-toggle.min.js?v=6df25d9e6333">
+
+
+
+
+
+
 <style id="steel-toggle-loading">
 /* Paint a steel placeholder immediately, before the 3D module downloads.
    Keep the original two theme buttons usable if the module cannot load. */
@@ -63,7 +67,7 @@ html[data-theme="dark"] .tools .mode::before{transform:none;background-image:var
    <p>Growth leader, marketer, experimenter.</p>
    <p>10+ years across startups, agencies, and tech. Building teams and driving growth for ecommerce, onchain finance, and consumer apps. Always learning.</p>
   </div>
-  <ul class="folders" id="folders"></ul>
+  <ul class="folders" id="folders"><li><button type="button" aria-expanded="false" aria-controls="p-work" data-w="work"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">work</span><span class="n">8</span></button></li><li><button type="button" aria-expanded="false" aria-controls="p-growth" data-w="growth"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">growth experiments</span><span class="n">12</span></button></li><li><button type="button" aria-expanded="false" aria-controls="p-lab" data-w="lab"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">lab experiments</span><span class="n">9</span></button></li><li><button type="button" aria-expanded="false" aria-controls="p-learn" data-w="learn"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">learning</span><span class="n">18</span></button></li><li><button type="button" aria-expanded="false" aria-controls="p-talks" data-w="talks"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">speaking</span><span class="n">11</span></button></li><li><button type="button" aria-expanded="false" aria-controls="p-side" data-w="side"><svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg><span class="lbl">side projects</span><span class="n">8</span></button></li></ul>
  </aside>
  <main class="stage" aria-label="Explore Emily's folders">
 <!-- fallback:start -->
@@ -159,17 +163,18 @@ html[data-theme="dark"] .tools .mode::before{transform:none;background-image:var
 </div>
 <div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Search everything"><div class="searchbox"><form class="search" role="search" onsubmit="return false"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#magnifying-glass"/></svg><input type="search" id="q" placeholder="Search everything" autocomplete="off" aria-label="Search all folders" aria-controls="search-results"><span class="hits" aria-live="polite"></span><button type="button" class="pclose" aria-label="Close search"><svg class="i" aria-hidden="true"><use href="assets/icons.svg#x"/></svg></button></form><div id="search-results" class="search-results" aria-label="Search results"></div></div></div>
 <nav class="contact" aria-label="Contact">
- <a class="mail" href="#" data-eu="ylime" data-ed="moc.aidemnamuherom">contact</a>
+ <button type="button" class="contact-trigger" aria-expanded="false" aria-controls="contact-options">contact</button>
  <a href="https://x.com/emilylai" target="_blank" rel="me noopener" title="X, @emilylai (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1l8-9.2L.6 2h7.1l4.9 6.4L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg><span class="sr">X, @emilylai</span></a>
  <a href="https://linkedin.com/in/laiemily" target="_blank" rel="me noopener" title="LinkedIn, laiemily (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.5c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.7C24 .8 23.2 0 22.2 0z"/></svg><span class="sr">LinkedIn, laiemily</span></a>
 </nav>
-<script src="content.js?v=80ad7acdb7eb" defer></script>
-<script src="previews.js?v=5a6fc3226875" defer></script>
-<script src="motion.js?v=eef0b169197a" defer></script>
-<script src="social-date.js?v=25aa05d5a85c" defer></script>
-<script src="app.js?v=b8c3c92e76b7" defer></script>
+<nav id="contact-options" class="contact-options" hidden aria-label="Message Emily">
+<a href="https://x.com/messages/compose?recipient_id=969355945645039616" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1l8-9.2L.6 2h7.1l4.9 6.4L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg></span><span class="contact-copy"><span>DM on X</span></span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="https://t.me/emilyxlai" target="_blank" rel="noopener"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.5 3.5 18.2 20c-.2 1-1 1.2-1.8.7l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L17.7 6c.4-.4-.1-.6-.6-.3L5.6 13l-4.9-1.5c-1-.3-1-1 .2-1.5L20 2.6c.9-.3 1.7.2 1.5.9Z"/></svg></span><span class="contact-copy"><span>DM on Telegram</span></span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="mailto:emily@morehumanmedia.com"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span class="contact-copy"><span>Email</span></span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+</nav>
+<script src="dist/site.min.js?v=e09f08754d5d" defer></script>
 <script type="module">
-import { replaceThemeControl } from './silver-toggle/silver-toggle.js?v=photo1';
+import { replaceThemeControl } from './silver-toggle/silver-toggle.min.js?v=6df25d9e6333';
 const toggle = replaceThemeControl('.mode');
 if (toggle) toggle.setAttribute('sound', 'weighted');
 </script>

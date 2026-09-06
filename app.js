@@ -7,7 +7,7 @@ const Motion=window.DeskMotion;
 const MAXTABS=4;
 const ICON='<svg class="i folder-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="folder-back" d="M3 8V5.5A1.5 1.5 0 0 1 4.5 4h5L12 7h7.5A1.5 1.5 0 0 1 21 8.5V19H3Z"/><path class="folder-front" d="M3 9h18v10.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg>';
 const XICON='<svg class="i" aria-hidden="true"><use href="assets/icons.svg#x"/></svg>';
-const CONTACT='<div class="mcontact"><a class="mail" href="#" data-eu="ylime" data-ed="moc.aidemnamuherom">contact</a><a href="https://x.com/emilylai" target="_blank" rel="me noopener" aria-label="X, @emilylai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1l8-9.2L.6 2h7.1l4.9 6.4L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg></a><a href="https://linkedin.com/in/laiemily" target="_blank" rel="me noopener" aria-label="LinkedIn, laiemily"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.5c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.7C24 .8 23.2 0 22.2 0z"/></svg></a></div>';
+const CONTACT='<div class="mcontact"><button type="button" class="contact-trigger" aria-expanded="false" aria-controls="contact-options">contact</button><a href="https://x.com/emilylai" target="_blank" rel="me noopener" aria-label="X, @emilylai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1l8-9.2L.6 2h7.1l4.9 6.4L18.9 2zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20z"/></svg></a><a href="https://linkedin.com/in/laiemily" target="_blank" rel="me noopener" aria-label="LinkedIn, laiemily"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.5c0 1 .8 1.8 1.8 1.8h20.4c1 0 1.8-.8 1.8-1.8V1.7C24 .8 23.2 0 22.2 0z"/></svg></a></div>';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const md=s=>esc(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+|#[A-Za-z0-9_-]+)\)/g,(m,label,url)=>url[0]==='#'?'<a href="'+url+'">'+label+'</a>':'<a href="'+url+'" target="_blank" rel="noopener">'+label+'</a>');
 const linkedText=s=>String(s).split(/(https?:\/\/[^\s<>]+)/g).map((part,i)=>i%2?'<a href="'+esc(part)+'" target="_blank" rel="noopener">'+esc(part.replace(/^https?:\/\//,''))+'</a>':esc(part)).join('');
@@ -205,9 +205,16 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
  addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();pal.hidden?show():q.focus();}});
 })();
 
-/* email, assembled here so the address is not in the markup */
-/* the address is assembled only when someone means to use it; the page never renders it as text */
-(function(){const arm=a=>{if(a.dataset.ok)return;const u=[...a.dataset.eu].reverse().join(''),d=[...a.dataset.ed].reverse().join('');a.href='mailto:'+u+'@'+d;a.dataset.ok='1';};
- for(const ev of ['pointerdown','mouseenter','focusin','touchstart','click'])document.addEventListener(ev,e=>{const a=e.target.closest&&e.target.closest('a.mail');if(a)arm(a);},true);})();
+/* Contact options, shared by home and mobile folder views. */
+(function(){
+ const popup=document.getElementById('contact-options');let trigger;
+ const close=(restore=false)=>{popup.hidden=true;if(trigger){trigger.setAttribute('aria-expanded','false');if(restore&&trigger.isConnected)trigger.focus();}};
+ const position=()=>{if(popup.hidden||!trigger)return;const r=trigger.getBoundingClientRect(),w=popup.offsetWidth,h=popup.offsetHeight;popup.style.left=Math.max(16,Math.min(r.left,innerWidth-w-16))+'px';popup.style.top=Math.max(16,r.top-h-8>=16?r.top-h-8:Math.min(r.bottom+8,innerHeight-h-16))+'px';};
+ document.addEventListener('click',e=>{const t=e.target.closest('.contact-trigger');if(t){const opening=popup.hidden||trigger!==t;close();if(opening){trigger=t;popup.hidden=false;t.setAttribute('aria-expanded','true');position();popup.querySelector('a').focus();}return;}if(e.target.closest('#contact-options a'))close(true);else if(!popup.contains(e.target))close();});
+ document.addEventListener('keydown',e=>{if(!popup.hidden&&e.key==='Tab'&&e.shiftKey&&e.target===popup.querySelector('a')){e.preventDefault();close(true);return;}if(!popup.hidden&&e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();close(true);}},true);
+ document.addEventListener('focusin',e=>{if(!popup.hidden&&!popup.contains(e.target)&&e.target!==trigger)close();});
+ addEventListener('resize',()=>close());document.addEventListener('scroll',()=>close(),true);
+})();
+
 
 })();

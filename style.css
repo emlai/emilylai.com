@@ -103,8 +103,8 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 
 /* list */
 .pane .list{padding:20px 18px 18px;overflow:auto;min-height:0;min-width:0;overscroll-behavior:contain}
-.pane h2{margin:0;font-size:17px;line-height:1.5;font-weight:400;color:var(--ink)}
-.pane .meta{margin:4px 0 12px;color:var(--gray)}
+.pane h2{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0}
+.pane .meta{margin:0 0 12px;color:var(--gray)}
 .pane ul{list-style:none;margin:0;padding:0}
 .pane .list li{display:grid;grid-template-columns:1fr;gap:2px;padding:6px 10px;margin:0 -10px;border-radius:var(--ri);font-size:17px;line-height:1.4}
 .pane .list li.first{padding-top:9px}

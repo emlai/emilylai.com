@@ -12,12 +12,13 @@ await build({entryPoints:['silver-toggle/silver-toggle.js'],outfile:'silver-togg
 await build({entryPoints:['style.css'],outfile:'dist/style.min.css',minify:true});
 const hash=async path=>createHash('sha256').update(await readFile(path)).digest('hex').slice(0,12);
 let html=await readFile('index.html','utf8');
+html=html.replace(/:root\{--steel-toggle-light:url\("data:image\/png;base64,[^"]+"\);--steel-toggle-dark:url\("data:image\/png;base64,[^"]+"\)\}/,':root{--steel-toggle-light:url("silver-toggle/toggle-light.png");--steel-toggle-dark:url("silver-toggle/toggle-dark.png")}');
 html=html.replace(/<link rel="modulepreload"[^>]*>/g,'');
-html=html.replace(/<link rel="stylesheet"[^>]*>/,`<link rel="stylesheet" href="dist/style.min.css?v=${await hash('dist/style.min.css')}">\n<link rel="modulepreload" href="silver-toggle/silver-toggle.min.js?v=${await hash('silver-toggle/silver-toggle.min.js')}">`);
+html=html.replace(/<link rel="stylesheet"[^>]*>/,`<link rel="stylesheet" href="dist/style.min.css?v=${await hash('dist/style.min.css')}">`);
 html=html.replace(/<script src="(?:content|previews|motion|social-date|app)\.js[^>]*><\/script>\s*/g,'');
 html=html.replace(/<script src="dist\/site.min.js[^>]*><\/script>\s*/g,'');
 html=html.replace('<script type="module">',`<script src="dist/site.min.js?v=${await hash('dist/site.min.js')}" defer></script>\n<script type="module">`);
-html=html.replace(/from '\.\/silver-toggle\/silver-toggle(?:\.min)?\.js[^']*'/,`from './silver-toggle/silver-toggle.min.js?v=${await hash('silver-toggle/silver-toggle.min.js')}'`);
+html=html.replace(/import\('\.\/silver-toggle\/silver-toggle(?:\.min)?\.js[^']*'\)/,`import('./silver-toggle/silver-toggle.min.js?v=${await hash('silver-toggle/silver-toggle.min.js')}')`);
 // Paint the folder list with the first HTML response to avoid a mobile layout shift.
 const context={window:{}};
 vm.runInNewContext(await readFile('content.js','utf8'),context);

@@ -6,12 +6,22 @@ const article = JSON.parse(await readFile(source, 'utf8'));
 const escape = value => String(value).replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 }[character]));
-const body = article.html
+let body = article.html
   .replaceAll('src="media/', 'src="../media/')
   .replaceAll('poster="media/', 'poster="../media/');
 const title = escape(article.title);
 const description = 'How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.';
 const cover = `../${article.cover}`;
+const mediaPath = path => `../${String(path).replace(/^\//, '')}`;
+const videoFigure = ({ src, poster, caption, portrait = false }) => `<figure class="video${portrait ? ' video-portrait' : ''}"><video controls playsinline preload="none" poster="${escape(mediaPath(poster))}"><source src="${escape(mediaPath(src))}" type="video/mp4"></video><figcaption>${escape(caption)}</figcaption></figure>`;
+
+const introSentence = '<p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p>';
+body = body.replace(introSentence, `${introSentence}${videoFigure({src:article.introVideo,poster:article.introPoster,caption:'A walkthrough of the new emilylai.com.'})}`);
+const firstToggleRender = /(<figure><img[^>]+article-2096694660421104069-15\.jpg[\s\S]*?<\/figure>)/;
+body = body.replace(firstToggleRender, `$1${videoFigure({src:article.toggleVideo,poster:article.togglePoster,caption:'Testing the first steel toggle render.'})}`);
+body = body.replace('Then we worked on the sound.</p>', `Then we worked on the sound.</p>${videoFigure({src:article.soundsVideo,poster:article.soundsPoster,caption:'Comparing the full set of toggle sounds.'})}`);
+const grokSentence = '<p>I also tried Grok 4.6 in the Aside browser to paste the draft and assets in the X composer for me. This is a 5 minute video sped up to 10 seconds. It made strange messages to test it could type.</p>';
+body = body.replace(grokSentence, `${grokSentence}${videoFigure({src:article.grokVideo,poster:article.grokPoster,caption:'Five minutes of browser control, sped up to ten seconds.',portrait:true})}`);
 
 const html = `<!doctype html>
 <html lang="en" data-theme="light">
@@ -44,6 +54,7 @@ a{color:inherit;text-decoration-color:var(--hair);text-decoration-thickness:1px;
 .hero{max-width:1180px;margin:34px auto 64px;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.1fr);gap:64px;align-items:center}
 .eyebrow{margin:0 0 20px;color:var(--gray);font:13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
+.date{margin:20px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
 .article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
@@ -62,7 +73,7 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 <header class="top"><a class="home" href="../">Emily Lai</a><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
-  <div><p class="eyebrow">Writing</p><h1>${title}</h1></div>
+  <div><p class="eyebrow">Writing</p><h1>${title}</h1><p class="date">${escape(article.date)}</p></div>
   <img src="${cover}" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
 </section>
 <article class="article">${body}<div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>

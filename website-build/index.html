@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Using Astra, Fable, and Grok to build my personal website (what i learned) — Emily Lai</title>
+<title>Using Astra, Fable, and Grok to build my personal website (Full workflow and learnings) — Emily Lai</title>
 <meta name="description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <link rel="canonical" href="https://emilylai.com/website-build/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Using Astra, Fable, and Grok to build my personal website (what i learned)">
+<meta property="og:title" content="Using Astra, Fable, and Grok to build my personal website (Full workflow and learnings)">
 <meta property="og:description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <meta property="og:url" content="https://emilylai.com/website-build/">
 <meta property="og:image" content="https://emilylai.com/media/2096694660421104069-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@emilylai">
-<meta name="twitter:title" content="Using Astra, Fable, and Grok to build my personal website (what i learned)">
+<meta name="twitter:title" content="Using Astra, Fable, and Grok to build my personal website (Full workflow and learnings)">
 <meta name="twitter:description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <meta name="twitter:image" content="https://emilylai.com/media/2096694660421104069-cover.jpg">
 <link rel="icon" href="../assets/favicons/favicon-el.svg" type="image/svg+xml">
@@ -29,6 +29,7 @@ a{color:inherit;text-decoration-color:var(--hair);text-decoration-thickness:1px;
 .hero{max-width:1180px;margin:34px auto 64px;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.1fr);gap:64px;align-items:center}
 .eyebrow{margin:0 0 20px;color:var(--gray);font:13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
+.date{margin:20px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
 .article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
@@ -47,10 +48,10 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 <header class="top"><a class="home" href="../">Emily Lai</a><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
-  <div><p class="eyebrow">Writing</p><h1>Using Astra, Fable, and Grok to build my personal website (what i learned)</h1></div>
+  <div><p class="eyebrow">Writing</p><h1>Using Astra, Fable, and Grok to build my personal website (Full workflow and learnings)</h1><p class="date">September 6th, 2026</p></div>
   <img src="../media/2096694660421104069-cover.jpg" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
 </section>
-<article class="article"><p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p>
+<article class="article"><p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-intro-poster.jpg"><source src="../media/website-build-intro.mp4" type="video/mp4"></video><figcaption>A walkthrough of the new emilylai.com.</figcaption></figure>
 <p>This process took 180+ prompts across 5 chats and was happening as Fable 5.1 and GPT 6 Astra were released.  I have no domain expertise in UX, product design and am not a developer.</p>
 <h4>My complete tool stack: </h4>
 <ul><li>Grok 4.7 for research, personal website references, and building initial brand direction files </li><li>Fable 5 and 5.1 for reviewing design skills, finalizing design mockups, majority of code, UX, and mobile optimizations</li><li>GPT 5.6 Luna for cheaper code execution after the structure was in place</li><li>GPT 6 Astra for 3D rendering of the steel toggle switch, a gut check on design principles after I learned what grid sets were, further speed optimizations, copywriting assistance on this article, banner generation </li><li>Aside browser as a harness for driving my screen, reviewing GitHub skills, and even an attempt to compose this article (see below)</li><li>Wispr Flow to talk-to-prompt, making building a lot faster</li><li>Talented designers that let me gut checking design principles with them, inspiration from X, and 10+ references of other personal websites
@@ -175,7 +176,7 @@ I saw this post by <a href="https://x.com/marques_ph" target="_blank" rel="noope
 <p>
 
 I brought Aster photos of Buster + Punch steel switches as material references from a variety of angles. It generated this with the first prompt: </p>
-<figure><img src="../media/article-2096694660421104069-15.jpg" alt="First saved, but the material still needed more work." loading="lazy" decoding="async" width="1769" height="1331"><figcaption>First saved, but the material still needed more work.</figcaption></figure>
+<figure><img src="../media/article-2096694660421104069-15.jpg" alt="First saved, but the material still needed more work." loading="lazy" decoding="async" width="1769" height="1331"><figcaption>First saved, but the material still needed more work.</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-toggle-poster.jpg"><source src="../media/website-build-toggle.mp4" type="video/mp4"></video><figcaption>Testing the first steel toggle render.</figcaption></figure>
 <p>
 It took a few iterations to get to the hyperrealism and shine I wanted. The feedback got more specific:</p><ul><li>Shinier steel</li><li>Brushed grain</li><li>A darker recess around the lever</li><li>More detail on the grip and end cap</li><li>Horizontal screwdriver slots in the bolts</li></ul>
 <p>A lot of the above was picked up from image references. I ate through my 5h limit. I used one reset and it still wasn't enough. I bit the bullet and upgraded to Pro 5x. </p>
@@ -193,7 +194,7 @@ Make a hyperrealistic 3d version i can code into the site.</code></pre>
 <p>
 Really impressive. I've never opened Blender or used any 3D modeling software. Codex built it with Three.js geometry. The grip has 432 raised facets. The plate has depth, the lever casts a shadow, and the reflections come from a generated studio lighting setup.
 
-Then we worked on the sound.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-toggle-poster.jpg"><source src="../media/website-build-toggle.mp4" type="video/mp4"></video><figcaption>Testing the steel toggle and its weighted click.</figcaption></figure><p>It started with crisp, heavy, and damped clicks. It didn't hit right and I asked for more. The set grew to include chunky, metallic, relay, and latch sounds.
+Then we worked on the sound.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-sounds-poster.jpg"><source src="../media/website-build-sounds.mp4" type="video/mp4"></video><figcaption>Comparing the full set of toggle sounds.</figcaption></figure><p>It started with crisp, heavy, and damped clicks. It didn't hit right and I asked for more. The set grew to include chunky, metallic, relay, and latch sounds.
 
 Crisp snap was the closest and I asked for it to be slightly heavier. That's the weighted snap version you hear on the site today. 
 
@@ -201,21 +202,17 @@ The clicks are synthesized in the browser and wasn't extracted the audio from re
 <p>Then it helped me render a static image to load more quickly and merged on GitHub. 
 </p>
 <h3>Reflections, learnings, what i would do next time:</h3>
-<p class="reflection"><strong class="reflection-label">Reflection #1:</strong> The most powerful models are still not there for copywriting.</strong></p>
+<p class="reflection"><strong>Reflection #1: The most powerful models are still not there for copywriting.</strong></p>
 <p>After this entire process, I had every model write up a reflection on:</p><ul><li>What did we work on together</li><li>What was recieved and handed off</li><li>What were the main questions I asked</li><li>What was fixed and resolved together</li></ul>
 <p>Fable 5.1 had a majority of the early mock up assets. I fed all of this into Astra, loaded it with my <em>write-like-emily.md</em> skill, prompted it with Wispr Flow with my high level context and asked it draft this article for me. </p>
 <p>Astra probably helped me get 30% there. I've had to rewrite sentences and remove some that just don't sound like me. </p>
 <p>This makes me think I either haven't reinforced AI enough on how I'd like it to write, and/or it's just not there yet. The most helpful piece was the structure recommendations. </p>
-<p class="reflection"><strong class="reflection-label">Reflection #2:</strong> Seeing AI control your computer is magical, and I've tested it quite a bit on Grok <a href="https://x.com/bot" target="_blank" rel="noopener">@bot</a> and Aside, but it still feels like self-driving in early Tesla days where you need your hand on the wheel. </strong></p>
+<p class="reflection"><strong>Reflection #2: Seeing AI control your computer is magical, and I've tested it quite a bit on Grok <a href="https://x.com/bot" target="_blank" rel="noopener">@bot</a> and Aside, but it still feels like self-driving in early Tesla days where you need your hand on the wheel. </strong></p>
 <p>I also tried Grok 4.6 in the Aside browser to paste the draft and assets in the X composer for me. This is a 5 minute video sped up to 10 seconds. It made strange messages to test it could type.</p><figure class="video video-portrait"><video controls playsinline preload="none" poster="../media/website-build-grok-poster.jpg"><source src="../media/website-build-grok.mp4" type="video/mp4"></video><figcaption>Five minutes of browser control, sped up to ten seconds.</figcaption></figure>
-<p class="reflection"><strong class="reflection-label">Reflection #3:</strong> The more references you have on what you want, and what you don't want, the better. If you don't know what you want, work with AI as a brainstorming partner, but you yourself need to be the creative catalyst. </strong>
-
-<strong class="reflection-label">Reflection #4:</strong> Get experts in to check your work, and feed that back into AI. </strong></p>
-<p class="reflection"><strong class="reflection-label">Reflection #5:</strong> It's important to play with the latest models and consistently test. They're innovating so quickly now, and each new release feels like a huge jump forward. These last ~1.5 weeks of truly power using Hermes, Fable, Grok Bot, and now Astra have been some of the most productive for me.</strong></p>
-<p class="reflection"><strong class="reflection-label">Reflection #6:</strong> Use Fable 5.1 and Astra, the latest models for auditing and planning. Use a cheaper model for coding. </strong></p>
-<p><strong class="reflection-label">Reflection #7:</strong> Astra seems to be better at Fable 5.1 for 3D rendering and creative. I've also been using GPT 5.6 Sol quite a lot with simple statics, including the banner on this article. </strong>
-
-</p>
+<p class="reflection"><strong>Reflection #3: The more references you have on what you want, and what you don't want, the better. If you don't know what you want, work with AI as a brainstorming partner, but you yourself need to be the creative catalyst. </strong></p><p class="reflection"><strong>Reflection #4: Get experts in to check your work, and feed that back into AI. </strong></p>
+<p class="reflection"><strong>Reflection #5: It's important to play with the latest models and consistently test. They're innovating so quickly now, and each new release feels like a huge jump forward. These last ~1.5 weeks of truly power using Hermes, Fable, Grok Bot, and now Astra have been some of the most productive for me.</strong></p>
+<p class="reflection"><strong>Reflection #6: Use Fable 5.1 and Astra, the latest models for auditing and planning. Use a cheaper model for coding. </strong></p>
+<p class="reflection"><strong>Reflection #7: Astra seems to be better at Fable 5.1 for 3D rendering and creative. I've also been using GPT 5.6 Sol quite a lot with simple statics, including the banner on this article. </strong></p>
 <p>You can see the full website here: https://emilylai.com </p>
 <p>
 If you're a designer and have more feedback, please share. I still have some doubts on relying on AI for certain domains I have little working experience in. And if there are any recommendations for how I could reduce token costs or have better improved this workflow, please let me know. Thanks for reading. :) </p><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>

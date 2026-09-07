@@ -1,0 +1,40 @@
+media:
+  - name: article_media
+    label: Article media
+    input: media
+    output: media
+    rename: safe
+    categories: [image, video]
+
+content:
+  - name: website_build
+    label: Website build article
+    type: file
+    path: content/articles/website-build.json
+    format: json
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: cover
+        label: Cover image
+        type: image
+        required: true
+        options:
+          media: article_media
+      - name: html
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: html
+          media: article_media
+          switcher: true
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      update: "Update article via Pages CMS"

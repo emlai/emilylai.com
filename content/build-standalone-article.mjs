@@ -6,7 +6,9 @@ const article = JSON.parse(await readFile(source, 'utf8'));
 const escape = value => String(value).replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 }[character]));
-const body = article.html.replaceAll('src="media/', 'src="../media/');
+const body = article.html
+  .replaceAll('src="media/', 'src="../media/')
+  .replaceAll('poster="media/', 'poster="../media/');
 const title = escape(article.title);
 const description = 'How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.';
 const cover = `../${article.cover}`;

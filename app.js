@@ -159,6 +159,13 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
  const pal=document.getElementById('palette'),q=document.getElementById('q'),hits=pal.querySelector('.hits'),btn=document.querySelector('.sbtn'),results=document.getElementById('search-results');
  let returnFocus=btn;
  const textOf=it=>{if(Array.isArray(it)){const id=(String(it[2]||'').match(/status\/(\d+)/)||[])[1];return it[0]+' '+it[1]+' '+(id&&PREVIEWS[id]?PREVIEWS[id].text:'');}return [it.y,it.label,...(it.desc||[]),...((it.series||[]).map(s=>s.title)),...((it.posts||[]).map(u=>{const id=(u.match(/status\/(\d+)/)||[])[1];return id&&PREVIEWS[id]?PREVIEWS[id].text:''}))].join(' ');};
+ const topicTextOf=it=>Array.isArray(it)?[it[0],it[1],it[3]].join(' '):[it.y,it.label,it.tab,...((it.series||[]).map(s=>s.title))].join(' ');
+ const aiTopic=/\b(?:ai|artificial intelligence|grok|veo|runway|astra|fable|frontier models?|vibe coding|vibe marketing|compute|gaib|how i built this website)\b/i;
+ const isMatch=(it,s)=>{
+  if(s==='ai')return aiTopic.test(topicTextOf(it));
+  if(/^[a-z0-9]{1,2}$/.test(s))return new RegExp('(?:^|[^a-z0-9])'+s+'(?:$|[^a-z0-9])','i').test(textOf(it));
+  return textOf(it).toLowerCase().includes(s);
+ };
  function show(){
   returnFocus=document.activeElement;pal.hidden=false;btn.setAttribute('aria-expanded','true');
   document.querySelector('.layout').inert=true;document.querySelector('.contact').inert=true;
@@ -173,7 +180,7 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
   const s=v.trim().toLowerCase();
   if(!s){hits.textContent='';results.innerHTML='<p>Search by topic, project, or year.</p>';return;}
   const matches=[];
-  visible().forEach(b=>b.items.forEach((it,i)=>{if(textOf(it).toLowerCase().includes(s))matches.push({b,it,i});}));
+  visible().forEach(b=>b.items.forEach((it,i)=>{if(isMatch(it,s))matches.push({b,it,i});}));
   hits.textContent=matches.length+' found';
   results.innerHTML=matches.length?matches.map(({b,it,i})=>'<button type="button" data-folder="'+b.id+'" data-entry="'+i+'"><span>'+esc(Array.isArray(it)?it[1]:it.label)+'</span><small>'+esc(cap(b.name))+' · '+esc(Array.isArray(it)?it[0]:it.y)+'</small></button>').join(''):'<p>No entries found. Try a different topic or year.</p>';
  }

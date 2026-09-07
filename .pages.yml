@@ -23,6 +23,34 @@ content:
         required: true
         options:
           media: article_media
+      - name: introVideo
+        label: Intro website video
+        type: file
+        required: true
+        description: Appears after the first sentence of the article.
+        options:
+          media: article_media
+      - name: toggleVideo
+        label: First steel toggle render video
+        type: file
+        required: true
+        description: Appears directly under the image of the first steel toggle render.
+        options:
+          media: article_media
+      - name: soundsVideo
+        label: Steel toggle sounds video
+        type: file
+        required: true
+        description: Appears after “Then we worked on the sound.”
+        options:
+          media: article_media
+      - name: grokVideo
+        label: Grok browser video
+        type: file
+        required: true
+        description: Appears between reflections 2 and 3.
+        options:
+          media: article_media
       - name: html
         label: Article
         type: rich-text

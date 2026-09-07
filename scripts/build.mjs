@@ -3,6 +3,7 @@ import { build, transform } from 'esbuild';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import vm from 'node:vm';
+await import('../content/build-standalone-article.mjs');
 await mkdir('dist',{recursive:true});
 const files=['content.js','previews.js','motion.js','social-date.js','app.js'];
 const source=(await Promise.all(files.map(f=>readFile(f,'utf8')))).join('\n;\n');

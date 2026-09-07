@@ -1,8 +1,13 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 
 const source = 'content/articles/website-build.json';
 const output = 'website-build/index.html';
 const article = JSON.parse(await readFile(source, 'utf8'));
+const toggleVersion = createHash('sha256')
+  .update(await readFile('silver-toggle/silver-toggle.min.js'))
+  .digest('hex')
+  .slice(0, 12);
 const escape = value => String(value).replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 }[character]));
@@ -44,13 +49,20 @@ const html = `<!doctype html>
 <link rel="icon" href="../assets/favicons/favicon-el.svg" type="image/svg+xml">
 <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='dark')?'dark':'light'}catch(e){}})();</script>
 <style>
-:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:light}
+:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--steel-toggle-light:url("../silver-toggle/toggle-light.png");--steel-toggle-dark:url("../silver-toggle/toggle-dark.png");color-scheme:light}
 html[data-theme="dark"]{--bg:#171717;--ink:#f2f2f2;--text:#d9d9d9;--gray:#a0a0a0;--hair:#343434;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:18px/1.65 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.16em}a:hover{text-decoration-color:currentColor}
 ::selection{background:var(--ink);color:var(--bg)}:focus-visible{outline:1.5px solid var(--ink);outline-offset:4px}
 .top{max-width:1180px;margin:auto;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;font:14px/1.3 var(--sans)}
+.brand-tools{display:flex;align-items:center;gap:16px;min-width:0}
 .home{text-decoration:none;font-size:18px;font-weight:600;color:var(--ink)}.back{text-decoration:none;color:var(--gray)}.back:hover{color:var(--ink)}
+.mode{box-sizing:border-box;display:inline-flex;position:relative;flex:none;width:84px;height:44px;padding:0;gap:0;border:0;border-radius:5px;background:transparent}
+.mode::before{content:"";position:absolute;inset:0;width:100%;height:100%;background:var(--steel-toggle-light) center/100% 100% no-repeat;pointer-events:none}
+html[data-theme="dark"] .mode::before{background-image:var(--steel-toggle-dark)}
+.mode button{box-sizing:border-box;width:42px;height:44px;padding:0;border:0;border-radius:4px;background:transparent;cursor:pointer;z-index:1}
+.mode button svg{visibility:hidden}.mode button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+silver-toggle{display:inline-block;flex:none;width:84px;height:44px}
 .hero{max-width:1180px;margin:34px auto 64px;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.1fr);gap:64px;align-items:center}
 .eyebrow{margin:0 0 20px;color:var(--gray);font:13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
@@ -66,11 +78,12 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 .video video{max-height:78vh;object-fit:contain;background:#111}.video-portrait video{width:min(520px,100%);margin-inline:auto}
 .reflection,.reflection-label{font-family:var(--sans);line-height:1.5;color:var(--ink)}
 .source{margin-top:72px;padding-top:24px;border-top:1px solid var(--hair);color:var(--gray);font:14px/1.5 var(--sans)}
-@media(max-width:800px){body{font-size:17px}.top{padding:22px 20px}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h3{font-size:27px}.article h4{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(max-width:800px){body{font-size:17px}.top{padding:18px 20px;gap:12px}.brand-tools{gap:10px}.back{max-width:116px;text-align:right}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h3{font-size:27px}.article h4{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(max-width:360px){.home{font-size:16px}.brand-tools{gap:8px}.back{max-width:100px;font-size:12px}}
 </style>
 </head>
 <body>
-<header class="top"><a class="home" href="../">Emily Lai</a><a class="back" href="../">← Back to emilylai.com</a></header>
+<header class="top"><div class="brand-tools"><a class="home" href="../">Emily Lai</a><div class="mode" role="group" aria-label="Color scheme"><button type="button" data-mode="light" aria-pressed="true" aria-label="Light mode" title="Light mode"><svg aria-hidden="true"><use href="../assets/icons.svg#sun"></use></svg></button><button type="button" data-mode="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true"><use href="../assets/icons.svg#moon"></use></svg></button></div></div><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
   <div><p class="eyebrow">Writing</p><h1>${title}</h1><p class="date">${escape(article.date)}</p></div>
@@ -78,6 +91,32 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 </section>
 <article class="article">${body}<div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
 </main>
+<script>
+(() => {
+  const mode = document.querySelector('.mode');
+  const paint = () => mode?.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(document.documentElement.dataset.theme === button.dataset.mode)));
+  mode?.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+    document.documentElement.dataset.theme = button.dataset.mode;
+    try { localStorage.setItem('theme', button.dataset.mode); } catch (error) {}
+    paint();
+  }));
+  paint();
+})();
+</script>
+<script type="module">
+const mode = document.querySelector('.mode');
+let loadingToggle;
+const loadToggle = () => {
+  if (loadingToggle || !mode?.isConnected) return;
+  loadingToggle = import('../silver-toggle/silver-toggle.min.js?v=${toggleVersion}').then(({replaceThemeControl}) => {
+    const toggle = replaceThemeControl('.mode');
+    if (toggle) toggle.setAttribute('sound', 'weighted');
+  }).catch(() => {});
+};
+for (const event of ['pointerover', 'focusin', 'touchstart']) {
+  mode?.addEventListener(event, loadToggle, {once: true, passive: true});
+}
+</script>
 </body>
 </html>`;
 

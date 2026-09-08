@@ -24,7 +24,7 @@ let updates = String(article.updatesHtml || '')
   .replaceAll('poster="media/', 'poster="../media/');
 if (article.updatesImage) {
   const updateImage = `<figure><img src="${escape(mediaPath(article.updatesImage))}" alt="${escape(article.updatesImageAlt)}" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>${escape(article.updatesImageCaption)}</figcaption></figure>`;
-  updates = updates.replace('<h4>September 8th, 2026</h4>', `${updateImage}<h4>September 8th, 2026</h4>`);
+  updates = updates.replace('<h4>September 8th:</h4>', `${updateImage}<h4>September 8th:</h4>`);
 }
 
 const introSentence = '<p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p>';
@@ -73,7 +73,7 @@ silver-toggle{display:inline-block;flex:none;width:84px;height:44px}
 .hero{max-width:1180px;margin:34px auto 64px;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.1fr);gap:64px;align-items:center}
 .eyebrow{margin:0 0 20px;color:var(--gray);font:13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
-.date{margin:20px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
+.subtitle{max-width:700px;margin:20px 0 0;color:var(--text);font:18px/1.45 var(--serif)}.date{margin:10px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
 .article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
@@ -94,7 +94,7 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 <header class="top"><div class="brand-tools"><a class="home" href="../">Emily Lai</a><div class="mode" role="group" aria-label="Color scheme"><button type="button" data-mode="light" aria-pressed="true" aria-label="Light mode" title="Light mode"><svg aria-hidden="true"><use href="../assets/icons.svg#sun"></use></svg></button><button type="button" data-mode="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true"><use href="../assets/icons.svg#moon"></use></svg></button></div></div><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
-  <div><p class="eyebrow">Writing</p><h1>${title}</h1><p class="date">${escape(article.date)}</p></div>
+  <div><p class="eyebrow">Writing</p><h1>${title}</h1><p class="subtitle">${escape(article.subtitle)}</p><p class="date">${escape(article.date)}</p></div>
   <img src="${cover}" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
 </section>
 <article class="article">${body}<section class="updates" aria-labelledby="updates-title"><h3 id="updates-title">Updates</h3>${updates}</section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>

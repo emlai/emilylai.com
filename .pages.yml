@@ -59,6 +59,36 @@ content:
           format: html
           media: article_media
           switcher: true
+  - name: peptides
+    label: Peptides article
+    type: file
+    path: content/articles/peptides.json
+    format: json
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: true
+      - name: updated
+        label: Updated date
+        type: string
+        required: true
+      - name: description
+        label: Search description
+        type: text
+        required: true
+      - name: html
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: html
+          media: article_media
+          switcher: true
 
 settings:
   content:

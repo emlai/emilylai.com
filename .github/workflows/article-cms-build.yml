@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - content/articles/website-build.json
+      - content/articles/peptides.json
 
 permissions:
   contents: write
@@ -24,6 +25,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add website-build/index.html
-          git diff --cached --quiet || git commit -m "Rebuild website article"
+          git add website-build/index.html peptides/index.html
+          git diff --cached --quiet || git commit -m "Rebuild standalone articles"
           git push

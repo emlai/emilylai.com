@@ -10,6 +10,7 @@ const result=await transform(source,{minify:true,format:'iife',target:'es2020',l
 await writeFile('dist/site.min.js',result.code);
 await build({entryPoints:['silver-toggle/silver-toggle.js'],outfile:'silver-toggle/silver-toggle.min.js',bundle:true,minify:true,format:'esm',target:'es2020',legalComments:'eof'});
 await import('../content/build-standalone-article.mjs');
+await import('../content/build-peptides-article.mjs');
 await build({entryPoints:['style.css'],outfile:'dist/style.min.css',minify:true});
 const hash=async path=>createHash('sha256').update(await readFile(path)).digest('hex').slice(0,12);
 let html=await readFile('index.html','utf8');

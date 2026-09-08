@@ -51,6 +51,29 @@ content:
         description: Appears between reflections 2 and 3.
         options:
           media: article_media
+      - name: updatesHtml
+        label: Updates
+        type: rich-text
+        required: true
+        description: Dated updates shown at the bottom of the workflow article.
+        options:
+          format: html
+          media: article_media
+          switcher: true
+      - name: updatesImage
+        label: Updates image
+        type: image
+        required: true
+        options:
+          media: article_media
+      - name: updatesImageAlt
+        label: Updates image description
+        type: string
+        required: true
+      - name: updatesImageCaption
+        label: Updates image caption
+        type: string
+        required: true
       - name: html
         label: Article
         type: rich-text
@@ -80,6 +103,14 @@ content:
       - name: description
         label: Search description
         type: text
+        required: true
+      - name: podcastNavLabel
+        label: Podcast navigation label
+        type: string
+        required: true
+      - name: originalsLabel
+        label: Original posts label
+        type: string
         required: true
       - name: html
         label: Article

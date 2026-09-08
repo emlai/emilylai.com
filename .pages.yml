@@ -17,6 +17,10 @@ content:
         label: Title
         type: string
         required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+        required: true
       - name: cover
         label: Cover image
         type: image

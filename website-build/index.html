@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Building this website — Emily Lai</title>
+<title>How I Built This Website With Astra, Fable, and Grok — Emily Lai</title>
 <meta name="description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <link rel="canonical" href="https://emilylai.com/website-build/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Building this website">
+<meta property="og:title" content="How I Built This Website With Astra, Fable, and Grok">
 <meta property="og:description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <meta property="og:url" content="https://emilylai.com/website-build/">
 <meta property="og:image" content="https://emilylai.com/media/2096694660421104069-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@emilylai">
-<meta name="twitter:title" content="Building this website">
+<meta name="twitter:title" content="How I Built This Website With Astra, Fable, and Grok">
 <meta name="twitter:description" content="How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.">
 <meta name="twitter:image" content="https://emilylai.com/media/2096694660421104069-cover.jpg">
 <link rel="icon" href="../assets/favicons/favicon-el.svg" type="image/svg+xml">
@@ -36,7 +36,7 @@ silver-toggle{display:inline-block;flex:none;width:84px;height:44px}
 .hero{max-width:1180px;margin:34px auto 64px;padding:0 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.1fr);gap:64px;align-items:center}
 .eyebrow{margin:0 0 20px;color:var(--gray);font:13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
-.date{margin:20px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
+.subtitle{max-width:700px;margin:20px 0 0;color:var(--text);font:18px/1.45 var(--serif)}.date{margin:10px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
 .article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
@@ -57,7 +57,7 @@ figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;hei
 <header class="top"><div class="brand-tools"><a class="home" href="../">Emily Lai</a><div class="mode" role="group" aria-label="Color scheme"><button type="button" data-mode="light" aria-pressed="true" aria-label="Light mode" title="Light mode"><svg aria-hidden="true"><use href="../assets/icons.svg#sun"></use></svg></button><button type="button" data-mode="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true"><use href="../assets/icons.svg#moon"></use></svg></button></div></div><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
-  <div><p class="eyebrow">Writing</p><h1>Building this website</h1><p class="date">September 6th, 2026</p></div>
+  <div><p class="eyebrow">Writing</p><h1>How I Built This Website With Astra, Fable, and Grok</h1><p class="subtitle">The full workflow, prompts, and what I learned about AI in the process.</p><p class="date">September 6th, 2026</p></div>
   <img src="../media/2096694660421104069-cover.jpg" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
 </section>
 <article class="article"><p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-intro-poster.jpg"><source src="../media/website-build-intro.mp4" type="video/mp4"></video><figcaption>A walkthrough of the new emilylai.com.</figcaption></figure>
@@ -224,7 +224,7 @@ The clicks are synthesized in the browser and wasn't extracted the audio from re
 <p class="reflection"><strong>Reflection #7: Astra seems to be better at Fable 5.1 for 3D rendering and creative. I've also been using GPT 5.6 Sol quite a lot with simple statics, including the banner on this article. </strong></p>
 <p>You can see the full website here: https://emilylai.com </p>
 <p>
-If you're a designer and have more feedback, please share. I still have some doubts on relying on AI for certain domains I have little working experience in. And if there are any recommendations for how I could reduce token costs or have better improved this workflow, please let me know. Thanks for reading. :) </p><section class="updates" aria-labelledby="updates-title"><h3 id="updates-title">Updates</h3><h4>September 6th, 2026</h4><ul><li>I standardized the responsive grid and spacing across desktop, smaller laptops, and mobile.</li><li>I added the 3D steel light and dark mode toggle, the weighted snap sound, and exact static previews so it loads cleanly.</li><li>I optimized the site by reducing served image weight by 51%, adding progressive rendering, and loading heavier content only when it is needed.</li><li>I added and refined the contact menu.</li></ul><h4>September 7th, 2026</h4><ul><li>I simplified the desktop tabs and made the mobile note navigation clearer.</li><li>I added the interlocking EL favicon.</li><li>I made short searches topic-aware, so a search like “AI” brings up work that is actually about AI.</li><li>I improved the initial mobile and font-loading performance.</li><li>I added a CMS for editing the long-form workflow, turned it into a standalone page, and added the videos in their proper places.</li><li>I added the steel dark mode toggle to the standalone writing pages.</li></ul><figure><img src="../media/favicon-explorations-white.webp" alt="Explorations of E, EL, and LAI favicon and identity marks on a white background" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>Exploring E, EL, and LAI marks before choosing the interlocking EL favicon.</figcaption></figure><h4>September 8th, 2026</h4><ul><li>I added a polished long-form peptide log with Part 1, Part 2, later updates, original posts, and its own CMS entry.</li><li>I made the top bar sticky across standalone writing pages so my name, the theme toggle, and the link back to emilylai.com stay visible while you scroll.</li></ul></section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
+If you're a designer and have more feedback, please share. I still have some doubts on relying on AI for certain domains I have little working experience in. And if there are any recommendations for how I could reduce token costs or have better improved this workflow, please let me know. Thanks for reading. :) </p><section class="updates" aria-labelledby="updates-title"><h3 id="updates-title">Updates</h3><h4>September 6th, 2026:</h4><ul><li>Optimized site speed by reducing served image weight by 51%, adding progressive rendering, and loading heavier content when needed</li><li>Refined the contact menu</li></ul><h4>September 7th:</h4><ul><li>Improved readability on UX by simplifying desktop tabs and reducing word clutter on mobile</li><li>Added a favicon with GPT 5.6 Sol</li><li>Made short searches topic-aware, so a search like “AI” brings up work that is actually about AI</li><li>Improved the mobile and font loading performance further</li><li>Built a CMS for editing and adding long form blogs (like this one)</li></ul><figure><img src="../media/favicon-explorations-white.webp" alt="Explorations of E, EL, and LAI favicon and identity marks on a white background" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>Exploring E, EL, and LAI marks before choosing the interlocking EL favicon.</figcaption></figure><h4>September 8th:</h4><ul><li>Made top bar on all blog pages sticky</li></ul></section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
 </main>
 <script>
 (() => {

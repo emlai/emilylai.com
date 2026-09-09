@@ -161,9 +161,69 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
  let returnFocus=btn;
  const textOf=it=>{if(Array.isArray(it)){const id=(String(it[2]||'').match(/status\/(\d+)/)||[])[1];return it[0]+' '+it[1]+' '+(id&&PREVIEWS[id]?PREVIEWS[id].text:'');}return [it.y,it.label,...(it.desc||[]),...((it.series||[]).map(s=>s.title)),...((it.posts||[]).map(u=>{const id=(u.match(/status\/(\d+)/)||[])[1];return id&&PREVIEWS[id]?PREVIEWS[id].text:''}))].join(' ');};
  const topicTextOf=it=>Array.isArray(it)?[it[0],it[1],it[3]].join(' '):[it.y,it.label,it.tab,...((it.series||[]).map(s=>s.title))].join(' ');
- const aiTopic=/\b(?:ai|artificial intelligence|grok|veo|runway|astra|fable|frontier models?|vibe coding|vibe marketing|compute|gaib|how i built this website)\b/i;
+ const topicDetailsOf=it=>Array.isArray(it)?topicTextOf(it):[topicTextOf(it),...(it.desc||[])].join(' ');
+ const topicGroups=[
+  {
+   queries:['ai','artificial intelligence','ai tools','llm','llms','frontier model','frontier models'],
+   matches:/\b(?:ai|artificial intelligence|grok|veo|runway|astra|fable|frontier models?|llms?|vibe coding|vibe marketing|compute|gaib|how i built this website)\b/i
+  },
+  {
+   queries:['performance marketing','paid marketing','media buying','paid media','paid ads','paid advertising','digital advertising','online ads','advertising','ads','paid social','paid search','ppc','user acquisition'],
+   details:true,
+   matches:/\b(?:performance marketing|paid marketing|media buyers?|media buying|paid media|paid ads?|paid advertising|digital advertising|online ads?|paid social|paid search|ppc|user acquisition|facebook ads?|instagram ads?|adwords|roas|cpm|ctr|cac)\b/i
+  },
+  {
+   queries:['crypto','web3','blockchain','onchain','defi','decentralized finance','onchain finance','capital markets','tokenization','rwa','rwas','real world assets'],
+   details:true,
+   matches:/\b(?:crypto|web3|blockchain|onchain|defi|decentralized finance|onchain finance|capital markets|wallets?|dapps?|tokenization|rwas?|real[- ]world assets?|yield|vaults?)\b/i
+  },
+  {
+   queries:['ecommerce','e-commerce','ecom','dtc','direct to consumer'],
+   details:true,
+   matches:/\b(?:ecommerce|e-commerce|ecom|dtc|direct[- ]to[- ]consumer)\b/i
+  },
+  {
+   queries:['short form video','short-form video','creator marketing','content creators','ugc','video distribution'],
+   matches:/\b(?:short[- ]form video|creator marketing|content creators?|ugc|clipping|tiktok|video distribution|content repurposing|virality|viral)\b/i
+  },
+  {
+   queries:['personal brand','personal branding','founder brand','founder branding'],
+   matches:/\b(?:personal brand(?:ing)?|founder brand(?:ing)?)\b/i
+  },
+  {
+   queries:['gtm','go to market','go-to-market','growth marketing'],
+   details:true,
+   matches:/\b(?:gtm|go[- ]to[- ]market|growth marketing|growth strategy|marketing strategy|distribution|head of marketing|cmo|product marketing|growth org)\b/i
+  },
+  {
+   queries:['brand strategy','brand positioning','positioning','messaging','narrative'],
+   details:true,
+   matches:/\b(?:brand strategy|brand positioning|positioning|messaging|narrative)\b/i
+  },
+  {
+   queries:['seo','search engine optimization','aeo','answer engine optimization','organic search'],
+   details:true,
+   matches:/\b(?:seo|search engine optimization|aeo|answer engine optimization|organic search|organic traffic|affiliate website)\b/i
+  },
+  {
+   queries:['influencer marketing','influencers','affiliate marketing','affiliates','referral marketing','referrals','kol','kols','clipping'],
+   details:true,
+   matches:/\b(?:influencer marketing|influencers?|affiliate marketing|affiliates?|referral marketing|referrals?|kols?|clipping)\b/i
+  },
+  {
+   queries:['analytics','attribution','measurement','cro','conversion rate optimization','a/b testing','ab testing'],
+   details:true,
+   matches:/\b(?:analytics|attribution|measurement|tracking|cro|conversion rate optimization|a\/b tests?|ab tests?|product analytics|data-driven|dashboards?|conversion funnels?)\b/i
+  },
+  {
+   queries:['community','community marketing','community growth','telegram','discord'],
+   details:true,
+   matches:/\b(?:community|community marketing|community growth|telegram|discord)\b/i
+  },
+ ];
+ const topicMatch=(it,s)=>{const group=topicGroups.find(({queries})=>queries.includes(s));return group?group.matches.test(group.details?topicDetailsOf(it):topicTextOf(it)):null;};
  const isMatch=(it,s)=>{
-  if(s==='ai')return aiTopic.test(topicTextOf(it));
+  const topical=topicMatch(it,s);if(topical!==null)return topical;
   if(/^[a-z0-9]{1,2}$/.test(s))return new RegExp('(?:^|[^a-z0-9])'+s+'(?:$|[^a-z0-9])','i').test(textOf(it));
   return textOf(it).toLowerCase().includes(s);
  };

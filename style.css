@@ -270,7 +270,7 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
 .reader .year-break p{font:13px var(--sans);color:var(--gray);margin:0}
 .reader .year-break + .post{border-top:0;margin-top:0;padding-top:0}
 .reader .deck{margin:20px 0 24px}
-.reader .deck summary{font:14px var(--sans);cursor:pointer;padding:14px 0;border-block:1px solid var(--hair);min-height:44px}
+.reader .deck summary{font:600 14px/1.4 var(--sans);color:var(--ink);cursor:pointer;padding:14px 0;border-block:1px solid var(--hair);min-height:44px}
 .reader .deck figure{margin:20px 0}
 .reader .deck img{width:100%;height:auto;display:block}
 .reader .deck figcaption{font:12px var(--sans);text-align:center;color:var(--gray);margin-top:8px}

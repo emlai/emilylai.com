@@ -23,7 +23,7 @@ for(const id of ids){const t=byId.get(id);if(!t){if(FX[id])prev[id]=FX[id];else 
  const out=mediaOf(t,id);if(out.length)p.media=out;
  const th=[];let q=[id];while(q.length){const n=[];for(const pid of q)for(const k of (kids.get(pid)||[])){th.push(k);n.push(k.id_str);}q=n;}
  if(th.length)p.thread=th.sort((a,b)=>a.id_str.localeCompare(b.id_str)).map(k=>{const o={text:clean(k.full_text)};const mm=mediaOf(k,k.id_str);if(mm.length)o.media=mm;return {...o,...overrides[k.id_str]};});
- if(FX[id]&&(!p.text||/…$/.test(p.text)||FX[id].article)){p.text=FX[id].text||p.text;if(FX[id].media&&FX[id].media.length)p.media=FX[id].media;}
+ if(FX[id]&&(!p.text||/…$/.test(p.text)||FX[id].article)){p.text=clean(FX[id].text||p.text);if(FX[id].media&&FX[id].media.length)p.media=FX[id].media;}
  prev[id]={...p,...overrides[id]};}
 fs.writeFileSync(outPath,'window.PREVIEWS='+JSON.stringify(prev)+';\n');
 console.log('previews',Object.keys(prev).length,'copied',copied,'missing (newer than export)',missing);

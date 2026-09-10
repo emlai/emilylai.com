@@ -8,7 +8,7 @@ const textOnly=process.argv.includes('--text-only');
 for(const id of process.argv.slice(2).filter(a=>/^\d+$/.test(a))){if(cache[id]){console.log(id,'cached');continue;}
  const r=await fetch('https://api.fxtwitter.com/i/status/'+id);if(!r.ok){console.log(id,'HTTP',r.status);continue;}
  const j=await r.json();const t=j.tweet;if(!t){console.log(id,'no tweet');continue;}
- const p={text:dash(t.text.replace(/https:\/\/t\.co\/\w+/g,'').trim()),date:new Date(t.created_at).toISOString().slice(0,10),likes:+t.likes||0,author:t.author&&t.author.screen_name};
+ const p={text:dash(t.text.replace(/https:\/\/t\.co\/\w+/g,'').replace(/[ \t]+\n/g,'\n').trim()),date:new Date(t.created_at).toISOString().slice(0,10),likes:+t.likes||0,author:t.author&&t.author.screen_name};
  const media=[];let n=0;
  if(!textOnly)for(const ph of (t.media&&t.media.photos)||[]){const f='media/'+id+'-fx'+(++n)+'.jpg';await grab(ph.url,f);media.push({t:'photo',src:f});}
  if(!textOnly)for(const v of (t.media&&t.media.videos)||[]){const f='media/'+id+'-fx'+(++n)+'.mp4',po='media/'+id+'-fx'+n+'-poster.jpg';await grab(v.url,f);if(v.thumbnail_url)await grab(v.thumbnail_url,po);media.push({t:'video',src:f,poster:fs.existsSync(po)?po:''});}

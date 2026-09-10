@@ -34,6 +34,11 @@ function renderFolders(){F.innerHTML=visible().map(b=>'<li'+(b.egg?' class="egg"
 function rowHTML(it,i,prev){if(Array.isArray(it)){const py=prev?(Array.isArray(prev)?prev[0]:prev.y):null;const first=py!==it[0];return '<li'+(first?' class="first"':'')+'>'+(first?'<span class="d">'+esc(it[0])+'</span>':'')+'<span>'+(it[2]?'<a href="'+it[2]+'" data-u="'+it[2]+'">'+esc(it[1])+'</a>':esc(it[1]))+'</span></li>';}
  const py=prev?(Array.isArray(prev)?prev[0]:prev.y):null;const first=py!==it.y;return '<li class="role'+(first?' first':'')+'">'+(first?'<span class="d">'+esc(it.y)+'</span>':'')+'<span><a href="#" class="lbl" data-role="'+i+'">'+esc(plain(it.label))+'</a></span></li>';}
 function renderPanes(){P.innerHTML=BUCKETS.map(b=>'<div class="pane" id="p-'+b.id+'" role="tabpanel" aria-labelledby="h-'+b.id+'"><div class="list"><h2 id="h-'+b.id+'">'+esc(cap(b.name))+'</h2><p class="meta">'+b.items.length+' entries</p><ul>'+b.items.map((it,i)=>rowHTML(it,i,b.items[i-1])).join('')+'</ul>'+CONTACT+'</div><div class="divider" role="separator" aria-orientation="vertical" aria-label="Resize columns" aria-valuemin="22" aria-valuemax="70" aria-valuenow="38" tabindex="0"></div><div class="nav-shade" aria-hidden="true"></div><aside class="reader" tabindex="-1" aria-label="Entry content"><p class="empty">Select an entry to read it here.</p></aside></div>').join('');}
+const routeName=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+function routeEntry(){const parts=decodeURIComponent(location.hash.slice(1)).split('/');if(parts.length!==2)return null;for(const b of BUCKETS){if(routeName(b.name)!==parts[0])continue;const index=b.items.findIndex(it=>!Array.isArray(it)&&it.slug===parts[1]);if(index>=0)return {b,index,it:b.items[index]};}return null;}
+function setRoute(b,it){const hash=it?.slug?'#'+routeName(b.name)+'/'+it.slug:'';if(location.hash===hash)return;history.replaceState(null,'',location.pathname+location.search+hash);}
+function clearRoute(){if(routeEntry())history.replaceState(null,'',location.pathname+location.search);}
+function openRoute(){const route=routeEntry();if(!route)return;visit(route.b.id);open=[route.b.id];active=route.b.id;sync(false);P.querySelectorAll('#p-'+route.b.id+' .list li')[route.index]?.querySelector('a')?.click();}
 function remember(){store.set('desk',{open,active,transform:isMobile()?'':WIN.style.transform||'',w:isMobile()?'':WIN.style.width||'',h:isMobile()?'':WIN.style.height||''});}
 function keepWindowInView(){if(isMobile()||!open.length)return;const r=WIN.getBoundingClientRect(),m=/translate\((-?[\d.]+)px, ?(-?[\d.]+)px\)/.exec(WIN.style.transform||'');const dx=r.left<24?24-r.left:Math.min(0,innerWidth-24-r.right),dy=r.top<24?24-r.top:Math.min(0,innerHeight-24-r.bottom);if(dx||dy)WIN.style.transform='translate('+((m?+m[1]:0)+dx)+'px, '+((m?+m[2]:0)+dy)+'px)';}
 function dividerBounds(pane){const style=getComputedStyle(pane),width=pane.clientWidth;const min=parseFloat(style.getPropertyValue("--list-min")),reader=parseFloat(style.getPropertyValue("--reader-min")),divider=parseFloat(style.getPropertyValue("--divider-width"));return {width,min,max:Math.max(min,width-reader-divider)};}
@@ -57,20 +62,20 @@ function sync(focusTab){if(isMobile()&&open.length>1)open=[active];remember();
 renderFolders();renderPanes();
 WIN.inert=true;
 function visit(id){const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked()){pendingDiscovery=true;renderFolders();}if(BUCKETS.find(b=>b.id===id)?.egg)store.set('eggOpened',true);}
-function closeWindow(immediate=false){if(immediate!==true&&isMobile()&&open.length){Motion.folderClose(()=>closeWindow(true));return;}const id=active;open=[];active=null;sync(false);revealDiscovery();F.querySelector('[data-w="'+id+'"]')?.focus({preventScroll:true});}
-function backToList(pane,immediate=false){if(!immediate&&isMobile()&&pane.classList.contains('has-cur')){Motion.noteBack(pane,()=>backToList(pane,true));return;}pauseMedia(pane);pane.classList.remove('has-cur');refreshTabLabel(pane);const a=pane.querySelector('.list li.cur a');pane.querySelector('.list').inert=false;pane.querySelector('.reader').inert=isMobile();a?.focus({preventScroll:true});}
+function closeWindow(immediate=false){if(immediate!==true&&isMobile()&&open.length){Motion.folderClose(()=>closeWindow(true));return;}const id=active;open=[];active=null;clearRoute();sync(false);revealDiscovery();F.querySelector('[data-w="'+id+'"]')?.focus({preventScroll:true});}
+function backToList(pane,immediate=false){if(!immediate&&isMobile()&&pane.classList.contains('has-cur')){Motion.noteBack(pane,()=>backToList(pane,true));return;}pauseMedia(pane);pane.classList.remove('has-cur');clearRoute();refreshTabLabel(pane);const a=pane.querySelector('.list li.cur a');pane.querySelector('.list').inert=false;pane.querySelector('.reader').inert=isMobile();a?.focus({preventScroll:true});}
 Motion.connect({back:pane=>backToList(pane,true),close:()=>closeWindow(true),
  neighbor:direction=>{const tabs=[...T.querySelectorAll('[data-t]')],i=tabs.findIndex(t=>t.dataset.t===active),id=tabs[i+direction]?.dataset.t;return id?document.getElementById('p-'+id):null;},
  tab:pane=>{const id=pane.id.slice(2);visit(id);open=[id];active=id;P.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(false);T.querySelector('[aria-selected="true"]')?.focus({preventScroll:true});}
 });
 
 /* folders */
-F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.w;const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked()){pendingDiscovery=true;renderFolders();}if((BUCKETS.find(x=>x.id===id)||{}).egg)store.set('eggOpened',true);
+F.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;clearRoute();const id=b.dataset.w;const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked()){pendingDiscovery=true;renderFolders();}if((BUCKETS.find(x=>x.id===id)||{}).egg)store.set('eggOpened',true);
  if(isMobile()){const origin=b.getBoundingClientRect();open=[id];active=id;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(e.detail===0);Motion.folderOpen(origin);return;}
  if(open.includes(id)){open=[];active=null;sync(false);}else{const first=!open.length;open=[id];active=id;sync(true);if(first)Motion.folderOpen();}});
 
 /* tabs */
-T.addEventListener('click',e=>{const x=e.target.closest('.x');const t=e.target.closest('[data-t]');
+T.addEventListener('click',e=>{const x=e.target.closest('.x');const t=e.target.closest('[data-t]');clearRoute();
  if(isMobile()){if(t){const direction=BUCKETS.findIndex(b=>b.id===t.dataset.t)-BUCKETS.findIndex(b=>b.id===active);Motion.reset();visit(t.dataset.t);open=[t.dataset.t];active=t.dataset.t;document.querySelectorAll('.pane').forEach(p=>p.classList.remove('has-cur'));sync(e.detail===0);if(direction){Motion.tabChange(P.querySelector('.pane.on'),Math.sign(direction));Motion.haptic();}}return;}
  if(x){const id=x.dataset.x;if(open.length===1){closeWindow();return;}open=open.filter(o=>o!==id);if(active===id)active=open[open.length-1]||null;sync(true);return;}
  if(t){active=t.dataset.t;sync(true);}});
@@ -97,7 +102,7 @@ function descHTML(d){if(!d||!d.length)return '';let out='',ul=[];const flush=()=
 function imagesHTML(it){return (it.images||[]).filter(img=>(img.src||img)!==it.cover?.src).map(img=>'<div class="media">'+(img.src?'<a href="'+esc(img.src)+'" target="_blank" rel="noopener" aria-label="'+esc(img.alt)+': open full size">'+imageHTML(img.src,img.alt)+'</a>':imageHTML(img))+'</div>').join('');}
 function embedHTML(e){const url=e.src.replace('/embed/feed/update/','/feed/update/');return '<div class="li"><p class="who"><span>LinkedIn</span><a href="'+esc(url)+'" target="_blank" rel="noopener">Open original ↗</a></p><iframe src="'+esc(e.src)+'" height="'+e.h+'" loading="lazy" tabindex="-1" title="LinkedIn post preview"></iframe></div>';}
 function coverHTML(it){return it.cover?'<div class="media cover">'+imageHTML(it.cover.src,it.cover.alt,true)+'</div>':'';}
-function deckHTML(it){if(!it.deck)return '';return '<details class="deck"><summary>View all '+it.deck.slides.length+' slides</summary>'+it.deck.slides.map((slide,i)=>'<figure><a href="'+esc(slide.src)+'" target="_blank" rel="noopener" aria-label="Open slide '+(i+1)+' full size"><img src="'+esc(slide.src)+'" alt="'+esc(slide.text||'Presentation slide '+(i+1))+'" width="1440" height="1080" loading="lazy" decoding="async"></a><figcaption>Slide '+(i+1)+' of '+it.deck.slides.length+'</figcaption></figure>').join('')+'<p class="out"><a href="'+esc(it.deck.url)+'" target="_blank" rel="noopener">Original presentation on SlideShare ↗</a></p></details>';}
+function deckHTML(it){if(!it.deck)return '';const w=it.deck.width||1440,h=it.deck.height||1080,label=it.deck.sourceLabel||'Original presentation on SlideShare ↗',source=it.deck.url?'<p class="out"><a href="'+esc(it.deck.url)+'" target="_blank" rel="noopener">'+esc(label)+'</a></p>':'';return '<details class="deck"><summary>View all '+it.deck.slides.length+' slides</summary>'+it.deck.slides.map((slide,i)=>'<figure><a href="'+esc(slide.src)+'" target="_blank" rel="noopener" aria-label="Open slide '+(i+1)+' full size"><img src="'+esc(slide.src)+'" alt="'+esc(slide.text||'Presentation slide '+(i+1))+'" width="'+w+'" height="'+h+'" loading="lazy" decoding="async"></a><figcaption>Slide '+(i+1)+' of '+it.deck.slides.length+'</figcaption></figure>').join('')+source+'</details>';}
 /* a single video renders large; several render as a row of cards (or stacked for type stack) */
 function seriesHTML(it){if(!it.series)return '';if(it.stack||(it.series.length===1&&it.series[0].kind==='yt'))return it.series.map(stackHTML).join('');return '<div class="row" role="list">'+it.series.map(cardHTML).join('')+'</div><div class="stagebox"></div>';}
 /* posts and LinkedIn embeds in one stream, newest first. LinkedIn ids carry their timestamp in the top bits. */
@@ -123,8 +128,9 @@ P.addEventListener('click',e=>{
  const y=e.target.closest('a[data-yt]');if(y){e.preventDefault();const rd=y.closest('.reader'),box=rd.querySelector('.stagebox');const html='<div class="video-frame"><button type="button" class="media-back" aria-label="Back to entries" title="Swipe right or tap to go back"><span aria-hidden="true">‹</span></button><iframe src="https://www.youtube-nocookie.com/embed/'+y.dataset.yt+'?autoplay=1" title="Video" allow="autoplay" allowfullscreen></iframe></div>';if(box){box.innerHTML=html;rd.querySelectorAll('.card').forEach(k=>k.classList.toggle('on',k===y));}else y.outerHTML=html;return;}
  const sp=e.target.closest('a[data-series]');if(sp){e.preventDefault();const rd=sp.closest('.reader'),box=rd.querySelector('.stagebox');const b=BUCKETS.find(x=>'p-'+x.id===sp.closest('.pane').id),cur=sp.closest('.pane').querySelector('li.cur a[data-role]'),it=cur&&b.items[+cur.dataset.role],safe=!!(it&&it.safe);box.innerHTML=postHTML(sp.dataset.u,safe,safe);rd.querySelectorAll('.card').forEach(k=>k.classList.toggle('on',k===sp));return;}
  const r=e.target.closest('a[data-role]');if(r){e.preventDefault();const pane=r.closest('.pane'),b=BUCKETS.find(x=>'p-'+x.id===pane.id),it=b.items[+r.dataset.role];const rd=select(pane,r.closest('li'));
+  setRoute(b,it);
   const pageLink=PAGE_LINKS[it.tab],out=pageLink?'<p class="out"><a href="'+pageLink.href+'">'+esc(pageLink.label)+'</a></p>':(it.link?'<p class="out"><a href="'+it.link+'" target="_blank" rel="noopener">Open '+esc(new URL(it.link).host)+' ↗</a></p>':'');rd.innerHTML=coverHTML(it)+'<p class="who"><span>'+esc(it.y)+'</span></p>'+(it.hideTitle?'':'<p class="rl">'+md(it.label)+'</p>')+descHTML(it.desc)+logosHTML(it.label)+seriesHTML(it)+imagesHTML(it)+deckHTML(it)+out+streamHTML(it);mobileBack(pane,rd,it);return;}
- const a=e.target.closest('a[data-u]');if(!a||a.classList.contains('mail'))return;e.preventDefault();const pane=a.closest('.pane'),u=a.dataset.u,lab=false;const rd=select(pane,a.closest('li'));
+ const a=e.target.closest('a[data-u]');if(!a||a.classList.contains('mail'))return;e.preventDefault();clearRoute();const pane=a.closest('.pane'),u=a.dataset.u,lab=false;const rd=select(pane,a.closest('li'));
  const m=u.match(/status\/(\d+)/),yt=u.match(/youtu\.be\/([\w-]+)/);
  if(m)rd.innerHTML=postHTML(u,lab);
  else if(yt)rd.innerHTML='<p class="who"><span>YouTube · @emilylai8</span></p><a class="yt vid" href="'+u+'" data-yt="'+yt[1]+'"><img src="https://img.youtube.com/vi/'+yt[1]+'/hqdefault.jpg" alt="Play the video here"></a><p class="out"><a href="'+u+'" target="_blank" rel="noopener">Open on YouTube ↗</a></p>';
@@ -290,6 +296,9 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
  document.addEventListener('focusin',e=>{if(!popup.hidden&&!popup.contains(e.target)&&e.target!==trigger)close();});
  addEventListener('resize',()=>close());document.addEventListener('scroll',()=>{if(popup.hidden)return;const r=trigger.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)close();else position();},true);
 })();
+
+openRoute();
+addEventListener('hashchange',openRoute);
 
 
 })();

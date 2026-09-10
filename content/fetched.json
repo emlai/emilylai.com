@@ -1031,5 +1031,30 @@
     "src": "media/2096694660421104069-cover.jpg"
    }
   ]
+ },
+ "2095827825131479329": {
+  "text": "Using AI to Improve your Life\n\nDiscover how to use AI to improve your life. Zero coding skills required.\n\nSave time, money, and get more done in your day.",
+  "date": "2026-09-04",
+  "likes": 5,
+  "author": "cryptohubmalta",
+  "media": [
+   {
+    "t": "photo",
+    "src": "media/2095827825131479329-fx1.jpg"
+   }
+  ]
+ },
+ "2098063465789190351": {
+  "text": "Using AI to improve your life.\n\nFull slides from my talk yesterday: https://emilylai.com/#speaking/crypto-hub-malta-ai\n\nNot shown but important: discussions on privacy, guardrails, and dependency",
+  "date": "2026-09-10",
+  "likes": 13,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "video",
+    "src": "media/2098063465789190351-fx1.mp4",
+    "poster": "media/2098063465789190351-fx1-poster.jpg"
+   }
+  ]
  }
 }

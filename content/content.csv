@@ -217,9 +217,11 @@ https://www.linkedin.com/embed/feed/update/urn:li:share:6442755508939120640 | he
 deck: content/dojo-slides.json
 curated order
 tab: Dojo bali"
-"side projects","1","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
+"side projects","1","Sep 2026","sponsor me: a sponsorship index","role","https://sponsorme.emilylai.com","","","approved","curated order
+tab: Sponsor me"
+"side projects","2","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
 tab: emilylai.com"
-"side projects","2","2026","defi-native: make your AI an expert on onchain finance","role","https://x.com/defi_native_ai/status/2095510628865593684
+"side projects","3","2026","defi-native: make your AI an expert on onchain finance","role","https://x.com/defi_native_ai/status/2095510628865593684
 https://x.com/emilylai/status/2095549760631443716
 https://x.com/emilylai/status/2094480103463899494
 https://x.com/emilylai/status/2094132631478698379
@@ -228,7 +230,7 @@ https://x.com/emilylai/status/2093538609827631270
 https://x.com/emilylai/status/2094132628458803417
 https://defi-native.ai","> Fully built in public with AI from the skill itself, the website, and all social graphics.","","approved","curated order
 tab: defi-native"
-"side projects","3","2024 to 2025","Onboarding friends to crypto: the video series","note","https://x.com/emilylai/status/1909612696674124050
+"side projects","4","2024 to 2025","Onboarding friends to crypto: the video series","note","https://x.com/emilylai/status/1909612696674124050
 https://x.com/emilylai/status/1902350737218146573
 https://x.com/emilylai/status/1894551182242451967
 https://x.com/emilylai/status/1893547624764223503
@@ -240,7 +242,7 @@ Onboarding my lawyer friend to crypto | https://youtu.be/bszY7lH2W0Y
 Onboarding my ex-Tesla, CPA, yoga instructor friend | https://youtu.be/zzP7fT_6Hig
 Choosing a crypto wallet for the first time: raw feedback | https://youtu.be/zVs2CI0dEJ8","approved","curated order
 tab: Onboarding"
-"side projects","4","2024 to 2025","Crypto marketing roast live stream series","note","https://x.com/emilylai/status/1901983349784092752","","Ep. 7: April Fools campaigns edition | https://youtu.be/GpJLsaaamfE
+"side projects","5","2024 to 2025","Crypto marketing roast live stream series","note","https://x.com/emilylai/status/1901983349784092752","","Ep. 7: April Fools campaigns edition | https://youtu.be/GpJLsaaamfE
 Ep. 6: Scroll, Zerion, Eco, Malda, Privy, Soulmates | https://youtu.be/WvmuyjYytoM
 Ep. 5: live audience roast with Optimism, SOON, Virtuals | https://youtu.be/7j9HGcRo078
 Ep. 4: social media edition with AlexOnChain | https://youtu.be/yXqj1N2nWnU
@@ -249,16 +251,16 @@ Ep. 2: with Reka Medvecz | https://youtu.be/j39lbRx0o4E
 Ep. 1: with Reka Medvecz | https://youtu.be/HbpFQ0iDqYA","approved","The X posts carry the stream announcements and clips. Add YouTube recordings to the series column if they exist.
 curated order
 tab: Roast"
-"side projects","5","2025","Cozy & curious: asking experts about the future, tech, and world direction","series","https://x.com/emilylai/status/1886866126824407313","","TradFi goes crypto? with Payy CEO Sid Gandhi | https://youtu.be/CvElHYFxEwY
+"side projects","6","2025","Cozy & curious: asking experts about the future, tech, and world direction","series","https://x.com/emilylai/status/1886866126824407313","","TradFi goes crypto? with Payy CEO Sid Gandhi | https://youtu.be/CvElHYFxEwY
 07 Energy: new batteries, tariffs, melting GPUs, with Danielle Fong | https://youtu.be/c4a0cXLRUdM
 02 Religion in ancient Rome and crypto, with Jill Gunter | https://youtu.be/M5C7-epcp7A
 01 The future of Bitcoin, quantum computing, and AI | https://youtu.be/326nMQceUgY","approved","curated order
 tab: Cozy & curious"
-"side projects","6","2025","Early 2025 vibe coding video series","note","https://x.com/emilylai/status/1890047985289142661
+"side projects","7","2025","Early 2025 vibe coding video series","note","https://x.com/emilylai/status/1890047985289142661
 https://x.com/emilylai/status/1891795292984406270","","Using AI to make an app in ten minutes | https://youtu.be/o1eKHZCUt18
 Using AI to make an event website in ten minutes | https://youtu.be/a2ktaeEs3iE","approved","curated order
 tab: Vibe coding"
-"side projects","7","2016 to 2018","Unicorn gear: first ecommerce store","role","https://x.com/emilylai/status/1807113908173308269
+"side projects","8","2016 to 2018","Unicorn gear: first ecommerce store","role","https://x.com/emilylai/status/1807113908173308269
 media/unicorngear.webp
 media/unicorngear2.webp
 media/unicorngear3.webp","> Right after college, I started an ecom business with my roommate. It started as dropshipping. First, we set up a Shopify store, designed a logo, and hooked up Oberlo to AliExpress for dropshipping. I had limited Photoshop skills back then and manipulated an existing logo I found on Google Images. Then we went full on private labeling, packed bags to Asia, and toured 3 factories in Shenzhen.
@@ -282,7 +284,7 @@ media/unicorngear3.webp","> Right after college, I started an ecom business with
 > Most importantly, it led me to where I am today. Growth and digital marketing is so much fun. Marketing principles are the same today. But there are loads of new tools to use, problems to solve, and stories to share.","","approved","cover: media/unicorngear.webp | Inside the factory making Unicorn Gear products.
 curated order
 tab: Ecommerce"
-"side projects","8","2017","Bitcoin and crypto affiliate website","role","https://x.com/emilylai/status/1806644072444047692
+"side projects","9","2017","Bitcoin and crypto affiliate website","role","https://x.com/emilylai/status/1806644072444047692
 media/bitcoin-blog-1.jpg
 media/bitcoin-blog-2.jpg","> This was early on in my digital marketing experiments. I made a website with guides on how to buy and secure crypto. I monetized it with affiliate links for hardware wallets and exchange signups.","","approved","curated order
 tab: Affiliate blog"

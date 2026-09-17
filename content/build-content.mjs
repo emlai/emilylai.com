@@ -40,6 +40,8 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  if(/hide reader title/i.test(notes||''))it.hideTitle=true;
  const deck=(notes||'').match(/(?:^|\n)deck:\s*(\S+)/);
  if(deck)it.deck=JSON.parse(fs.readFileSync(deck[1],'utf8'));
+ const linkLabel=(notes||'').match(/(?:^|\n)link label:\s*([^\n]+)/i);
+ if(linkLabel&&it.link)it.linkLabel=linkLabel[1].trim();
  const share=(notes||'').match(/(?:^|\n)share:\s*([a-z0-9-]+)/i);
  if(share)it.slug=share[1].toLowerCase();
  if(Object.keys(cuts).length)it.cuts=cuts;

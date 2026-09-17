@@ -217,7 +217,11 @@ https://www.linkedin.com/embed/feed/update/urn:li:share:6442755508939120640 | he
 deck: content/dojo-slides.json
 curated order
 tab: Dojo bali"
-"side projects","1","Sep 2026","sponsor me: a sponsorship index","role","https://sponsorme.emilylai.com","","","approved","curated order
+"side projects","1","Sep 2026","sponsor me: the sponsorship index","role","https://sponsorme.emilylai.com
+media/sponsor-me-index.webp","> I noticed a trend of people turning their bodies, clothing, and possessions into ad space. It started with [Vincent](https://x.com/VynseDev/status/2092544016315306400) letting companies put their logos on his laptop. Marc Lou then [raised a record $112,000](https://x.com/marclou/status/2097326512169222407) by advertising his body for a HYROX competition. This led to many other creators selling ad space for company logos on clothes, bicycles, cars, and more. I was reminded of early experiments when people sold tattoo space on their bodies on eBay. I thought about how diminishing returns correlate with diminishing novelty and found this trend resurgence on X interesting.
+> The project was built with a combination of Claude Code, ChatGPT Codex, and Grok.","","approved","cover: media/sponsor-me-index.webp | sponsor me, the sponsorship index, shown on a laptop and a phone.
+link label: See it here →
+curated order
 tab: Sponsor me"
 "side projects","2","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
 tab: emilylai.com"

@@ -15,7 +15,7 @@ export function fallbackHTML(buckets){
   for(const id of [...(it.streamOrder||[])].reverse()){
    const i=social.findIndex(s=>s.url.includes(id));if(i>=0)social.unshift(...social.splice(i,1));
   }
-  const sources=[...social.map(s=>link(s.url,s.label)),...(it.series||[]).map(s=>link(s.kind==='yt'?'https://youtu.be/'+s.id:s.url,s.title)),...(it.images||[]).map(img=>link(img.src||img,img.alt||'View image')),...(it.link?[link(it.link,'Visit website')]:[])];
+  const sources=[...social.map(s=>link(s.url,s.label)),...(it.series||[]).map(s=>link(s.kind==='yt'?'https://youtu.be/'+s.id:s.url,s.title)),...(it.images||[]).map(img=>link(img.src||img,img.alt||'View image')),...(it.link?[link(it.link,it.linkLabel||'Visit website')]:[])];
   return '<article><h3>'+esc(String(it.label).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'$1'))+'</h3><small>'+esc(it.y)+'</small>'+desc+(sources.length?'<p>'+sources.join(' · ')+'</p>':'')+'</article>';
  }).join('\n')+'\n</details>').join('\n')+'\n</div></noscript>';
 }

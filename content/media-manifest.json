@@ -39,6 +39,11 @@
     "w": 2048,
     "h": 1536
   },
+  "media/sponsor-me-index.webp": {
+    "src": "media/sponsor-me-index.webp",
+    "w": 2400,
+    "h": 1400
+  },
   "media/unicorngear.webp": {
     "src": "media/unicorngear.webp",
     "w": 1132,

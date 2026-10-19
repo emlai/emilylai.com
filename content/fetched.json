@@ -1069,5 +1069,18 @@
     "poster": "media/2100881644840484877-fx1-poster.jpg"
    }
   ]
+ },
+ "2111442736838488475": {
+  "text": "Anyone here work in payments?\n\nSneak peak of a side project I’ve been building to understand payment orchestration layers and the capital stack.\n\nWould love to get feedback before I push it live!",
+  "date": "2026-10-17",
+  "likes": 109,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "video",
+    "src": "media/2111442736838488475-fx1.mp4",
+    "poster": "media/2111442736838488475-fx1-poster.jpg"
+   }
+  ]
  }
 }

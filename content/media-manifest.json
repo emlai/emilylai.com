@@ -39,6 +39,11 @@
     "w": 2048,
     "h": 1536
   },
+  "media/follow-the-money.jpg": {
+    "src": "media/follow-the-money-optimized.webp",
+    "w": 1200,
+    "h": 630
+  },
   "media/sponsor-me-index.webp": {
     "src": "media/sponsor-me-index.webp",
     "w": 2400,
@@ -722,6 +727,11 @@
   "media/1317883308840079361-EkoP4O6VkAEFGfL.jpg": {
     "src": "media/1317883308840079361-EkoP4O6VkAEFGfL-optimized.webp",
     "w": 900,
+    "h": 1200
+  },
+  "media/2111442736838488475-fx1-poster.jpg": {
+    "src": "media/2111442736838488475-fx1-poster-optimized.webp",
+    "w": 674,
     "h": 1200
   },
   "media/dojo-slide-1.webp": {

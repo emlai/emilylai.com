@@ -1082,5 +1082,24 @@
     "poster": "media/2111442736838488475-fx1-poster.jpg"
    }
   ]
+ },
+ "2114515085008019742": {
+  "text": "LIFE CHANGING: the most mentioned products that changed people’s lives\n\nin a Big 5 ad inspired format, based on most recommended in Lenny’s post and similar across the internet\n\nhttps://lifechanging.emilylai.com",
+  "date": "2026-10-26",
+  "likes": 32,
+  "author": "emilylai",
+  "media": [
+   {
+    "t": "video",
+    "src": "media/2114515085008019742-fx1.mp4",
+    "poster": "media/2114515085008019742-fx1-poster.jpg"
+   }
+  ]
+ },
+ "2114780831197630737": {
+  "text": "Truly feel like AI gives me superpowers.\n\nhttp://lifechanging.emilylai.com was built over seven hours with 94 prompts and 30 agents. Grok Bot, Grok 4.7 and 19 other agents were used to index product recommendations, one for planning, seven for creative direction and design, one for the video. Built this with Claude code. Getting faster with every side project.",
+  "date": "2026-10-26",
+  "likes": 63,
+  "author": "emilylai"
  }
 }

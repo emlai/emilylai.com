@@ -217,22 +217,29 @@ https://www.linkedin.com/embed/feed/update/urn:li:share:6442755508939120640 | he
 deck: content/dojo-slides.json
 curated order
 tab: Dojo bali"
-"side projects","1","Oct 2026","Follow the Money: understand payments and how money moves","role","https://x.com/emilylai/status/2111442736838488475
+"side projects","1","Oct 2026","LIFE CHANGING: the most mentioned products that changed people’s lives for $250 or less","role","https://x.com/emilylai/status/2114515085008019742
+https://x.com/emilylai/status/2114780831197630737
+https://lifechanging.emilylai.com
+media/life-changing.png","","","approved","cover: media/life-changing.png | LIFE CHANGING. Things that changed people’s lives, all under $250, with four product cards.
+link label: See it here →
+curated order
+tab: Life changing"
+"side projects","2","Oct 2026","Follow the Money: understand payments and how money moves","role","https://x.com/emilylai/status/2111442736838488475
 https://followthemoney.emilylai.com
 media/follow-the-money.jpg","> I got really curious about payments and built Follow the Money as a public good for anyone else interested in the capital stack and how money moves. The industry is convoluted and opaque. Like tokenization, there are a lot of intermediaries and variances between licenses, geographies, and regulations. This website would not have been possible in its current state without fact checks and audits from fintech and payment leaders. I initially shared a teaser on X and received a lot of helpful feedback that shaped the final website you see today.","","approved","cover: media/follow-the-money.jpg | Follow the money. A purple leather wallet, a silver payment card, and a $100 bill.
 link label: See it here →
 curated order
 tab: Follow the Money"
-"side projects","2","Sep 2026","sponsor me: the sponsorship index","role","https://x.com/emilylai/status/2100881644840484877
+"side projects","3","Sep 2026","sponsor me: the sponsorship index","role","https://x.com/emilylai/status/2100881644840484877
 https://sponsorme.emilylai.com
 media/sponsor-me-index.webp","> I noticed a trend of people turning their bodies, clothing, and possessions into ad space. It started with [Vincent](https://x.com/VynseDev/status/2092544016315306400) letting companies put their logos on his laptop. Marc Lou then [raised a record $112,000](https://x.com/marclou/status/2097326512169222407) by advertising his body for a HYROX competition. This led to many other creators selling ad space for company logos on clothes, bicycles, cars, and more. I was reminded of early experiments when people sold tattoo space on their bodies on eBay. I thought about how diminishing returns correlate with diminishing novelty and found this trend resurgence on X interesting.
 > The project was built with a combination of Claude Code, ChatGPT Codex, and Grok.","","approved","cover: media/sponsor-me-index.webp | sponsor me, the sponsorship index, shown on a laptop and a phone.
 link label: See it here →
 curated order
 tab: Sponsor me"
-"side projects","3","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
+"side projects","4","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
 tab: emilylai.com"
-"side projects","4","2026","defi-native: make your AI an expert on onchain finance","role","https://x.com/defi_native_ai/status/2095510628865593684
+"side projects","5","2026","defi-native: make your AI an expert on onchain finance","role","https://x.com/defi_native_ai/status/2095510628865593684
 https://x.com/emilylai/status/2095549760631443716
 https://x.com/emilylai/status/2094480103463899494
 https://x.com/emilylai/status/2094132631478698379
@@ -241,7 +248,7 @@ https://x.com/emilylai/status/2093538609827631270
 https://x.com/emilylai/status/2094132628458803417
 https://defi-native.ai","> Fully built in public with AI from the skill itself, the website, and all social graphics.","","approved","curated order
 tab: defi-native"
-"side projects","5","2024 to 2025","Onboarding friends to crypto: the video series","note","https://x.com/emilylai/status/1909612696674124050
+"side projects","6","2024 to 2025","Onboarding friends to crypto: the video series","note","https://x.com/emilylai/status/1909612696674124050
 https://x.com/emilylai/status/1902350737218146573
 https://x.com/emilylai/status/1894551182242451967
 https://x.com/emilylai/status/1893547624764223503
@@ -253,7 +260,7 @@ Onboarding my lawyer friend to crypto | https://youtu.be/bszY7lH2W0Y
 Onboarding my ex-Tesla, CPA, yoga instructor friend | https://youtu.be/zzP7fT_6Hig
 Choosing a crypto wallet for the first time: raw feedback | https://youtu.be/zVs2CI0dEJ8","approved","curated order
 tab: Onboarding"
-"side projects","6","2024 to 2025","Crypto marketing roast live stream series","note","https://x.com/emilylai/status/1901983349784092752","","Ep. 7: April Fools campaigns edition | https://youtu.be/GpJLsaaamfE
+"side projects","7","2024 to 2025","Crypto marketing roast live stream series","note","https://x.com/emilylai/status/1901983349784092752","","Ep. 7: April Fools campaigns edition | https://youtu.be/GpJLsaaamfE
 Ep. 6: Scroll, Zerion, Eco, Malda, Privy, Soulmates | https://youtu.be/WvmuyjYytoM
 Ep. 5: live audience roast with Optimism, SOON, Virtuals | https://youtu.be/7j9HGcRo078
 Ep. 4: social media edition with AlexOnChain | https://youtu.be/yXqj1N2nWnU
@@ -262,16 +269,16 @@ Ep. 2: with Reka Medvecz | https://youtu.be/j39lbRx0o4E
 Ep. 1: with Reka Medvecz | https://youtu.be/HbpFQ0iDqYA","approved","The X posts carry the stream announcements and clips. Add YouTube recordings to the series column if they exist.
 curated order
 tab: Roast"
-"side projects","7","2025","Cozy & curious: asking experts about the future, tech, and world direction","series","https://x.com/emilylai/status/1886866126824407313","","TradFi goes crypto? with Payy CEO Sid Gandhi | https://youtu.be/CvElHYFxEwY
+"side projects","8","2025","Cozy & curious: asking experts about the future, tech, and world direction","series","https://x.com/emilylai/status/1886866126824407313","","TradFi goes crypto? with Payy CEO Sid Gandhi | https://youtu.be/CvElHYFxEwY
 07 Energy: new batteries, tariffs, melting GPUs, with Danielle Fong | https://youtu.be/c4a0cXLRUdM
 02 Religion in ancient Rome and crypto, with Jill Gunter | https://youtu.be/M5C7-epcp7A
 01 The future of Bitcoin, quantum computing, and AI | https://youtu.be/326nMQceUgY","approved","curated order
 tab: Cozy & curious"
-"side projects","8","2025","Early 2025 vibe coding video series","note","https://x.com/emilylai/status/1890047985289142661
+"side projects","9","2025","Early 2025 vibe coding video series","note","https://x.com/emilylai/status/1890047985289142661
 https://x.com/emilylai/status/1891795292984406270","","Using AI to make an app in ten minutes | https://youtu.be/o1eKHZCUt18
 Using AI to make an event website in ten minutes | https://youtu.be/a2ktaeEs3iE","approved","curated order
 tab: Vibe coding"
-"side projects","9","2016 to 2018","Unicorn gear: first ecommerce store","role","https://x.com/emilylai/status/1807113908173308269
+"side projects","10","2016 to 2018","Unicorn gear: first ecommerce store","role","https://x.com/emilylai/status/1807113908173308269
 media/unicorngear.webp
 media/unicorngear2.webp
 media/unicorngear3.webp","> Right after college, I started an ecom business with my roommate. It started as dropshipping. First, we set up a Shopify store, designed a logo, and hooked up Oberlo to AliExpress for dropshipping. I had limited Photoshop skills back then and manipulated an existing logo I found on Google Images. Then we went full on private labeling, packed bags to Asia, and toured 3 factories in Shenzhen.
@@ -295,7 +302,7 @@ media/unicorngear3.webp","> Right after college, I started an ecom business with
 > Most importantly, it led me to where I am today. Growth and digital marketing is so much fun. Marketing principles are the same today. But there are loads of new tools to use, problems to solve, and stories to share.","","approved","cover: media/unicorngear.webp | Inside the factory making Unicorn Gear products.
 curated order
 tab: Ecommerce"
-"side projects","10","2017","Bitcoin and crypto affiliate website","role","https://x.com/emilylai/status/1806644072444047692
+"side projects","11","2017","Bitcoin and crypto affiliate website","role","https://x.com/emilylai/status/1806644072444047692
 media/bitcoin-blog-1.jpg
 media/bitcoin-blog-2.jpg","> This was early on in my digital marketing experiments. I made a website with guides on how to buy and secure crypto. I monetized it with affiliate links for hardware wallets and exchange signups.","","approved","curated order
 tab: Affiliate blog"

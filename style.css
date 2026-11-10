@@ -9,7 +9,7 @@ body{font:17px/1.5 var(--serif);-webkit-font-smoothing:antialiased;min-height:10
 a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:var(--hair)}a:hover{text-decoration-color:currentColor}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 a,button,[role="tab"]{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-::selection{background:var(--ink);color:var(--bg)}
+::selection{background:#CEFA50;color:#161616}
 :focus-visible{outline:1.5px solid var(--ink);outline-offset:3px;border-radius:var(--ri)}
 html[data-input="pointer"] :is(.folders button,.pane .list a,.tab,.back,.close):focus-visible{outline:none}
 .tab:focus-visible{outline-offset:-4px}
@@ -246,6 +246,7 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .reader .logos{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center;margin:4px 0 20px}
 .reader .logos img{height:22px;width:auto;filter:grayscale(1) contrast(1.1);opacity:.8}
 html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contrast(1.1)}
+.reader video.clip{height:auto}
 .reader video{width:100%;display:block;border-radius:var(--ri);border:1px solid var(--hair);background:#000}
 
 /* thread continuation inside a post */

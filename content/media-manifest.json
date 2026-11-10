@@ -39,6 +39,16 @@
     "w": 2048,
     "h": 1536
   },
+  "media/trillions-post.png": {
+    "src": "media/trillions-post-optimized.webp",
+    "w": 948,
+    "h": 428
+  },
+  "media/trillions-demo-poster.jpg": {
+    "src": "media/trillions-demo-poster-optimized.webp",
+    "w": 960,
+    "h": 636
+  },
   "media/life-changing.png": {
     "src": "media/life-changing-optimized.webp",
     "w": 1200,

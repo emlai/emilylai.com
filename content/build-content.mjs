@@ -48,6 +48,7 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  if(Object.keys(cuts).length)it.cuts=cuts;
  if(tab)it.tab=tab.trim();
  const tile=((notes||'').match(/(?:^|\n)tile:\s*([^\n]+)/)||[])[1];if(tile){const [name,mode]=tile.split('|').map(x=>x.trim());it.tile=name;if(/^entry$/i.test(mode||''))it.tileEntry=true;}
+ const tileImage=((notes||'').match(/(?:^|\n)tile image:\s*(\S+)/)||[])[1];if(tileImage)it.tileImage=tileImage;
  if(Object.keys(solo).length)it.solo=solo;
  if(it.newestFirst)embeds.sort((a,b)=>socialTimestamp(b.src)-socialTimestamp(a.src));
  if(embeds.length)it.embeds=embeds;

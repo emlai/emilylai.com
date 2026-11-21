@@ -229,7 +229,8 @@ link label: art.emilylai.com
 curated order
 tab: Art in NYC
 share: art-in-nyc
-tile: ART in NYC"
+tile: ART in NYC
+tile image: media/tile-art-in-nyc.webp"
 "side projects","2","Nov 2026","OpenAI Hardware Hackathon in NYC","role","https://x.com/emilylai/status/2123990258538750434
 https://x.com/fedesarquis/status/2123522920865480711
 https://x.com/emilylai/status/2123568822158504408
@@ -243,7 +244,8 @@ link label: See it here →
 curated order
 tab: Hackathon
 share: openai-hackathon
-tile: FUZZ | entry"
+tile: FUZZ | entry
+tile image: media/tile-openai-hackathon.webp"
 "side projects","3","Nov 2026","TRILLIONS: what does a trillion or even quadrillion dollars look like?? I vibe coded it to find out.","role","https://trillions.emilylai.com
 media/trillions-post.png
 media/trillions-demo.mp4 | poster: media/trillions-demo-poster.jpg | alt: Demo of TRILLIONS. $1.5 trillion shown as a stack reaching space, a cube beside the Statue of Liberty, and company comparisons.","","Building | https://www.youtube.com/watch?v=wOb7rg4azds
@@ -252,7 +254,8 @@ link label: See it here →
 curated order
 tab: Trillions
 share: trillions
-tile: TRILLIONS"
+tile: TRILLIONS
+tile image: media/tile-trillions.webp"
 "side projects","4","Oct 2026","LIFE CHANGING: the most mentioned products that changed people’s lives for $250 or less","role","https://x.com/emilylai/status/2114515085008019742
 https://x.com/emilylai/status/2114780831197630737
 https://lifechanging.emilylai.com
@@ -261,7 +264,8 @@ link label: See it here →
 curated order
 tab: Life changing
 share: life-changing
-tile: LIFE CHANGING"
+tile: LIFE CHANGING
+tile image: media/tile-life-changing.webp"
 "side projects","5","Oct 2026","Follow the Money: understand payments and how money moves","role","https://x.com/emilylai/status/2111442736838488475
 https://followthemoney.emilylai.com
 media/follow-the-money.jpg","> I got really curious about payments and built Follow the Money as a public good for anyone else interested in the capital stack and how money moves. The industry is convoluted and opaque. Like tokenization, there are a lot of intermediaries and variances between licenses, geographies, and regulations. This website would not have been possible in its current state without fact checks and audits from fintech and payment leaders. I initially shared a teaser on X and received a lot of helpful feedback that shaped the final website you see today.","","approved","cover: media/follow-the-money.jpg | Follow the money. A purple leather wallet, a silver payment card, and a $100 bill.
@@ -269,7 +273,8 @@ link label: See it here →
 curated order
 tab: Follow the Money
 share: follow-the-money
-tile: Follow the Money"
+tile: Follow the Money
+tile image: media/tile-follow-the-money.webp"
 "side projects","6","Sep 2026","sponsor me: the sponsorship index","role","https://x.com/emilylai/status/2100881644840484877
 https://sponsorme.emilylai.com
 media/sponsor-me-index.webp","> I noticed a trend of people turning their bodies, clothing, and possessions into ad space. It started with [Vincent](https://x.com/VynseDev/status/2092544016315306400) letting companies put their logos on his laptop. Marc Lou then [raised a record $112,000](https://x.com/marclou/status/2097326512169222407) by advertising his body for a HYROX competition. This led to many other creators selling ad space for company logos on clothes, bicycles, cars, and more. I was reminded of early experiments when people sold tattoo space on their bodies on eBay. I thought about how diminishing returns correlate with diminishing novelty and found this trend resurgence on X interesting.
@@ -278,7 +283,8 @@ link label: See it here →
 curated order
 tab: Sponsor me
 share: sponsor-me
-tile: sponsor me index"
+tile: sponsor me index
+tile image: media/tile-sponsor-me.webp"
 "side projects","7","2026","How I built this website","note","https://x.com/emilylai/status/2096694660421104069","","","approved","sort: 2026-09-06. The X article renders in full from content/articles/2096694660421104069.json (rebuild with node content/build-article.mjs 2096694660421104069).
 tab: emilylai.com
 share: emilylai-com"

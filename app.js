@@ -16,6 +16,12 @@ const cap=s=>String(s).charAt(0).toUpperCase()+String(s).slice(1);
 const fmt=d=>{const [y,m,dd]=d.split('-');return (+dd)+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+m-1]+' '+y};
 const store={get(k,f){try{const v=localStorage.getItem(k);return v==null?f:JSON.parse(v)}catch(e){return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
+// Post previews are most of the script bytes, so they load after the desk works.
+// The build points PREVIEWS_SRC at the hashed dist copy.
+const PREVIEWS_SRC='previews.js';
+let previewsLoaded=false;window.PREVIEWS={};
+const previewsReady=new Promise(done=>{const s=document.createElement('script');s.src=PREVIEWS_SRC;s.async=true;s.onload=s.onerror=()=>{previewsLoaded=true;done();};document.head.appendChild(s);});
+
 let seen=new Set(store.get('seen',[]));
 const unlocked=()=>BUCKETS.filter(b=>!b.egg).every(b=>seen.has(b.id));
 const visible=()=>BUCKETS.filter(b=>!b.egg||unlocked());
@@ -116,7 +122,8 @@ function sync(focusTab,navigate=false){if(isMobile()&&open.length>1)open=[active
   recordView(b,b?.items[index]);
  }
  if(selected){selected.scrollIntoView({inline:'nearest',block:'nearest'});if(focusTab)selected.focus({preventScroll:true});}}
-renderFolders();renderPanes();
+// index.html ships the folder list prerendered; only the unlocked egg needs a client render.
+if(unlocked())renderFolders();renderPanes();
 WIN.inert=true;
 function visit(id){const was=unlocked();seen.add(id);store.set('seen',[...seen]);if(!was&&unlocked()){pendingDiscovery=true;renderFolders();}if(BUCKETS.find(b=>b.id===id)?.egg)store.set('eggOpened',true);}
 function closeWindow(immediate=false,navigate=true){if(immediate!==true&&isMobile()&&open.length){Motion.folderClose(()=>closeWindow(true));return;}const id=active;open=[];active=null;sync(false,navigate);revealDiscovery();F.querySelector('[data-w="'+id+'"]')?.focus({preventScroll:true});}
@@ -181,6 +188,7 @@ function select(pane,li){pane.querySelectorAll('.list li').forEach(l=>l.classLis
 function mobileBack(pane,rd,it){rd.insertAdjacentHTML('afterbegin','<button type="button" class="back"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to '+esc(pane.querySelector('h2').textContent)+'</button>');if(isMobile()){Motion.noteOpen(pane);rd.querySelector('.back').focus({preventScroll:true});}else rd.focus({preventScroll:true});observeStream(rd,it);}
 P.addEventListener('click',e=>{
  if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+ if(!previewsLoaded){const wait=e.target.closest('a[data-role],a[data-u],a[data-series]');if(wait){e.preventDefault();previewsReady.then(()=>wait.click());return;}}
  const bk=e.target.closest('.back,.media-back');if(bk){backToList(bk.closest('.pane'));return;}
  const y=e.target.closest('a[data-yt]');if(y){e.preventDefault();const rd=y.closest('.reader'),box=rd.querySelector('.stagebox');const html='<div class="video-frame"><button type="button" class="media-back" aria-label="Back to entries" title="Swipe right or tap to go back"><span aria-hidden="true">‹</span></button><iframe src="https://www.youtube-nocookie.com/embed/'+y.dataset.yt+'?autoplay=1" title="Video" allow="autoplay" allowfullscreen></iframe></div>';if(box){box.innerHTML=html;rd.querySelectorAll('.card').forEach(k=>k.classList.toggle('on',k===y));}else y.outerHTML=html;return;}
  const sp=e.target.closest('a[data-series]');if(sp){e.preventDefault();const rd=sp.closest('.reader'),box=rd.querySelector('.stagebox');const b=BUCKETS.find(x=>'p-'+x.id===sp.closest('.pane').id),cur=sp.closest('.pane').querySelector('li.cur a[data-role]'),it=cur&&b.items[+cur.dataset.role],safe=!!(it&&it.safe);box.innerHTML=postHTML(sp.dataset.u,safe,safe);rd.querySelectorAll('.card').forEach(k=>k.classList.toggle('on',k===sp));return;}
@@ -314,6 +322,7 @@ document.querySelectorAll('.mode button').forEach(b=>b.addEventListener('click',
   active=id;if(isMobile())open=[id];sync(false);
   P.querySelectorAll('#p-'+id+' .list li')[index].querySelector('a')?.click();
  }
+ previewsReady.then(()=>{if(!pal.hidden)apply(q.value);});
  pal.addEventListener('click',e=>{if(e.target===pal)hide();});
  pal.querySelector('.pclose').addEventListener('click',()=>hide());
  results.addEventListener('click',e=>{const b=e.target.closest('button');if(b)choose(b);});

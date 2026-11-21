@@ -10,6 +10,10 @@ const [header,...data]=rows;
 const ids={'work':'work','growth experiments':'growth','lab experiments':'lab','learning':'learn','speaking':'talks','side projects':'side','field notes':'notes'};
 const EGG={'field notes':true};
 const DISPLAY={'field notes':'field notes (unlocked)'};
+const articlePages={
+ Peptides:{href:'peptides/',label:'Read the full log here →'},
+ 'emilylai.com':{href:'website-build/',label:'Read the full workflow here'}
+};
 const buckets={};
 for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,status,notes]=r;if(!ids[bucket])continue;if((status||'').trim()==='cut')continue;
  const b=buckets[bucket]||(buckets[bucket]={id:ids[bucket],name:bucket,items:[]});
@@ -47,6 +51,7 @@ for(const r of data){const [bucket,order,dates,title,type,urls,bullets,series,st
  if(share)it.slug=share[1].toLowerCase();
  if(Object.keys(cuts).length)it.cuts=cuts;
  if(tab)it.tab=tab.trim();
+ if(Object.hasOwn(articlePages,it.tab))it.page=articlePages[it.tab];
  const tile=((notes||'').match(/(?:^|\n)tile:\s*([^\n]+)/)||[])[1];if(tile){const [name,mode]=tile.split('|').map(x=>x.trim());it.tile=name;if(/^entry$/i.test(mode||''))it.tileEntry=true;}
  const tileImage=((notes||'').match(/(?:^|\n)tile image:\s*(\S+)/)||[])[1];if(tileImage)it.tileImage=tileImage;
  if(Object.keys(solo).length)it.solo=solo;

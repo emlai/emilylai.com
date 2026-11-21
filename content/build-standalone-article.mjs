@@ -16,24 +16,27 @@ let body = article.html
   .replaceAll('poster="media/', 'poster="../media/');
 const title = escape(article.title);
 const description = 'How I used Astra, Fable, Grok, Codex, and 180+ prompts to design and build my personal website—and what I learned.';
-const cover = `../${article.cover}`;
+const media = JSON.parse(await readFile('content/media-manifest.json', 'utf8'));
+const optimizedCover = media[article.cover];
+const cover = escape(`../${optimizedCover?.src || article.cover}`);
+const coverSize = optimizedCover ? ` width="${optimizedCover.w}" height="${optimizedCover.h}"` : '';
 const mediaPath = path => `../${String(path).replace(/^\//, '')}`;
-const videoFigure = ({ src, poster, caption, portrait = false }) => `<figure class="video${portrait ? ' video-portrait' : ''}"><video controls playsinline preload="none" poster="${escape(mediaPath(poster))}"><source src="${escape(mediaPath(src))}" type="video/mp4"></video><figcaption>${escape(caption)}</figcaption></figure>`;
+const videoFigure = ({ src, poster, caption, width, height, portrait = false }) => `<figure class="video${portrait ? ' video-portrait' : ''}"><video controls playsinline loading="lazy" preload="none" width="${width}" height="${height}" poster="${escape(mediaPath(poster))}"><source src="${escape(mediaPath(src))}" type="video/mp4"></video><figcaption>${escape(caption)}</figcaption></figure>`;
 let updates = String(article.updatesHtml || '')
   .replaceAll('src="media/', 'src="../media/')
   .replaceAll('poster="media/', 'poster="../media/');
 if (article.updatesImage) {
   const updateImage = `<figure><img src="${escape(mediaPath(article.updatesImage))}" alt="${escape(article.updatesImageAlt)}" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>${escape(article.updatesImageCaption)}</figcaption></figure>`;
-  updates = updates.replace('<h4>September 8th:</h4>', `${updateImage}<h4>September 8th:</h4>`);
+  updates = updates.replace('<h3>September 8th:</h3>', `${updateImage}<h3>September 8th:</h3>`);
 }
 
 const introSentence = '<p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p>';
-body = body.replace(introSentence, `${introSentence}${videoFigure({src:article.introVideo,poster:article.introPoster,caption:'A walkthrough of the new emilylai.com.'})}`);
+body = body.replace(introSentence, `${introSentence}${videoFigure({src:article.introVideo,poster:article.introPoster,width:1280,height:720,caption:'A walkthrough of the new emilylai.com.'})}`);
 const firstToggleRender = /(<figure><img[^>]+article-2096694660421104069-15\.jpg[\s\S]*?<\/figure>)/;
-body = body.replace(firstToggleRender, `$1${videoFigure({src:article.toggleVideo,poster:article.togglePoster,caption:'Testing the first steel toggle render.'})}`);
-body = body.replace('Then we worked on the sound.</p>', `Then we worked on the sound.</p>${videoFigure({src:article.soundsVideo,poster:article.soundsPoster,caption:'Comparing the full set of toggle sounds.'})}`);
+body = body.replace(firstToggleRender, `$1${videoFigure({src:article.toggleVideo,poster:article.togglePoster,width:1280,height:732,caption:'Testing the first steel toggle render.'})}`);
+body = body.replace('Then we worked on the sound.</p>', `Then we worked on the sound.</p>${videoFigure({src:article.soundsVideo,poster:article.soundsPoster,width:1280,height:720,caption:'Comparing the full set of toggle sounds.'})}`);
 const grokSentence = '<p>I also tried Grok 4.6 in the Aside browser to paste the draft and assets in the X composer for me. This is a 5 minute video sped up to 10 seconds. It made strange messages to test it could type.</p>';
-body = body.replace(grokSentence, `${grokSentence}${videoFigure({src:article.grokVideo,poster:article.grokPoster,caption:'Five minutes of browser control, sped up to ten seconds.',portrait:true})}`);
+body = body.replace(grokSentence, `${grokSentence}${videoFigure({src:article.grokVideo,poster:article.grokPoster,width:960,height:1284,caption:'Five minutes of browser control, sped up to ten seconds.',portrait:true})}`);
 
 const html = `<!doctype html>
 <html lang="en" data-theme="light">
@@ -56,7 +59,7 @@ const html = `<!doctype html>
 <link rel="icon" href="../assets/favicons/favicon-el.svg" type="image/svg+xml">
 <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='dark')?'dark':'light'}catch(e){}})();</script>
 <style>
-:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--steel-toggle-light:url("../silver-toggle/toggle-light.png");--steel-toggle-dark:url("../silver-toggle/toggle-dark.png");color-scheme:light}
+:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--steel-toggle-light:url("../silver-toggle/toggle-light.webp");--steel-toggle-dark:url("../silver-toggle/toggle-dark.webp");color-scheme:light}
 html[data-theme="dark"]{--bg:#171717;--ink:#f2f2f2;--text:#d9d9d9;--gray:#a0a0a0;--hair:#343434;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--text);font:18px/1.65 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.16em}a:hover{text-decoration-color:currentColor}
@@ -76,28 +79,30 @@ h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);le
 .subtitle{max-width:700px;margin:20px 0 0;color:var(--text);font:18px/1.45 var(--serif)}.date{margin:10px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
-.article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
-.article h3{margin:3.2em 0 1em;color:var(--ink);font:600 30px/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
-.article h4{margin:2.8em 0 1em;color:var(--ink);font:600 22px/1.25 var(--sans);letter-spacing:-.015em}.article h4 strong{font-weight:inherit}
-.article h5{margin:2em 0 .75em;color:var(--ink);font:600 14px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em}
+.article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h2{margin-top:2.15em}
+.article h2{margin:3.2em 0 1em;color:var(--ink);font:600 30px/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
+.article h3{margin:2.8em 0 1em;color:var(--ink);font:600 22px/1.25 var(--sans);letter-spacing:-.015em}.article h3 strong{font-weight:inherit}
+.article h4{margin:2em 0 .75em;color:var(--ink);font:600 14px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em}
 .prompt{margin:0 0 2.25em;padding:20px 22px;overflow:auto;border:1px solid var(--hair);background:color-mix(in srgb,var(--bg) 94%,var(--ink));color:var(--text);font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
 figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;height:auto;border:1px solid var(--hair);background:#fff}figcaption{margin-top:10px;color:var(--gray);font:13px/1.45 var(--sans)}
 .video video{max-height:78vh;object-fit:contain;background:#111}.video-portrait video{width:min(520px,100%);margin-inline:auto}
 .reflection,.reflection-label{font-family:var(--sans);line-height:1.5;color:var(--ink)}
-.updates{margin-top:84px;padding-top:24px;border-top:1px solid var(--hair)}.updates>h3{margin-top:0}.updates h4{margin-top:2.5em}.updates figure{margin-top:2.1em}
+.updates{margin-top:84px;padding-top:24px;border-top:1px solid var(--hair)}.updates>h2{margin-top:0}.updates h3{margin-top:2.5em}.updates figure{margin-top:2.1em}
 .source{margin-top:72px;padding-top:24px;border-top:1px solid var(--hair);color:var(--gray);font:14px/1.5 var(--sans)}
-@media(max-width:800px){body{font-size:17px}.top{padding:10px 20px;gap:12px}.brand-tools{gap:10px}.back{max-width:116px;text-align:right}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h3{font-size:27px}.article h4{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(max-width:800px){body{font-size:17px}.top{padding:10px 20px;gap:12px}.brand-tools{gap:10px}.back{max-width:116px;text-align:right}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h2{font-size:27px}.article h3{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(max-width:360px){.home{font-size:16px}.brand-tools{gap:8px}.back{max-width:100px;font-size:12px}}
 </style>
+<noscript><style>.mode{display:none}</style></noscript>
 </head>
 <body>
 <header class="top"><div class="brand-tools"><a class="home" href="../">Emily Lai</a><div class="mode" role="group" aria-label="Color scheme"><button type="button" data-mode="light" aria-pressed="true" aria-label="Light mode" title="Light mode"><svg aria-hidden="true"><use href="../assets/icons.svg#sun"></use></svg></button><button type="button" data-mode="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true"><use href="../assets/icons.svg#moon"></use></svg></button></div></div><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
   <div><p class="eyebrow">Writing</p><h1>${title}</h1><p class="subtitle">${escape(article.subtitle)}</p><p class="date">${escape(article.date)}</p></div>
-  <img src="${cover}" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
+  <img src="${cover}" alt="Collage from the personal website build process"${coverSize} fetchpriority="high">
 </section>
-<article class="article">${body}<section class="updates" aria-labelledby="updates-title"><h3 id="updates-title">Updates</h3>${updates}</section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
+<article class="article">${body}<section class="updates" aria-labelledby="updates-title"><h2 id="updates-title">Updates</h2>${updates}</section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
 </main>
 <script>
 (() => {

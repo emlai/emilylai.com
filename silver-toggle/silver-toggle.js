@@ -185,5 +185,11 @@ export class SilverToggle extends HTMLElement {
 }
 if(!customElements.get('silver-toggle'))customElements.define('silver-toggle',SilverToggle);
 export function replaceThemeControl(selector='.mode'){
-  const old=document.querySelector(selector);if(!old)return null;const toggle=document.createElement('silver-toggle');old.replaceWith(toggle);return toggle;
+  const old = document.querySelector(selector);
+  if (!old) return null;
+  const hadFocus = old.contains(document.activeElement);
+  const toggle = document.createElement('silver-toggle');
+  old.replaceWith(toggle);
+  if (hadFocus) toggle.button.focus({preventScroll: true});
+  return toggle;
 }

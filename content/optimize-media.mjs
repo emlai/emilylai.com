@@ -5,15 +5,26 @@ import {execFileSync} from 'node:child_process';
 const sources=['content/content.csv','previews.js','content/dojo-slides.json'];
 const paths=new Set(sources.flatMap(file=>[...fs.readFileSync(file,'utf8').matchAll(/media\/[\w./-]+\.(?:jpe?g|png|webp)/g)].map(m=>m[0])));
 const manifest={};let before=0,after=0;
+const maxReaderWidth=2048;
+function dimensions(src){
+ const info=execFileSync('sips',['-g','pixelWidth','-g','pixelHeight',src],{encoding:'utf8'});
+ return {w:+info.match(/pixelWidth: (\d+)/)[1],h:+info.match(/pixelHeight: (\d+)/)[1]};
+}
 for(const src of paths){
  if(!fs.existsSync(src))throw new Error('Missing image: '+src);
- const info=execFileSync('sips',['-g','pixelWidth','-g','pixelHeight',src],{encoding:'utf8'});
- const width=+info.match(/pixelWidth: (\d+)/)[1],height=+info.match(/pixelHeight: (\d+)/)[1];
- let dest=src,w=width,h=height;
+ let {w,h}=dimensions(src);
+ let dest=src;
  if(!src.endsWith('.webp')){
   const candidate=src.replace(/\.(?:jpe?g|png)$/,'-optimized.webp');
-  if(!fs.existsSync(candidate)||fs.statSync(candidate).mtimeMs<fs.statSync(src).mtimeMs)execFileSync('cwebp',['-quiet','-q','84',src,'-o',candidate]);
-  if(fs.statSync(candidate).size<fs.statSync(src).size)dest=candidate;
+  const resize=w>maxReaderWidth;
+  if(!fs.existsSync(candidate)||fs.statSync(candidate).mtimeMs<fs.statSync(src).mtimeMs||(resize&&dimensions(candidate).w!==maxReaderWidth)){
+   const args=resize?['-resize',String(maxReaderWidth),'0']:[];
+   execFileSync('cwebp',['-quiet','-q','84',...args,src,'-o',candidate]);
+  }
+  if(fs.statSync(candidate).size<fs.statSync(src).size){
+   dest=candidate;
+   if(resize)({w,h}=dimensions(candidate));
+  }
  }
  before+=fs.statSync(src).size;after+=fs.statSync(dest).size;
  manifest[src]={src:dest,w,h};

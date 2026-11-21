@@ -19,7 +19,7 @@
 <link rel="icon" href="../assets/favicons/favicon-el.svg" type="image/svg+xml">
 <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='dark')?'dark':'light'}catch(e){}})();</script>
 <style>
-:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--steel-toggle-light:url("../silver-toggle/toggle-light.png");--steel-toggle-dark:url("../silver-toggle/toggle-dark.png");color-scheme:light}
+:root{--bg:#fff;--ink:#161616;--text:#2a2a2a;--gray:#666;--hair:#d6d6d6;--serif:"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--steel-toggle-light:url("../silver-toggle/toggle-light.webp");--steel-toggle-dark:url("../silver-toggle/toggle-dark.webp");color-scheme:light}
 html[data-theme="dark"]{--bg:#171717;--ink:#f2f2f2;--text:#d9d9d9;--gray:#a0a0a0;--hair:#343434;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:var(--bg);color:var(--text);font:18px/1.65 var(--serif);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration-color:var(--hair);text-decoration-thickness:1px;text-underline-offset:.16em}a:hover{text-decoration-color:currentColor}
@@ -39,38 +39,40 @@ h1{margin:0;color:var(--ink);font:600 clamp(38px,5.2vw,70px)/1.02 var(--sans);le
 .subtitle{max-width:700px;margin:20px 0 0;color:var(--text);font:18px/1.45 var(--serif)}.date{margin:10px 0 0;color:var(--gray);font:14px/1.4 var(--sans)}
 .hero img{display:block;width:100%;height:auto;border:1px solid var(--hair)}
 .article{width:min(720px,calc(100% - 48px));margin:0 auto 120px}
-.article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h3{margin-top:2.15em}
-.article h3{margin:3.2em 0 1em;color:var(--ink);font:600 30px/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
-.article h4{margin:2.8em 0 1em;color:var(--ink);font:600 22px/1.25 var(--sans);letter-spacing:-.015em}.article h4 strong{font-weight:inherit}
-.article h5{margin:2em 0 .75em;color:var(--ink);font:600 14px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em}
+.article p{white-space:pre-line;margin:0 0 1.5em}.article ul{margin:0 0 1.75em;padding-left:1.2em}.article li+li{margin-top:.45em}.article ul+h2{margin-top:2.15em}
+.article h2{margin:3.2em 0 1em;color:var(--ink);font:600 30px/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
+.article h3{margin:2.8em 0 1em;color:var(--ink);font:600 22px/1.25 var(--sans);letter-spacing:-.015em}.article h3 strong{font-weight:inherit}
+.article h4{margin:2em 0 .75em;color:var(--ink);font:600 14px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em}
 .prompt{margin:0 0 2.25em;padding:20px 22px;overflow:auto;border:1px solid var(--hair);background:color-mix(in srgb,var(--bg) 94%,var(--ink));color:var(--text);font:14px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
 figure{margin:2.4em 0 2.8em}figure img,figure video{display:block;width:100%;height:auto;border:1px solid var(--hair);background:#fff}figcaption{margin-top:10px;color:var(--gray);font:13px/1.45 var(--sans)}
 .video video{max-height:78vh;object-fit:contain;background:#111}.video-portrait video{width:min(520px,100%);margin-inline:auto}
 .reflection,.reflection-label{font-family:var(--sans);line-height:1.5;color:var(--ink)}
-.updates{margin-top:84px;padding-top:24px;border-top:1px solid var(--hair)}.updates>h3{margin-top:0}.updates h4{margin-top:2.5em}.updates figure{margin-top:2.1em}
+.updates{margin-top:84px;padding-top:24px;border-top:1px solid var(--hair)}.updates>h2{margin-top:0}.updates h3{margin-top:2.5em}.updates figure{margin-top:2.1em}
 .source{margin-top:72px;padding-top:24px;border-top:1px solid var(--hair);color:var(--gray);font:14px/1.5 var(--sans)}
-@media(max-width:800px){body{font-size:17px}.top{padding:10px 20px;gap:12px}.brand-tools{gap:10px}.back{max-width:116px;text-align:right}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h3{font-size:27px}.article h4{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(max-width:800px){body{font-size:17px}.top{padding:10px 20px;gap:12px}.brand-tools{gap:10px}.back{max-width:116px;text-align:right}.hero{margin:20px auto 48px;padding:0 20px;grid-template-columns:1fr;gap:34px}.hero img{order:-1}h1{font-size:clamp(36px,11vw,52px)}.article{width:min(100% - 40px,720px);margin-bottom:80px}.article h2{font-size:27px}.article h3{font-size:21px}figure{margin:2em -4px 2.5em}.prompt{margin-inline:-4px;padding:17px 16px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(max-width:360px){.home{font-size:16px}.brand-tools{gap:8px}.back{max-width:100px;font-size:12px}}
 </style>
+<noscript><style>.mode{display:none}</style></noscript>
 </head>
 <body>
 <header class="top"><div class="brand-tools"><a class="home" href="../">Emily Lai</a><div class="mode" role="group" aria-label="Color scheme"><button type="button" data-mode="light" aria-pressed="true" aria-label="Light mode" title="Light mode"><svg aria-hidden="true"><use href="../assets/icons.svg#sun"></use></svg></button><button type="button" data-mode="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg aria-hidden="true"><use href="../assets/icons.svg#moon"></use></svg></button></div></div><a class="back" href="../">← Back to emilylai.com</a></header>
 <main>
 <section class="hero">
   <div><p class="eyebrow">Writing</p><h1>How I Built This Website With Astra, Fable, and Grok</h1><p class="subtitle">The full workflow, prompts, and what I learned about AI in the process.</p><p class="date">September 6th, 2026</p></div>
-  <img src="../media/2096694660421104069-cover.jpg" alt="Collage from the personal website build process" width="1600" height="900" fetchpriority="high">
+  <img src="../media/2096694660421104069-cover-optimized.webp" alt="Collage from the personal website build process" width="1200" height="480" fetchpriority="high">
 </section>
-<article class="article"><p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-intro-poster.jpg"><source src="../media/website-build-intro.mp4" type="video/mp4"></video><figcaption>A walkthrough of the new emilylai.com.</figcaption></figure>
+<article class="article"><p>I spent the last 3 days playing with the latest frontier models to build my personal website.</p><figure class="video"><video controls playsinline loading="lazy" preload="none" width="1280" height="720" poster="../media/website-build-intro-poster.jpg"><source src="../media/website-build-intro.mp4" type="video/mp4"></video><figcaption>A walkthrough of the new emilylai.com.</figcaption></figure>
 <p>This process took 180+ prompts across 5 chats and was happening as Fable 5.1 and GPT 6 Astra were released.  I have no domain expertise in UX, product design and am not a developer.</p>
-<h4>My complete tool stack: </h4>
+<h2>My complete tool stack: </h2>
 <ul><li>Grok 4.7 for research, personal website references, and building initial brand direction files </li><li>Fable 5 and 5.1 for reviewing design skills, finalizing design mockups, majority of code, UX, and mobile optimizations</li><li>GPT 5.6 Luna for cheaper code execution after the structure was in place</li><li>GPT 6 Astra for 3D rendering of the steel toggle switch, a gut check on design principles after I learned what grid sets were, further speed optimizations, copywriting assistance on this article, banner generation </li><li>Aside browser as a harness for driving my screen, reviewing GitHub skills, and even an attempt to compose this article (see below)</li><li>Wispr Flow to talk-to-prompt, making building a lot faster</li><li>Talented designers that let me gut checking design principles with them, inspiration from X, and 10+ references of other personal websites
 </li></ul>
-<h3>The full process from concept, to design, code and even writing this. Complete workflow and what I’d do differently.</h3>
-<h4>
-1. Coming up with the design concept </h4>
+<h2>The full process from concept, to design, code and even writing this. Complete workflow and what I’d do differently.</h2>
+<h3>
+1. Coming up with the design concept </h3>
 <p>I've been an AI power user and found creative output can be lackluster without strong skills and references. Without having a creative direction background, I first looked used Grok (on grok.com, not via Premium+ on X) to ask it to research personal websites. I like using Grok because it has real-time access to X, and I figured this was the right channel to query up past porfolios and websites that have gone viral. 
 
-</p><h5>Prompt</h5><pre class="prompt"><code>find me the best personal websites for inspiration</code></pre>
+</p><h4>Prompt</h4><pre class="prompt"><code>find me the best personal websites for inspiration</code></pre>
 <p>It gave me plenty to look at. I had it find and list out 30+ different personal websites. I used <a href="https://x.com/asideAI" target="_blank" rel="noopener">@asideAI</a> , my main browser with built-in AI to open all those links, and analyze them for me based off my personal brand, which it derived from a write-like-emily.md skill, a distillation of everything I've posted on X. </p>
 <figure><img src="../media/article-2096694660421104069-1.jpg" alt="Initial research using Grok for design inspiration" loading="lazy" decoding="async" width="1446" height="1027"><figcaption>Initial research using Grok for design inspiration</figcaption></figure>
 <p>
@@ -81,7 +83,7 @@ Out of the entire list, <a href="https://x.com/patrickc" target="_blank" rel="no
 This is a principle I've learned on how to get the best output with AI: reinforce what you like and didn't like; it improves on the next turn.
 
 </p>
-<h4><strong>Finalizing a design concept</strong></h4>
+<h3><strong>Finalizing a design concept</strong></h3>
 <p>Out of my distrust in relying on AI completely for output, I opened up GitHub on my Aside browser and had Claude Fable 5.1 evaluate and compare different design and brand skills. We looked at <a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">Impeccable</a>, <a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener">taste-skill</a>, and other <a href="https://github.com/ibelick/ui-skills" target="_blank" rel="noopener">UI skills </a>to build out the brief. Impeccable by <a href="https://x.com/pbakaus" target="_blank" rel="noopener">@pbakaus</a> is one of the best, highly recommend. 
 
 The useful part was reading what the skills actually told the agent to do. Some were about visual execution. Others were questionnaires or meant for a different kind of tool. I really like using this <a href="https://www.aihero.dev/skills-grill-me" target="_blank" rel="noopener">grill-me</a> skill by <a href="https://x.com/mattpocockuk" target="_blank" rel="noopener">@mattpocockuk</a> to help refine briefs and skill files. 
@@ -107,8 +109,8 @@ I loved how the folders opened up into a notepad UI and went with The Desk.
 Then came the smaller choices: glass treatment, notes-style tabs, the list and reader, dark mode, spacing, margin, padding, and ensuring it was all mobile optimized. 
 
 I had Claude make another mock for me with a Times Roman/Sans Serif switch so I could compare the type font directly. I eventually chose Times for the majority and system sans for the interface.</p>
-<h4>
-<strong>2. Building out the website content </strong></h4>
+<h3>
+<strong>2. Building out the website content </strong></h3>
 <p>This part took the absolute longest. Manually finding, filtering, and mapping my internet artifacts took a majority of the prompts. 
 
 Old tweets. Videos. Talks. Projects. Things I’d forgotten I had already written about.
@@ -129,15 +131,15 @@ Fable a Google sheet for me which became the content source. Entries could be mo
 The search helped me collect the material. Deciding what it said about me took longer. This whole process took me a full day with some breaks. 
 </p>
 <figure><img src="../media/article-2096694660421104069-8.jpg" alt="Unsure if I posted when I freelanced around 2018 and if I ever tweeted about A/B testing or building offer flows. Used Grok to check!" loading="lazy" decoding="async" width="1578" height="1043"><figcaption>Unsure if I posted when I freelanced around 2018 and if I ever tweeted about A/B testing or building offer flows. Used Grok to check!</figcaption></figure>
-<h4><strong>3. Adding features and functionality </strong></h4>
+<h3><strong>3. Adding features and functionality </strong></h3>
 <p>Fable 5.1 was an excellent design partner and would help me think through easter eggs (yes there is at least one!), design choices, and features. </p>
 <figure><img src="../media/article-2096694660421104069-9.jpg" alt="Fable 5.1's initial easter egg options" loading="lazy" decoding="async" width="1158" height="482"><figcaption>Fable 5.1's initial easter egg options</figcaption></figure>
 <p>If you're on desktop, you'll notice the notes module can be moved around the screen and fully adjusted. There's also a search built in that automatically loads when you start typing. </p>
 <p>On mobile, it's optimized to where notes can be swiped through and closed with finger movements, rather than just tapping on the 'x' to close out. I also worked with Fable to animate and work on the movements of how folders opened. </p>
 <figure><img src="../media/article-2096694660421104069-10.jpg" alt="Optimizing on mobile and triple checking again with skills " loading="lazy" decoding="async" width="1120" height="852"><figcaption>Optimizing on mobile and triple checking again with skills </figcaption></figure>
 <p>You can tell my trust levels are low for fully relying on AI when it comes to domain expertise, even the frontier models. This is why I built <a href="https://x.com/defi_native_ai" target="_blank" rel="noopener">@defi_native_ai</a> when I realized AI was not always giving me accurate information when I was trying to learn about onchain finance. I had Fable use skills multiple times throughout the process and would have it reference UI guides made by well known designers. </p>
-<h4>
-4<strong>. Astra Launches In My Final Touches </strong></h4>
+<h3>
+4<strong>. Astra Launches In My Final Touches </strong></h3>
 <p><a href="https://x.com/OpenAI" target="_blank" rel="noopener">@OpenAI</a>'s Astra model launched on September 3rd. It wasn't available in ChatGPT Plus account at the time, but I discovered I had access in my terminal through Codex CLI on September 4th. I ended up pulling an all nighter that evening: </p>
 <p>
 I used Astra to do a full audit and rerun the Impeccable skill. It corrected spacing, dividers, small-laptop overflow and mobile sizing. It added some more mobile interactions and also helped improve speed by reducing served image weight by 51% and adding progressive rendering. The fact Astra caught some things that Fable didn't, and Fable caught things Grok didn't makes me believe having model and agentic orchestration to review is important for quality. 
@@ -149,7 +151,7 @@ That sent me into a whole other round of questions. I had never heard of grid se
 
 Because this was a post from <a href="https://x.com/Mschwaibold" target="_blank" rel="noopener">@Mschwaibold</a>, I used Grok 4.6 again to get more details on grid sets. 
 
-</p><h5>Prompts</h5><pre class="prompt"><code>Prompt 1
+</p><h4>Prompts</h4><pre class="prompt"><code>Prompt 1
 Help me find grid sets for design that I can feed an llm to help me for my website
 
 Prompt 2
@@ -175,7 +177,7 @@ the menu bar and tabs</code></pre>
 That was a useful reminder to ask for the reasoning and to use the most powerful models possible when it comes to specific domains and strategic planning.
 
 Astra ran an audit and found concrete problems. At one breakpoint, making the browser a pixel wider made the window 115px narrower. The divider calculation wasn’t reserving enough space for the reader. I used Grok to point at Marvin's profile and distill his core principles on grid sets based off his posts (vs. just a general, broad take) and gave that all to Astra to fix. </p>
-<h4>5. Inspired Last Detail: The Steel Toggle </h4>
+<h3>5. Inspired Last Detail: The Steel Toggle </h3>
 <p>
 I saw this post by <a href="https://x.com/marques_ph" target="_blank" rel="noopener">@marques_ph</a> this morning on his light sweet and was reminded of a brushed steel ones I once saw. </p>
 <figure><img src="../media/article-2096694660421104069-13.jpg" alt="I remembered these light switches I saw on Instagram once" loading="lazy" decoding="async" width="1206" height="1603"><figcaption>I remembered these light switches I saw on Instagram once</figcaption></figure>
@@ -185,11 +187,11 @@ I saw this post by <a href="https://x.com/marques_ph" target="_blank" rel="noope
 <p>
 
 I brought Aster photos of Buster + Punch steel switches as material references from a variety of angles. It generated this with the first prompt: </p>
-<figure><img src="../media/article-2096694660421104069-15.jpg" alt="First saved, but the material still needed more work." loading="lazy" decoding="async" width="1769" height="1331"><figcaption>First saved, but the material still needed more work.</figcaption></figure><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-toggle-poster.jpg"><source src="../media/website-build-toggle.mp4" type="video/mp4"></video><figcaption>Testing the first steel toggle render.</figcaption></figure>
+<figure><img src="../media/article-2096694660421104069-15.jpg" alt="First saved, but the material still needed more work." loading="lazy" decoding="async" width="1769" height="1331"><figcaption>First saved, but the material still needed more work.</figcaption></figure><figure class="video"><video controls playsinline loading="lazy" preload="none" width="1280" height="732" poster="../media/website-build-toggle-poster.jpg"><source src="../media/website-build-toggle.mp4" type="video/mp4"></video><figcaption>Testing the first steel toggle render.</figcaption></figure>
 <p>
 It took a few iterations to get to the hyperrealism and shine I wanted. The feedback got more specific:</p><ul><li>Shinier steel</li><li>Brushed grain</li><li>A darker recess around the lever</li><li>More detail on the grip and end cap</li><li>Horizontal screwdriver slots in the bolts</li></ul>
 <p>A lot of the above was picked up from image references. I ate through my 5h limit. I used one reset and it still wasn't enough. I bit the bullet and upgraded to Pro 5x. </p>
-<h5>Full prompt</h5><pre class="prompt"><code>For the light / dark mode icon for emilylai.com, can you help me replace it with a aluminum steel silver toggle?
+<h4>Full prompt</h4><pre class="prompt"><code>For the light / dark mode icon for emilylai.com, can you help me replace it with a aluminum steel silver toggle?
 
 I&#39;m attaching refrences of something simialr. Rather than square, please make it slimmer rectangle and it toggles left/right verses up/down.
 
@@ -203,28 +205,28 @@ Make a hyperrealistic 3d version i can code into the site.</code></pre>
 <p>
 Really impressive. I've never opened Blender or used any 3D modeling software. Codex built it with Three.js geometry. The grip has 432 raised facets. The plate has depth, the lever casts a shadow, and the reflections come from a generated studio lighting setup.
 
-Then we worked on the sound.</p><figure class="video"><video controls playsinline preload="none" poster="../media/website-build-sounds-poster.jpg"><source src="../media/website-build-sounds.mp4" type="video/mp4"></video><figcaption>Comparing the full set of toggle sounds.</figcaption></figure><p>It started with crisp, heavy, and damped clicks. It didn't hit right and I asked for more. The set grew to include chunky, metallic, relay, and latch sounds.
+Then we worked on the sound.</p><figure class="video"><video controls playsinline loading="lazy" preload="none" width="1280" height="720" poster="../media/website-build-sounds-poster.jpg"><source src="../media/website-build-sounds.mp4" type="video/mp4"></video><figcaption>Comparing the full set of toggle sounds.</figcaption></figure><p>It started with crisp, heavy, and damped clicks. It didn't hit right and I asked for more. The set grew to include chunky, metallic, relay, and latch sounds.
 
 Crisp snap was the closest and I asked for it to be slightly heavier. That's the weighted snap version you hear on the site today. 
 
 The clicks are synthesized in the browser and wasn't extracted the audio from reference videos. Aster made me a  mock within the Codex browser that let me switch between the sounds and feel each one with movement.</p>
 <p>Then it helped me render a static image to load more quickly and merged on GitHub. 
 </p>
-<h3>Reflections, learnings, what i would do next time:</h3>
+<h2>Reflections, learnings, what i would do next time:</h2>
 <p class="reflection"><strong>Reflection #1: The most powerful models are still not there for copywriting.</strong></p>
 <p>After this entire process, I had every model write up a reflection on:</p><ul><li>What did we work on together</li><li>What was recieved and handed off</li><li>What were the main questions I asked</li><li>What was fixed and resolved together</li></ul>
 <p>Fable 5.1 had a majority of the early mock up assets. I fed all of this into Astra, loaded it with my <em>write-like-emily.md</em> skill, prompted it with Wispr Flow with my high level context and asked it draft this article for me. </p>
 <p>Astra probably helped me get 30% there. I've had to rewrite sentences and remove some that just don't sound like me. </p>
 <p>This makes me think I either haven't reinforced AI enough on how I'd like it to write, and/or it's just not there yet. The most helpful piece was the structure recommendations. </p>
 <p class="reflection"><strong>Reflection #2: Seeing AI control your computer is magical, and I've tested it quite a bit on Grok <a href="https://x.com/bot" target="_blank" rel="noopener">@bot</a> and Aside, but it still feels like self-driving in early Tesla days where you need your hand on the wheel. </strong></p>
-<p>I also tried Grok 4.6 in the Aside browser to paste the draft and assets in the X composer for me. This is a 5 minute video sped up to 10 seconds. It made strange messages to test it could type.</p><figure class="video video-portrait"><video controls playsinline preload="none" poster="../media/website-build-grok-poster.jpg"><source src="../media/website-build-grok.mp4" type="video/mp4"></video><figcaption>Five minutes of browser control, sped up to ten seconds.</figcaption></figure>
+<p>I also tried Grok 4.6 in the Aside browser to paste the draft and assets in the X composer for me. This is a 5 minute video sped up to 10 seconds. It made strange messages to test it could type.</p><figure class="video video-portrait"><video controls playsinline loading="lazy" preload="none" width="960" height="1284" poster="../media/website-build-grok-poster.jpg"><source src="../media/website-build-grok.mp4" type="video/mp4"></video><figcaption>Five minutes of browser control, sped up to ten seconds.</figcaption></figure>
 <p class="reflection"><strong>Reflection #3: The more references you have on what you want, and what you don't want, the better. If you don't know what you want, work with AI as a brainstorming partner, but you yourself need to be the creative catalyst. </strong></p><p class="reflection"><strong>Reflection #4: Get experts in to check your work, and feed that back into AI. </strong></p>
 <p class="reflection"><strong>Reflection #5: It's important to play with the latest models and consistently test. They're innovating so quickly now, and each new release feels like a huge jump forward. These last ~1.5 weeks of truly power using Hermes, Fable, Grok Bot, and now Astra have been some of the most productive for me.</strong></p>
 <p class="reflection"><strong>Reflection #6: Use Fable 5.1 and Astra, the latest models for auditing and planning. Use a cheaper model for coding. </strong></p>
 <p class="reflection"><strong>Reflection #7: Astra seems to be better at Fable 5.1 for 3D rendering and creative. I've also been using GPT 5.6 Sol quite a lot with simple statics, including the banner on this article. </strong></p>
 <p>You can see the full website here: https://emilylai.com </p>
 <p>
-If you're a designer and have more feedback, please share. I still have some doubts on relying on AI for certain domains I have little working experience in. And if there are any recommendations for how I could reduce token costs or have better improved this workflow, please let me know. Thanks for reading. :) </p><section class="updates" aria-labelledby="updates-title"><h3 id="updates-title">Updates</h3><h4>September 6th, 2026:</h4><ul><li>Optimized site speed by reducing served image weight by 51%, adding progressive rendering, and loading heavier content when needed</li><li>Refined the contact menu</li></ul><h4>September 7th:</h4><ul><li>Improved readability on UX by simplifying desktop tabs and reducing word clutter on mobile</li><li>Added a favicon with GPT 5.6 Sol</li><li>Made short searches topic-aware, so a search like “AI” brings up work that is actually about AI</li><li>Improved the mobile and font loading performance further</li><li>Built a CMS for editing and adding long form blogs (like this one)</li></ul><figure><img src="../media/favicon-explorations-white.webp" alt="Explorations of E, EL, and LAI favicon and identity marks on a white background" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>Exploring E, EL, and LAI marks before choosing the interlocking EL favicon.</figcaption></figure><h4>September 8th:</h4><ul><li>Made top bar on all blog pages sticky</li></ul></section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
+If you're a designer and have more feedback, please share. I still have some doubts on relying on AI for certain domains I have little working experience in. And if there are any recommendations for how I could reduce token costs or have better improved this workflow, please let me know. Thanks for reading. :) </p><section class="updates" aria-labelledby="updates-title"><h2 id="updates-title">Updates</h2><h3>September 6th, 2026:</h3><ul><li>Optimized site speed by reducing served image weight by 51%, adding progressive rendering, and loading heavier content when needed</li><li>Refined the contact menu</li></ul><h3>September 7th:</h3><ul><li>Improved readability on UX by simplifying desktop tabs and reducing word clutter on mobile</li><li>Added a favicon with GPT 5.6 Sol</li><li>Made short searches topic-aware, so a search like “AI” brings up work that is actually about AI</li><li>Improved the mobile and font loading performance further</li><li>Built a CMS for editing and adding long form blogs (like this one)</li></ul><figure><img src="../media/favicon-explorations-white.webp" alt="Explorations of E, EL, and LAI favicon and identity marks on a white background" loading="lazy" decoding="async" width="1254" height="1254"><figcaption>Exploring E, EL, and LAI marks before choosing the interlocking EL favicon.</figcaption></figure><h3>September 8th:</h3><ul><li>Made top bar on all blog pages sticky</li></ul></section><div class="source"><p>Originally published on <a href="https://x.com/emilylai/status/2096694660421104069" target="_blank" rel="noopener">X</a>.</p><a href="../">← Go back to emilylai.com</a></div></article>
 </main>
 <script>
 (() => {
@@ -243,7 +245,7 @@ const mode = document.querySelector('.mode');
 let loadingToggle;
 const loadToggle = () => {
   if (loadingToggle || !mode?.isConnected) return;
-  loadingToggle = import('../silver-toggle/silver-toggle.min.js?v=6df25d9e6333').then(({replaceThemeControl}) => {
+  loadingToggle = import('../silver-toggle/silver-toggle.min.js?v=eefe11e3c678').then(({replaceThemeControl}) => {
     const toggle = replaceThemeControl('.mode');
     if (toggle) toggle.setAttribute('sound', 'weighted');
   }).catch(() => {});

@@ -123,6 +123,13 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 .reader .back{display:none}
 .reader:focus{outline:none}
 .reader .empty{color:var(--gray);margin:0;text-align:center;padding-top:6px}
+/* Side projects: square tiles link to each live site while no entry is open. */
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:24px 16px}
+.tiles a{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--text);font:13px/1.4 var(--sans)}
+.tiles img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:left top;border-radius:var(--ri);background:var(--hover);box-shadow:0 0 0 1px var(--hair);transition:transform var(--press) var(--ease)}
+.tiles a:hover{color:var(--ink)}.tiles a:hover img{transform:translateY(-2px)}
+.tiles a:focus-visible{outline:1.5px solid var(--ink);outline-offset:4px;border-radius:var(--ri)}
+@media(prefers-reduced-motion:reduce){.tiles img{transition:none}.tiles a:hover img{transform:none}}
 .reader .who{color:var(--gray);margin:0 0 8px;display:flex;justify-content:space-between;gap:8px}
 .reader .rl{margin:0 0 12px;font-size:17px;line-height:1.4;color:var(--ink)}
 .reader .bul{margin:0 0 16px;padding:0 0 0 1.1em}
@@ -154,7 +161,7 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 
 /* contact */
 .mcontact{display:none}
-.contact{position:fixed;left:48px;bottom:40px;display:flex;align-items:center;gap:18px;color:var(--text)}
+.contact{display:flex;align-items:center;gap:18px;color:var(--text)}
 .contact a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:inherit;min-width:24px;min-height:32px}
 .contact a:hover{color:var(--ink)}
 .contact svg{width:15px;height:15px;fill:currentColor;color:var(--gray)}
@@ -170,12 +177,8 @@ html[data-theme="dark"] .mode::before{transform:translateX(30px)}
 @media (min-width:901px) and (max-width:1200px){
  body{padding:32px}
  .layout{grid-template-columns:280px minmax(0,1fr);gap:24px}
- .contact{left:32px;bottom:24px}
  .idrow{flex-wrap:wrap}
  .id h1{font-size:30px}
-}
-@media (min-width:901px) and (max-height:650px){
- .contact{position:static;margin-top:32px}
 }
 
 /* phone: folders home, full-screen window with a tab strip, note as a level */
@@ -292,7 +295,9 @@ html[data-theme="dark"] .reader .logos img{filter:grayscale(1) invert(1) contras
 :root{--space-xs:4px;--space-sm:8px;--space-md:16px;--space-lg:24px;--space-xl:32px;--space-2xl:48px;--page-pad:clamp(32px,calc(4.04vw - 4.4px),48px);--desk-gap:clamp(24px,calc(6.06vw - 30.6px),48px);--sidebar-width:clamp(280px,calc(15.15vw + 143.5px),340px);--list-min:208px;--reader-min:272px;--divider-width:8px}
 body{padding:var(--page-pad)}
 .layout{grid-template-columns:var(--sidebar-width) minmax(0,1fr);gap:var(--desk-gap)}
-.contact{left:var(--page-pad);bottom:var(--space-2xl);gap:var(--space-md)}
+.contact{gap:var(--space-md)}
+/* Contact sits at the bottom of the sidebar column; it moves down when the folder list grows. */
+@media(min-width:901px){.layout>aside{display:flex;flex-direction:column;min-height:calc(100dvh - 2 * var(--page-pad))}.contact{margin-top:auto;padding-top:var(--space-xl);padding-bottom:calc(var(--space-2xl) - var(--page-pad))}}
 .id h1{font-size:32px}
 .id p{line-height:1.5}.id p+p{margin-top:var(--space-sm)}
 .tools{gap:var(--space-xs)}

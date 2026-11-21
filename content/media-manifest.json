@@ -44,10 +44,20 @@
     "w": 2000,
     "h": 1188
   },
+  "media/tile-art-in-nyc.webp": {
+    "src": "media/tile-art-in-nyc.webp",
+    "w": 640,
+    "h": 640
+  },
   "media/purr-buddy.png": {
     "src": "media/purr-buddy-optimized.webp",
     "w": 1912,
     "h": 1548
+  },
+  "media/tile-openai-hackathon.webp": {
+    "src": "media/tile-openai-hackathon.webp",
+    "w": 640,
+    "h": 640
   },
   "media/trillions-post.png": {
     "src": "media/trillions-post-optimized.webp",
@@ -59,20 +69,40 @@
     "w": 960,
     "h": 636
   },
+  "media/tile-trillions.webp": {
+    "src": "media/tile-trillions.webp",
+    "w": 640,
+    "h": 640
+  },
   "media/life-changing.png": {
     "src": "media/life-changing-optimized.webp",
     "w": 1200,
     "h": 630
+  },
+  "media/tile-life-changing.webp": {
+    "src": "media/tile-life-changing.webp",
+    "w": 640,
+    "h": 640
   },
   "media/follow-the-money.jpg": {
     "src": "media/follow-the-money-optimized.webp",
     "w": 1200,
     "h": 630
   },
+  "media/tile-follow-the-money.webp": {
+    "src": "media/tile-follow-the-money.webp",
+    "w": 640,
+    "h": 640
+  },
   "media/sponsor-me-index.webp": {
     "src": "media/sponsor-me-index.webp",
     "w": 2400,
     "h": 1400
+  },
+  "media/tile-sponsor-me.webp": {
+    "src": "media/tile-sponsor-me.webp",
+    "w": 640,
+    "h": 640
   },
   "media/unicorngear.webp": {
     "src": "media/unicorngear.webp",
